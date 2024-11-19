@@ -1,4 +1,4 @@
-#if UNITY_EDITOR
+ï»¿#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +19,8 @@ namespace VRSuya.Core.Avatar {
 	[ExecuteInEditMode]
 	public static class AvatarController {
 
-		/// <summary>¾Æ¹ÙÅ¸ÀÇ ÁöÁ¤ÇÑ ·¹ÀÌ¾î ¾Ö´Ï¸ŞÀÌÅÍ ÄÁÆ®·Ñ·¯¸¦ Ã£¾Æ¼­ ¹İÈ¯ÇÕ´Ï´Ù.</summary>
-		/// <returns>¾Æ¹ÙÅ¸ÀÇ ÁöÁ¤ÇÑ ·¹ÀÌ¾î ¾Ö´Ï¸ŞÀÌÅÍ ÄÁÆ®·Ñ·¯</returns>
+		/// <summary>ì•„ë°”íƒ€ì˜ ì§€ì •í•œ ë ˆì´ì–´ ì• ë‹ˆë©”ì´í„° ì»¨íŠ¸ë¡¤ëŸ¬ë¥¼ ì°¾ì•„ì„œ ë°˜í™˜í•©ë‹ˆë‹¤.</summary>
+		/// <returns>ì•„ë°”íƒ€ì˜ ì§€ì •í•œ ë ˆì´ì–´ ì• ë‹ˆë©”ì´í„° ì»¨íŠ¸ë¡¤ëŸ¬</returns>
 		public static AnimatorController GetAnimatorController(GameObject AvatarGameObject, VRCAvatarDescriptor.AnimLayerType LayerType) {
 			AvatarGameObject.TryGetComponent(typeof(VRCAvatarDescriptor), out Component AvatarDescriptor);
 			if (AvatarDescriptor) {
@@ -30,8 +30,8 @@ namespace VRSuya.Core.Avatar {
 			return null;
 		}
 
-		/// <summary>HumanBodyBonesÀÇ ÇÏÀ§ º» ¸ñ·ÏµéÀ» ¹İÈ¯ÇÕ´Ï´Ù.</summary>
-		/// <returns>HumanBodyBones ¸ñ·Ï</returns>
+		/// <summary>HumanBodyBonesì˜ í•˜ìœ„ ë³¸ ëª©ë¡ë“¤ì„ ë°˜í™˜í•©ë‹ˆë‹¤.</summary>
+		/// <returns>HumanBodyBones ëª©ë¡</returns>
 		public static List<HumanBodyBones> GetHumanBoneList() {
 			return Enum.GetValues(typeof(HumanBodyBones)).Cast<HumanBodyBones>().ToList();
 		}
