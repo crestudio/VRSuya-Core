@@ -1,5 +1,6 @@
 ﻿#if UNITY_EDITOR
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using UnityEditor.Animations;
@@ -100,6 +101,19 @@ namespace VRSuya.Core.Animation {
 			return;
 		}
 
+		/// <summary>요청한 애니메이터 컨트롤러에서 모든 AnimatorState를 반환합니다.</summary>
+		/// <returns>모든 AnimatorState</returns>
+		public static AnimatorState[] GetAllAnimatorStates(AnimatorController TargetAnimatorController) {
+			List<AnimatorStateMachine> AllAnimatorStateMachine = new List<AnimatorStateMachine>();
+			List<AnimatorState> AllAnimatorState = new List<AnimatorState>();
+			foreach (AnimatorControllerLayer TargetAnimatorLayer in TargetAnimatorController.layers) {
+				AllAnimatorStateMachine.AddRange(GetAllStateMachines(TargetAnimatorLayer.stateMachine).ToList());
+			}
+			foreach (AnimatorStateMachine TargetAnimatorStateMachine in AllAnimatorStateMachine) {
+				AllAnimatorState.AddRange(GetAllStates(TargetAnimatorStateMachine).ToList());
+			}
+			return AllAnimatorState.ToArray();
+		}
 		/// <summary>모든 State 어레이를 반환합니다.</summary>
 		/// <returns>State 어레이</returns>
 		public static AnimatorState[] GetAllStates(AnimatorStateMachine TargetStateMachine) {
