@@ -6,6 +6,8 @@ using System.Linq;
 using UnityEditor.Animations;
 using UnityEngine;
 
+using BlendTree = UnityEditor.Animations.BlendTree;
+
 /*
  * VRSuya Core
  * Contact : vrsuya@gmail.com // Twitter : https://twitter.com/VRSuya
@@ -114,6 +116,32 @@ namespace VRSuya.Core.Animation {
 			}
 			return AllAnimatorState.ToArray();
 		}
+
+		/// <summary>요청한 AnimatorState에서 모든 BlendTree를 반환합니다.</summary>
+		/// <returns>모든 BlendTree 어레이</returns>
+		public static BlendTree[] GetAllBlendTrees(AnimatorState[] TargetAnimatorStates) {
+			BlendTree[] BlendTrees = new BlendTree[0];
+			foreach (AnimatorState TargetAnimatorState in TargetAnimatorStates) {
+				if (TargetAnimatorState.motion is BlendTree TargetBlendTree) {
+					BlendTrees = BlendTrees.Concat(GetSubBlendTrees(TargetBlendTree)).ToArray();
+				}
+			}
+			return BlendTrees;
+		}
+
+		/// <summary>요청한 BlendTree에서 모든 BlendTree를 반환합니다.</summary>
+		/// <returns>모든 BlendTree 어레이</returns>
+		private static BlendTree[] GetSubBlendTrees(BlendTree TargetBlendTree) {
+			BlendTree[] BlendTrees = new BlendTree[0];
+			BlendTrees = BlendTrees.Concat(new BlendTree[] { TargetBlendTree }).ToArray();
+			foreach (ChildMotion ChildMotion in TargetBlendTree.children) {
+				if (ChildMotion.motion is BlendTree ChildBlendTree) {
+					BlendTrees = BlendTrees.Concat(GetSubBlendTrees(ChildBlendTree)).ToArray();
+				}
+			}
+			return BlendTrees;
+		}
+
 		/// <summary>모든 State 어레이를 반환합니다.</summary>
 		/// <returns>State 어레이</returns>
 		public static AnimatorState[] GetAllStates(AnimatorStateMachine TargetStateMachine) {
