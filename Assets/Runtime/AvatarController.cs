@@ -19,6 +19,34 @@ namespace VRSuya.Core.Avatar {
 	[ExecuteInEditMode]
 	public static class AvatarController {
 
+		public enum Avatar {
+			Airi, Aldina, Angura, Anon, Anri, Ash,
+			Chiffon, Chocolat, Cygnet,
+			Emmelie, EYO,
+			Firina, Fuzzy,
+			Glaze, Grus,
+			Hakka,
+			IMERIS,
+			Karin, Kikyo, Kokoa, Koyuki, Kuronatu,
+			Lapwing, Leefa, Leeme, Lime, Lunalitt,
+			Maki, Mamehinata, MANUKA, Mariel, Marron, Maya, Merino, Milk, Minahoshi, Minase, Mint, Mir, Mishe, Moe,
+			Nayu,
+			Platinum,
+			Quiche,
+			Rainy, Ramune_Old, RINDO, Rue, Rusk,
+			SELESTIA, Sephira, Shinano, Shinra, Sio, Sue, Sugar, Suzuhana,
+			Tien, TubeRose,
+			Ukon, Usasaki, Uzuki,
+			Wolferia,
+			Yoll, YUGI_MIYO, Yuuko
+		}
+
+		/// <summary>Avatar ENUM의 모든 요소를 string[]으로 반환합니다.</summary>
+		/// <returns>ENUM 구성 요소 이름의 배열</returns>
+		public static string[] GetAvatarNames() {
+			return Enum.GetNames(typeof(Avatar));
+		}
+
 		/// <summary>아바타의 지정한 레이어 애니메이터 컨트롤러를 찾아서 반환합니다.</summary>
 		/// <returns>아바타의 지정한 레이어 애니메이터 컨트롤러</returns>
 		public static AnimatorController GetAnimatorController(GameObject AvatarGameObject, VRCAvatarDescriptor.AnimLayerType LayerType) {
