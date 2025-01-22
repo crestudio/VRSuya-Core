@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 
 using VRC.SDK3.Avatars.ScriptableObjects;
+using VRSuya.Core.Avatar;
 
 /*
  * VRSuya Core
@@ -71,6 +72,42 @@ namespace VRSuya.Core.Asset {
 			FileName = AssetDatabase.GUIDToAssetPath(GUID).Split('/')[AssetDatabase.GUIDToAssetPath(GUID).Split('/').Length - 1];
 			if (OnlyFileName) FileName = FileName.Split('.')[0];
 			return FileName;
+		}
+
+		/// <summary>파일 이름에서 아바타 이름을 찾아 아바타 이름을 반환합니다.</summary>
+		/// <param name="OriginalFileName">원본 파일 이름</param>
+		/// <returns>아바타 이름</returns>
+		public static string GetAvatarName(string OriginalFileName) {
+			string[] FileNameParts = OriginalFileName.Split('_');
+			for (int Index = FileNameParts.Length - 1; Index >= 0; Index--) {
+				if (IsAvatarName(FileNameParts[Index])) {
+					return FileNameParts[Index];
+				}
+			}
+			return null;
+		}
+
+		/// <summary>파일 이름에서 아바타 이름을 찾아 다른 이름으로 바꾼 문자열을 반환합니다.</summary>
+		/// <param name="OriginalFileName">원본 파일 이름</param>
+		/// <param name="NewAvatarName">새로운 아바타 이름</param>
+		/// <returns>변경된 파일 이름</returns>
+		public static string ReplaceAvatarName(string OriginalFileName, string NewAvatarName) {
+			string[] FileNameParts = OriginalFileName.Split('_');
+			for (int Index = FileNameParts.Length - 1; Index >= 0; Index--) {
+				if (IsAvatarName(FileNameParts[Index])) {
+					FileNameParts[Index] = NewAvatarName;
+					break;
+				}
+			}
+			return string.Join("_", FileNameParts);
+		}
+
+		/// <summary>문자열이 아바타 이름인지 판단하는 메서드</summary>
+		/// <param name="TargetWord">검사할 문자열</param>
+		/// <returns>아바타 이름 여부</returns>
+		public static bool IsAvatarName(string TargetWord) {
+			string[] AvatarNames = AvatarController.GetAvatarNames();
+			return AvatarNames.Contains(TargetWord);
 		}
 	}
 }
