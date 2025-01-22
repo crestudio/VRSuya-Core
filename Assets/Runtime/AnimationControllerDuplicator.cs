@@ -6,8 +6,6 @@ using System.Linq;
 using UnityEditor.Animations;
 using UnityEngine;
 
-using BlendTree = UnityEditor.Animations.BlendTree;
-
 /*
  * VRSuya Core
  * Contact : vrsuya@gmail.com // Twitter : https://twitter.com/VRSuya
