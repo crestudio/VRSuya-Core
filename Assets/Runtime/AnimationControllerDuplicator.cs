@@ -42,7 +42,7 @@ namespace VRSuya.Core.Animation {
 
 		/// <summary>요청한 애니메이터 레이어를 복제하여 반환합니다.</summary>
 		/// <returns>복제된 애니메이터 레이어</returns>
-		private static AnimatorControllerLayer DuplicateAnimatorLayer(AnimatorControllerLayer TargetAnimatorLayer) {
+		public static AnimatorControllerLayer DuplicateAnimatorLayer(AnimatorControllerLayer TargetAnimatorLayer) {
 			AnimatorControllerLayer newAnimatorLayer = new AnimatorControllerLayer {
 				avatarMask = TargetAnimatorLayer.avatarMask,
 				blendingMode = TargetAnimatorLayer.blendingMode,
@@ -58,7 +58,7 @@ namespace VRSuya.Core.Animation {
 
 		/// <summary>요청한 StateMachine을 복제하여 반환합니다.</summary>
 		/// <returns>복제된 StateMachine</returns>
-		private static AnimatorStateMachine DuplicateStateMachine(AnimatorStateMachine TargetStateMachine) {
+		public static AnimatorStateMachine DuplicateStateMachine(AnimatorStateMachine TargetStateMachine) {
 			AnimatorStateMachine newStateMachines = new AnimatorStateMachine {
 				anyStatePosition = TargetStateMachine.anyStatePosition,
 				behaviours = TargetStateMachine.behaviours,
@@ -75,7 +75,7 @@ namespace VRSuya.Core.Animation {
 		}
 
 		/// <summary>새로 생성된 StateMachine에서 Transition 데이터를 복제 작업을 합니다.</summary>
-		private static void CopyTransitions(AnimatorStateMachine TargetStateMachine, AnimatorStateMachine OldStateMachine) {
+		public static void CopyTransitions(AnimatorStateMachine TargetStateMachine, AnimatorStateMachine OldStateMachine) {
 			AnimatorStateMachine[] OldAnimatorStateMachines = GetAllStateMachines(OldStateMachine);
 			AnimatorStateMachine[] NewAnimatorStateMachines = GetAllStateMachines(TargetStateMachine);
 			AnimatorState[] OldAnimatorStates = GetAllStates(OldStateMachine);
@@ -102,7 +102,7 @@ namespace VRSuya.Core.Animation {
 
 		/// <summary>모든 State 어레이를 반환합니다.</summary>
 		/// <returns>State 어레이</returns>
-		private static AnimatorState[] GetAllStates(AnimatorStateMachine TargetStateMachine) {
+		public static AnimatorState[] GetAllStates(AnimatorStateMachine TargetStateMachine) {
 			AnimatorState[] States = TargetStateMachine.states.Select(ExistChildState => ExistChildState.state).ToArray();
 			if (TargetStateMachine.stateMachines.Length > 0) {
 				foreach (var TargetChildStatetMachine in TargetStateMachine.stateMachines) {
@@ -114,7 +114,7 @@ namespace VRSuya.Core.Animation {
 
 		/// <summary>모든 StateMachine 어레이를 반환합니다.</summary>
 		/// <returns>StateMachine 어레이</returns>
-		private static AnimatorStateMachine[] GetAllStateMachines(AnimatorStateMachine TargetStateMachine) {
+		public static AnimatorStateMachine[] GetAllStateMachines(AnimatorStateMachine TargetStateMachine) {
 			AnimatorStateMachine[] StateMachines = new AnimatorStateMachine[] { TargetStateMachine };
 			if (TargetStateMachine.stateMachines.Length > 0) {
 				foreach (var TargetChildStateMachine in TargetStateMachine.stateMachines) {
@@ -126,7 +126,7 @@ namespace VRSuya.Core.Animation {
 
 		/// <summary>요청한 하위 StateMachine을 복제하여 반환합니다.</summary>
 		/// <returns>복제된 하위 StateMachine</returns>
-		private static ChildAnimatorStateMachine[] DuplicateChildStateMachine(ChildAnimatorStateMachine[] TargetChildStateMachines) {
+		public static ChildAnimatorStateMachine[] DuplicateChildStateMachine(ChildAnimatorStateMachine[] TargetChildStateMachines) {
 			ChildAnimatorStateMachine[] newChildStateMachines = new ChildAnimatorStateMachine[TargetChildStateMachines.Length];
 			for (int Index = 0; Index < TargetChildStateMachines.Length; Index++) {
 				ChildAnimatorStateMachine newChildStateMachine = new ChildAnimatorStateMachine {
@@ -140,7 +140,7 @@ namespace VRSuya.Core.Animation {
 
 		/// <summary>요청한 ChildAnimatorState을 복제하여 반환합니다.</summary>
 		/// <returns>복제된 ChildAnimatorState</returns>
-		private static ChildAnimatorState[] DuplicateChildAnimatorState(ChildAnimatorState[] TargetChildAnimatorStates) {
+		public static ChildAnimatorState[] DuplicateChildAnimatorState(ChildAnimatorState[] TargetChildAnimatorStates) {
 			ChildAnimatorState[] newChildAnimatorStates = new ChildAnimatorState[TargetChildAnimatorStates.Length];
 			for (int Index = 0; Index < TargetChildAnimatorStates.Length; Index++) {
 				ChildAnimatorState newChildAnimatorState = new ChildAnimatorState {
@@ -154,7 +154,7 @@ namespace VRSuya.Core.Animation {
 
 		/// <summary>요청한 ChildAnimatorState을 복제하여 반환합니다.</summary>
 		/// <returns>복제된 ChildAnimatorState</returns>
-		private static AnimatorState DuplicateAnimatorState(AnimatorState TargetAnimatorState) {
+		public static AnimatorState DuplicateAnimatorState(AnimatorState TargetAnimatorState) {
 			AnimatorState newState = new AnimatorState {
 				behaviours = TargetAnimatorState.behaviours,
 				cycleOffset = TargetAnimatorState.cycleOffset,
@@ -180,7 +180,7 @@ namespace VRSuya.Core.Animation {
 
 		/// <summary>요청한 Transition을 복제하여 반환합니다.</summary>
 		/// <returns>복제된 Transition</returns>
-		private static AnimatorStateTransition DuplicateTransition(AnimatorStateTransition TargetStateTransition, AnimatorState TargetAnimatorState, AnimatorStateMachine TargetAnimatorStateMachine) {
+		public static AnimatorStateTransition DuplicateTransition(AnimatorStateTransition TargetStateTransition, AnimatorState TargetAnimatorState, AnimatorStateMachine TargetAnimatorStateMachine) {
 			AnimatorStateTransition newTransition = new AnimatorStateTransition {
 				canTransitionToSelf = TargetStateTransition.canTransitionToSelf,
 				duration = TargetStateTransition.duration,
@@ -204,7 +204,7 @@ namespace VRSuya.Core.Animation {
 
 		/// <summary>요청한 조건을 복제하여 반환합니다.</summary>
 		/// <returns>복제된 조건</returns>
-		private static AnimatorCondition[] DuplicateConditions(AnimatorCondition[] TargetConditions) {
+		public static AnimatorCondition[] DuplicateConditions(AnimatorCondition[] TargetConditions) {
 			AnimatorCondition[] newConditions = new AnimatorCondition[TargetConditions.Length];
 			for (int Index = 0; Index < TargetConditions.Length; Index++) {
 				AnimatorCondition newCondition = new AnimatorCondition {
