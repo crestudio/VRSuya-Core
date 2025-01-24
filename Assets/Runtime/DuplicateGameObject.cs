@@ -35,9 +35,9 @@ namespace VRSuya.Core {
 		public static GameObject DuplicateGameObjectInstance(GameObject GameObjectInstance) {
 			Selection.objects = new Object[] { GameObjectInstance };
 			Selection.activeGameObject = GameObjectInstance;
-			Type hierarchyViewType = Type.GetType("UnityEditor.SceneHierarchyWindow, UnityEditor");
-			EditorWindow hierarchyView = FindFirstWindow(hierarchyViewType);
-			hierarchyView.SendEvent(EditorGUIUtility.CommandEvent("Duplicate"));
+			Type HierarchyViewType = Type.GetType("UnityEditor.SceneHierarchyWindow, UnityEditor");
+			EditorWindow HierarchyView = FindFirstWindow(HierarchyViewType);
+			HierarchyView.SendEvent(EditorGUIUtility.CommandEvent("Duplicate"));
 			GameObject CloneGameObject = Selection.activeGameObject;
 			return CloneGameObject;
 		}
