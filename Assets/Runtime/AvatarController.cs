@@ -13,7 +13,7 @@ using VRC.SDK3.Avatars.Components;
  * Contact : vrsuya@gmail.com // Twitter : https://twitter.com/VRSuya
  */
 
-namespace VRSuya.Core.Avatar {
+namespace VRSuya.Core {
 
 	[ExecuteInEditMode]
 	public static class AvatarController {

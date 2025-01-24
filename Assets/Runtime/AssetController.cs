@@ -6,14 +6,13 @@ using UnityEditor;
 using UnityEngine;
 
 using VRC.SDK3.Avatars.ScriptableObjects;
-using VRSuya.Core.Avatar;
 
 /*
  * VRSuya Core
  * Contact : vrsuya@gmail.com // Twitter : https://twitter.com/VRSuya
  */
 
-namespace VRSuya.Core.Asset {
+namespace VRSuya.Core {
 
 	[ExecuteInEditMode]
 	public static class AssetController {

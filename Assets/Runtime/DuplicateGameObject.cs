@@ -12,7 +12,7 @@ using Object = UnityEngine.Object;
  * Forked from ModLunar ( https://forum.unity.com/threads/solved-duplicate-prefab-issue.778553/ )
  */
 
-namespace VRSuya.Core.Unity {
+namespace VRSuya.Core {
 
 	[ExecuteInEditMode]
 	public static class DuplicateGameObject {

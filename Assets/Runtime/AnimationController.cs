@@ -3,18 +3,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using UnityEditor.Animations;
 using UnityEngine;
+using UnityEditor.Animations;
 
 /*
  * VRSuya Core
  * Contact : vrsuya@gmail.com // Twitter : https://twitter.com/VRSuya
  */
 
-namespace VRSuya.Core.Animation {
+namespace VRSuya.Core {
 
 	[ExecuteInEditMode]
-	public static class AnimationControllerDuplicator {
+	public static class AnimationController {
 
 		/// <summary>요청한 애니메이터 컨트롤러에 파라메터를 추가합니다.</summary>
 		public static void AddParameter(AnimatorController TargetController, AnimatorControllerParameter TargetParameter) {
