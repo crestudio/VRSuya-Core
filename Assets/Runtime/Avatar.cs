@@ -40,6 +40,8 @@ namespace VRSuya.Core {
 			Yoll, YUGI_MIYO, Yuuko
 		}
 
+		public static readonly string[] HeadGameObjectNames = new string[] { "Body", "Head", "Face" };
+
 		/// <summary>Avatar ENUM의 모든 요소를 string[]으로 반환합니다.</summary>
 		/// <returns>ENUM 구성 요소 이름의 배열</returns>
 		public string[] GetAvatarNames() {
@@ -63,6 +65,20 @@ namespace VRSuya.Core {
 		/// <returns>HumanBodyBones 목록</returns>
 		public List<HumanBodyBones> GetHumanBoneList() {
 			return Enum.GetValues(typeof(HumanBodyBones)).Cast<HumanBodyBones>().ToList();
+		}
+
+		/// <summary>요청한 아바타의 머리 GameObject를 가져옵니다</summary>
+		/// <param name="AvatarGameObject">VRChat 아바타 GameObject</param>
+		/// <returns>아바타의 머리 GameObject</returns>
+		public GameObject GetHeadGameObject(GameObject AvatarGameObject) {
+			foreach (SkinnedMeshRenderer TargetSkinnedMeshRenderer in AvatarGameObject.GetComponentsInChildren<SkinnedMeshRenderer>(true)) {
+				if (Array.Exists(HeadGameObjectNames, Item => TargetSkinnedMeshRenderer.gameObject.name == Item)) {
+					if (Array.Exists(TargetSkinnedMeshRenderer.bones, Bone => AvatarGameObject.GetComponent<UnityEngine.Animator>().GetBoneTransform(HumanBodyBones.Head) == Bone)) {
+						return TargetSkinnedMeshRenderer.gameObject;
+					}
+				}
+			}
+			return null;
 		}
 	}
 }
