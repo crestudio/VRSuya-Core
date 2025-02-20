@@ -47,6 +47,8 @@ namespace VRSuya.Core {
 		}
 
 		/// <summary>아바타의 지정한 레이어 애니메이터 컨트롤러를 찾아서 반환합니다.</summary>
+		/// <param name="AvatarGameObject">VRChat 아바타 GameObject</param>
+		/// <param name="LayerType">VRChat 애니메이터 타입</param>
 		/// <returns>아바타의 지정한 레이어 애니메이터 컨트롤러</returns>
 		public AnimatorController GetAnimatorController(GameObject AvatarGameObject, VRCAvatarDescriptor.AnimLayerType LayerType) {
 			AvatarGameObject.TryGetComponent(typeof(VRCAvatarDescriptor), out Component AvatarDescriptor);

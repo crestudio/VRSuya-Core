@@ -25,6 +25,7 @@ namespace VRSuya.Core {
 		}
 
 		/// <summary>요청한 타입의 파일 GUID 어레이를 가져옵니다</summary>
+		/// <param name="TargetType">Unity 에셋 타입</param>
 		/// <returns>요청한 타입의 파일 GUID 어레이</returns>
 		public string[] GetAssetGUIDs(AssetType TargetType) {
 			List<string> AssetGUIDs = new List<string>();
@@ -65,6 +66,8 @@ namespace VRSuya.Core {
 		}
 
 		/// <summary>요청한 GUID를 파일 이름으로 반환합니다. 2번째 인자는 확장명 포함 여부를 결정합니다.</summary>
+		/// <param name="GUID">에셋 GUID</param>
+		/// <param name="OnlyFileName">확장명 포함 여부</param>
 		/// <returns>파일 이름</returns>
 		public string GUIDToAssetName(string GUID, bool OnlyFileName) {
 			string FileName = "";
