@@ -14,7 +14,7 @@ using UnityEditor.Animations;
 namespace VRSuya.Core {
 
 	[ExecuteInEditMode]
-	public class Animation {
+	public class Animator {
 
 		/// <summary>요청한 애니메이터 컨트롤러에 파라메터를 추가합니다.</summary>
 		public void AddParameter(AnimatorController TargetController, AnimatorControllerParameter TargetParameter) {
