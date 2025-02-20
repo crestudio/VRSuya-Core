@@ -15,7 +15,7 @@ using VRC.SDK3.Avatars.ScriptableObjects;
 namespace VRSuya.Core {
 
 	[ExecuteInEditMode]
-	public static class AssetController {
+	public class Asset {
 
 		public enum AssetType {
 			AnimatorController,
@@ -26,7 +26,7 @@ namespace VRSuya.Core {
 
 		/// <summary>요청한 타입의 파일 GUID 어레이를 가져옵니다</summary>
 		/// <returns>요청한 타입의 파일 GUID 어레이</returns>
-		public static string[] GetAssetGUIDs(AssetType TargetType) {
+		public string[] GetAssetGUIDs(AssetType TargetType) {
 			List<string> AssetGUIDs = new List<string>();
 			string SearchWord = string.Empty;
 			string SearchPath = "Assets/";
@@ -66,7 +66,7 @@ namespace VRSuya.Core {
 
 		/// <summary>요청한 GUID를 파일 이름으로 반환합니다. 2번째 인자는 확장명 포함 여부를 결정합니다.</summary>
 		/// <returns>파일 이름</returns>
-		public static string GUIDToAssetName(string GUID, bool OnlyFileName) {
+		public string GUIDToAssetName(string GUID, bool OnlyFileName) {
 			string FileName = "";
 			FileName = AssetDatabase.GUIDToAssetPath(GUID).Split('/')[AssetDatabase.GUIDToAssetPath(GUID).Split('/').Length - 1];
 			if (OnlyFileName) FileName = FileName.Split('.')[0];
@@ -76,7 +76,7 @@ namespace VRSuya.Core {
 		/// <summary>파일 이름에서 아바타 이름을 찾아 아바타 이름을 반환합니다.</summary>
 		/// <param name="OriginalFileName">원본 파일 이름</param>
 		/// <returns>아바타 이름</returns>
-		public static string GetAvatarName(string OriginalFileName) {
+		public string GetAvatarName(string OriginalFileName) {
 			string[] FileNameParts = OriginalFileName.Split('_');
 			for (int Index = FileNameParts.Length - 1; Index >= 0; Index--) {
 				if (IsAvatarName(FileNameParts[Index])) {
@@ -90,7 +90,7 @@ namespace VRSuya.Core {
 		/// <param name="OriginalFileName">원본 파일 이름</param>
 		/// <param name="NewAvatarName">새로운 아바타 이름</param>
 		/// <returns>변경된 파일 이름</returns>
-		public static string ReplaceAvatarName(string OriginalFileName, string NewAvatarName) {
+		public string ReplaceAvatarName(string OriginalFileName, string NewAvatarName) {
 			string[] FileNameParts = OriginalFileName.Split('_');
 			for (int Index = FileNameParts.Length - 1; Index >= 0; Index--) {
 				if (IsAvatarName(FileNameParts[Index])) {

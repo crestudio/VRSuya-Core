@@ -15,11 +15,11 @@ using Object = UnityEngine.Object;
 namespace VRSuya.Core {
 
 	[ExecuteInEditMode]
-	public static class DuplicateGameObject {
+	public class DuplicateGameObject {
 
 		/// <summary>요청한 타입의 첫번째 윈도우 창 오브젝트를 반환합니다.</summary>
 		/// <returns>해당 타입의 첫번째 윈도우</returns>
-		private static EditorWindow FindFirstWindow(Type EditorWindowType) {
+		private EditorWindow FindFirstWindow(Type EditorWindowType) {
 			if (EditorWindowType == null)
 				throw new ArgumentNullException(nameof(EditorWindowType));
 			if (!typeof(EditorWindow).IsAssignableFrom(EditorWindowType))
@@ -32,7 +32,7 @@ namespace VRSuya.Core {
 
 		/// <summary>요청한 오브젝트의 복제된 GameObject를 반환합니다.</summary>
 		/// <returns>복제된 GameObject</returns>
-		public static GameObject DuplicateGameObjectInstance(GameObject GameObjectInstance) {
+		public GameObject DuplicateGameObjectInstance(GameObject GameObjectInstance) {
 			Selection.objects = new Object[] { GameObjectInstance };
 			Selection.activeGameObject = GameObjectInstance;
 			Type HierarchyViewType = Type.GetType("UnityEditor.SceneHierarchyWindow, UnityEditor");

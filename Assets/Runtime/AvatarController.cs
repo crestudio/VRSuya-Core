@@ -16,7 +16,7 @@ using VRC.SDK3.Avatars.Components;
 namespace VRSuya.Core {
 
 	[ExecuteInEditMode]
-	public static class AvatarController {
+	public class Avatar {
 
 		public enum Avatar {
 			Airi, Aldina, Angura, Anon, Anri, Ash,
@@ -42,13 +42,13 @@ namespace VRSuya.Core {
 
 		/// <summary>Avatar ENUM의 모든 요소를 string[]으로 반환합니다.</summary>
 		/// <returns>ENUM 구성 요소 이름의 배열</returns>
-		public static string[] GetAvatarNames() {
+		public string[] GetAvatarNames() {
 			return Enum.GetNames(typeof(Avatar));
 		}
 
 		/// <summary>아바타의 지정한 레이어 애니메이터 컨트롤러를 찾아서 반환합니다.</summary>
 		/// <returns>아바타의 지정한 레이어 애니메이터 컨트롤러</returns>
-		public static AnimatorController GetAnimatorController(GameObject AvatarGameObject, VRCAvatarDescriptor.AnimLayerType LayerType) {
+		public AnimatorController GetAnimatorController(GameObject AvatarGameObject, VRCAvatarDescriptor.AnimLayerType LayerType) {
 			AvatarGameObject.TryGetComponent(typeof(VRCAvatarDescriptor), out Component AvatarDescriptor);
 			if (AvatarDescriptor) {
 				VRCAvatarDescriptor.CustomAnimLayer TargetAnimatorController = Array.Find(AvatarDescriptor.GetComponent<VRCAvatarDescriptor>().baseAnimationLayers, AnimationLayer => AnimationLayer.type == LayerType);
@@ -59,7 +59,7 @@ namespace VRSuya.Core {
 
 		/// <summary>HumanBodyBones의 하위 본 목록들을 반환합니다.</summary>
 		/// <returns>HumanBodyBones 목록</returns>
-		public static List<HumanBodyBones> GetHumanBoneList() {
+		public List<HumanBodyBones> GetHumanBoneList() {
 			return Enum.GetValues(typeof(HumanBodyBones)).Cast<HumanBodyBones>().ToList();
 		}
 	}
