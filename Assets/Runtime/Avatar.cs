@@ -63,7 +63,7 @@ namespace VRSuya.Core {
 
 		/// <summary>HumanBodyBones의 하위 본 목록들을 반환합니다.</summary>
 		/// <returns>HumanBodyBones 목록</returns>
-		public List<HumanBodyBones> GetHumanBoneList() {
+		public static List<HumanBodyBones> GetHumanBoneList() {
 			return Enum.GetValues(typeof(HumanBodyBones)).Cast<HumanBodyBones>().ToList();
 		}
 
