@@ -13,6 +13,6 @@ https://github.com/crestudio/VRSuya-Core.git
 ## Copyright
 
 ```
-Copyright 2024 VRSuya. All rights reserved.
+Copyright 2025 VRSuya. All rights reserved.
 https://twitter.com/VRSuya / vrsuya@gmail.com
 ```
