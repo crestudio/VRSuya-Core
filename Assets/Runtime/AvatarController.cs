@@ -18,7 +18,7 @@ namespace VRSuya.Core {
 	[ExecuteInEditMode]
 	public class Avatar {
 
-		public enum Avatar {
+		public enum AvatarType {
 			Airi, Aldina, Angura, Anon, Anri, Ash,
 			Chiffon, Chocolat, Cygnet,
 			Emmelie, EYO,
