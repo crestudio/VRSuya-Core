@@ -80,9 +80,11 @@ namespace VRSuya.Core {
 		/// <param name="OriginalFileName">원본 파일 이름</param>
 		/// <returns>아바타 이름</returns>
 		public string GetAvatarName(string OriginalFileName) {
+			Avatar AvatarInstance = new Avatar();
 			string[] FileNameParts = OriginalFileName.Split('_');
+			string[] AvatarNames = AvatarInstance.GetAvatarNames();
 			for (int Index = FileNameParts.Length - 1; Index >= 0; Index--) {
-				if (IsAvatarName(FileNameParts[Index])) {
+				if (AvatarNames.Contains(FileNameParts[Index])) {
 					return FileNameParts[Index];
 				}
 			}
@@ -94,22 +96,16 @@ namespace VRSuya.Core {
 		/// <param name="NewAvatarName">새로운 아바타 이름</param>
 		/// <returns>변경된 파일 이름</returns>
 		public string ReplaceAvatarName(string OriginalFileName, string NewAvatarName) {
+			Avatar AvatarInstance = new Avatar();
 			string[] FileNameParts = OriginalFileName.Split('_');
+			string[] AvatarNames = AvatarInstance.GetAvatarNames();
 			for (int Index = FileNameParts.Length - 1; Index >= 0; Index--) {
-				if (IsAvatarName(FileNameParts[Index])) {
+				if (AvatarNames.Contains(FileNameParts[Index])) {
 					FileNameParts[Index] = NewAvatarName;
 					break;
 				}
 			}
 			return string.Join("_", FileNameParts);
-		}
-
-		/// <summary>문자열이 아바타 이름인지 판단하는 메서드</summary>
-		/// <param name="TargetWord">검사할 문자열</param>
-		/// <returns>아바타 이름 여부</returns>
-		public static bool IsAvatarName(string TargetWord) {
-			string[] AvatarNames = AvatarController.GetAvatarNames();
-			return AvatarNames.Contains(TargetWord);
 		}
 	}
 }
