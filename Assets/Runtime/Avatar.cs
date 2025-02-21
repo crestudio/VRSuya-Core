@@ -133,6 +133,20 @@ namespace VRSuya.Core {
 			}
 			return null;
 		}
+
+		/// <summary>요청한 SkinnedMeshRenderer에서 BlendShape 목록을 모두 불러옵니다.</summary>
+		/// <param name="TargetSkinnedMeshRenderer">요청할 SkinnedMeshRenderer</param>
+		/// <returns>BlendShape 이름 어레이</returns>
+		public string[] GetBlendshapeNameList(SkinnedMeshRenderer TargetSkinnedMeshRenderer) {
+			List<string> newBlendshapeNameList = new List<string>();
+			Mesh TargetMesh = TargetSkinnedMeshRenderer.sharedMesh;
+			if (TargetMesh.blendShapeCount > 0) {
+				for (int Index = 0; Index < TargetMesh.blendShapeCount; Index++) {
+					newBlendshapeNameList.Add(TargetMesh.GetBlendShapeName(Index));
+				}
+			}
+			return newBlendshapeNameList.ToArray();
+		}
 	}
 }
 #endif
