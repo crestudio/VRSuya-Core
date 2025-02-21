@@ -20,7 +20,7 @@ namespace VRSuya.Core {
 		/// <summary>요청한 타입의 첫번째 윈도우 창 오브젝트를 반환합니다.</summary>
 		/// <param name="EditorWindowType">Unity Editor 윈도우 타입</param>
 		/// <returns>해당 타입의 첫번째 윈도우</returns>
-		private EditorWindow FindFirstWindow(Type EditorWindowType) {
+		public EditorWindow FindFirstWindow(Type EditorWindowType) {
 			if (EditorWindowType == null)
 				throw new ArgumentNullException(nameof(EditorWindowType));
 			if (!typeof(EditorWindow).IsAssignableFrom(EditorWindowType))
