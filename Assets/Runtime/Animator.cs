@@ -256,6 +256,15 @@ namespace VRSuya.Core {
 			}
 			return newConditions;
 		}
+
+		/// <summary>대조할 String에 모든 String이 있는지 여부를 반환합니다.</summary>
+		/// <param name="OriginalString">대조 대상 String</param>
+		/// <param name="TargetString">확인 대상 String</param>
+		/// <returns>모든 단어 포함 여부</returns>
+		public bool ContainWords(string OriginalString, string TargetString) {
+			string[] Words = TargetString.Split(' ');
+			return Words.All(Word => OriginalString.Contains(Word));
+		}
 	}
 }
 #endif
