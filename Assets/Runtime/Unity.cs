@@ -32,6 +32,29 @@ namespace VRSuya.Core {
 			float B = int.Parse(HEXColorCode.Substring(4, 2), System.Globalization.NumberStyles.HexNumber) / 255f;
 			return new Color(R, G, B);
 		}
+
+		/// <summary>Color를 HEX 문자열로 변환합니다.</summary>
+		/// <param name="TargetColor">변환할 Color</param>
+		/// <param name="IncludeAlpha">알파 값을 포함할지 여부</param>
+		/// <returns>변환된 HEX 문자열</returns>
+		public static string ColorToHex(Color TargetColor, bool IncludeAlpha = false) {
+			int R = Mathf.RoundToInt(TargetColor.r * 255);
+			int G = Mathf.RoundToInt(TargetColor.g * 255);
+			int B = Mathf.RoundToInt(TargetColor.b * 255);
+			int A = Mathf.RoundToInt(TargetColor.a * 255);
+			return IncludeAlpha ?
+				$"#{R:X2}{G:X2}{B:X2}{A:X2}" :
+				$"#{R:X2}{G:X2}{B:X2}";
+		}
+
+		/// <summary>RGB Color를 HSV 값으로 변환합니다</summary>
+		/// <param name="TargetColor">변환할 RGB Color</param>
+		/// <returns>HSV Vector3</returns>
+		public static Vector3 ConvertRGBToHSV(Color TargetColor) {
+			float H, S, V;
+			Color.RGBToHSV(TargetColor, out H, out S, out V);
+			return new Vector3(H, S, V);
+		}
 	}
 }
 #endif
