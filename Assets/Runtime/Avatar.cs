@@ -47,7 +47,7 @@ namespace VRSuya.Core {
 		/// <summary>Avatar ENUM의 모든 요소를 string[]으로 반환합니다.</summary>
 		/// <returns>ENUM 구성 요소 이름의 배열</returns>
 		public string[] GetAvatarNames() {
-			return Enum.GetNames(typeof(Avatar));
+			return Enum.GetNames(typeof(AvatarType));
 		}
 
 		/// <summary>Scene에서 조건에 맞는 VRC AvatarDescriptor 컴포넌트 아바타 1개를 반환합니다.</summary>
