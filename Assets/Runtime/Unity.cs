@@ -55,6 +55,14 @@ namespace VRSuya.Core {
 			Color.RGBToHSV(TargetColor, out H, out S, out V);
 			return new Vector3(H, S, V);
 		}
+
+		/// <summary>요청한 유형의 컴포넌트가 존재하는지 확인하고 존재하지 않는다면 생성해서 반환합니다.</summary>
+		/// <returns>요청한 유형 컴포넌트</returns>
+		public static TargetComponent GetOrCreateComponent<TargetComponent>(GameObject TargetGameObject) where TargetComponent : Component {
+			TargetComponent Component = TargetGameObject.GetComponent<TargetComponent>();
+			if (!Component) Component = TargetGameObject.AddComponent<TargetComponent>();
+			return Component;
+		}
 	}
 }
 #endif
