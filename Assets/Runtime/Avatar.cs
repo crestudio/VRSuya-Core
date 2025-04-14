@@ -22,7 +22,7 @@ namespace VRSuya.Core {
 
 		public enum AvatarType {
 			Airi, Aldina, Angura, Anon, Anri, Ash,
-			Chiffon, Chocolat, Cygnet,
+			Chiffon, Chise, Chocolat, Cygnet,
 			Emmelie, EYO,
 			Firina, Fuzzy,
 			Glaze, Grus,
