@@ -147,6 +147,27 @@ namespace VRSuya.Core {
 			}
 			return newBlendshapeNameList.ToArray();
 		}
+
+		/// <summary>아바타의 대표 AnchorOverride 포인트를 획득하는 메소드 입니다.</summary>
+		/// <returns>기준이 되는 AnchorOverride 트랜스폼</returns>
+		public Transform GetAvatarAnchorOverride(GameObject AvatarGameObject) {
+			Transform AvatarAnchorOverride = null;
+			GameObject HeadGameObject = GetHeadGameObject(AvatarGameObject);
+			if (HeadGameObject) {
+				SkinnedMeshRenderer HeadSkinnedMeshRenderer = HeadGameObject.GetComponent<SkinnedMeshRenderer>();
+				if (HeadSkinnedMeshRenderer.probeAnchor) {
+					AvatarAnchorOverride = HeadSkinnedMeshRenderer.probeAnchor;
+					return AvatarAnchorOverride;
+				}
+			}
+			UnityEngine.Animator AvatarAnimator = AvatarGameObject.GetComponent<UnityEngine.Animator>();
+			if (AvatarAnimator.GetBoneTransform(HumanBodyBones.Head)) {
+				AvatarAnchorOverride = AvatarAnimator.GetBoneTransform(HumanBodyBones.Head);
+			} else if (AvatarAnimator.GetBoneTransform(HumanBodyBones.Hips)) {
+				AvatarAnchorOverride = AvatarAnimator.GetBoneTransform(HumanBodyBones.Hips);
+			}
+			return AvatarAnchorOverride;
+		}
 	}
 }
 #endif
