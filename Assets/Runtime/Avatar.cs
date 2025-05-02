@@ -40,6 +40,7 @@ namespace VRSuya.Core {
 			Ukon, Usasaki, Uzuki,
 			Wolferia,
 			Yoll, YUGI_MIYO, Yuuko
+			// 검색용 신규 아바타 추가 위치
 		}
 
 		public static readonly string[] HeadGameObjectNames = new string[] { "Body", "Head", "Face" };
