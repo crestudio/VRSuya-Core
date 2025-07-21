@@ -53,6 +53,22 @@ namespace VRSuya.Core {
 
 		/// <summary>Scene에서 조건에 맞는 VRC AvatarDescriptor 컴포넌트 아바타 1개를 반환합니다.</summary>
 		/// <returns>조건에 맞는 VRC 아바타</returns>
+		public GameObject GetAvatarGameObject(GameObject TargetGameObject = null) {
+			if (TargetGameObject == null) {
+				return GetVRCAvatarDescriptor().gameObject;
+			} else {
+				GameObject RootGameObject = TargetGameObject.transform.root.gameObject;
+				VRC_AvatarDescriptor TargetAvatarDescriptor = RootGameObject.GetComponent<VRC_AvatarDescriptor>();
+				if (TargetAvatarDescriptor) {
+					return RootGameObject;
+				} else {
+					return null;
+				}
+			}
+		}
+
+		/// <summary>Scene에서 조건에 맞는 VRC AvatarDescriptor 컴포넌트 아바타 1개를 반환합니다.</summary>
+		/// <returns>조건에 맞는 VRC 아바타</returns>
 		public VRC_AvatarDescriptor GetVRCAvatarDescriptor() {
 			VRC_AvatarDescriptor TargetAvatarDescriptor = GetAvatarDescriptorFromVRCSDKBuilder();
 			if (!TargetAvatarDescriptor) TargetAvatarDescriptor = GetAvatarDescriptorFromSelection();
