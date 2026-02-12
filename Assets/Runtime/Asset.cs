@@ -70,7 +70,7 @@ namespace VRSuya.Core {
 		/// <param name="OnlyFileName">확장명 포함 여부</param>
 		/// <returns>파일 이름</returns>
 		public string GUIDToAssetName(string GUID, bool OnlyFileName) {
-			string FileName = "";
+			string FileName = string.Empty;
 			FileName = AssetDatabase.GUIDToAssetPath(GUID).Split('/')[AssetDatabase.GUIDToAssetPath(GUID).Split('/').Length - 1];
 			if (OnlyFileName) FileName = FileName.Split('.')[0];
 			return FileName;
