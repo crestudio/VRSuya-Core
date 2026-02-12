@@ -127,7 +127,7 @@ namespace VRSuya.Core {
 
 		/// <summary>요청한 BlendTree에서 모든 BlendTree를 반환합니다.</summary>
 		/// <returns>모든 BlendTree 어레이</returns>
-		private BlendTree[] GetSubBlendTrees(BlendTree TargetBlendTree) {
+		BlendTree[] GetSubBlendTrees(BlendTree TargetBlendTree) {
 			BlendTree[] BlendTrees = new BlendTree[0];
 			BlendTrees = BlendTrees.Concat(new BlendTree[] { TargetBlendTree }).ToArray();
 			foreach (ChildMotion ChildMotion in TargetBlendTree.children) {
