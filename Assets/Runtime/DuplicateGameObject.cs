@@ -24,7 +24,7 @@ namespace VRSuya.Core {
 			if (EditorWindowType == null)
 				throw new ArgumentNullException(nameof(EditorWindowType));
 			if (!typeof(EditorWindow).IsAssignableFrom(EditorWindowType))
-				throw new ArgumentException("The given type (" + EditorWindowType.Name + ") does not inherit from " + nameof(EditorWindow) + ".");
+				throw new ArgumentException($"The given type ({EditorWindowType.Name}) does not inherit from {nameof(EditorWindow)}");
 			Object[] TypeOpenWindows = Resources.FindObjectsOfTypeAll(EditorWindowType);
 			if (TypeOpenWindows.Length <= 0) return null;
 			EditorWindow Window = (EditorWindow)TypeOpenWindows[0];
