@@ -26,7 +26,6 @@ namespace VRSuya.Core {
 				type = TargetParameter.type
 			};
 			TargetController.AddParameter(newParameter);
-			return;
 		}
 
 		/// <summary>요청한 애니메이터 컨트롤러에 레이어를 복제하여 추가합니다.</summary>
@@ -98,7 +97,6 @@ namespace VRSuya.Core {
 					TargetState.transitions = newTransitions;
 				}
 			}
-			return;
 		}
 
 		/// <summary>요청한 애니메이터 컨트롤러에서 모든 AnimatorState를 반환합니다.</summary>
