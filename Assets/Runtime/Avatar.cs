@@ -46,6 +46,17 @@ namespace VRSuya.Core {
 
 		public static readonly string[] HeadGameObjectNames = new string[] { "Body", "Head", "Face" };
 
+		/// <summary>주어진 String에서 아바타 이름을 추출하여 반환합니다</summary>
+		/// <returns>아바타 이름 또는 null 값</returns>
+		public string GetAvatarName(string TargetString) {
+			string[] AvatarNames = Enum.GetNames(typeof(AvatarType)).Where(Item => Item.Contains(TargetString)).ToArray();
+			if (AvatarNames.Length > 0) {
+				return AvatarNames[0];
+			} else {
+				return null;
+			}
+		}
+
 		/// <summary>Avatar ENUM의 모든 요소를 string[]으로 반환합니다.</summary>
 		/// <returns>ENUM 구성 요소 이름의 배열</returns>
 		public string[] GetAvatarNames() {
