@@ -1,5 +1,6 @@
 ﻿#if UNITY_EDITOR
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using UnityEditor;
@@ -106,6 +107,27 @@ namespace VRSuya.Core {
 				}
 			}
 			return string.Join("_", FileNameParts);
+		}
+
+		/// <summary>지정한 GameObject를 Prefab으로 내보내고 반환합니다</summary>
+		/// <param name="TargetGameObject">내보낼 GameObject</param>
+		/// <param name="TargetAssetPath">내보낼 폴더 경로</param>
+		/// <param name="TargetAssetName">내보낼 에셋 이름</param>
+		/// <returns>생성된 Prefab GameObject</returns>
+		public GameObject ExportPrefab(GameObject TargetGameObject, string TargetAssetPath, string TargetAssetName) {
+			string FullExportPath = Path.Combine(TargetAssetPath, $"{TargetAssetName}.prefab");
+			FullExportPath = FullExportPath.Replace("\\", "/");
+			if (!Directory.Exists(TargetAssetPath)) {
+				Directory.CreateDirectory(TargetAssetPath);
+				AssetDatabase.Refresh();
+			}
+			GameObject CreatedPrefab = PrefabUtility.SaveAsPrefabAsset(TargetGameObject, FullExportPath, out bool PrefabCreated);
+			if (PrefabCreated) {
+				Debug.Log($"[VRSuya] {TargetAssetName} 프리팹을 성공적으로 내보내기 하였습니다");
+				AssetDatabase.SaveAssets();
+				AssetDatabase.Refresh();
+			}
+			return CreatedPrefab;
 		}
 	}
 }
