@@ -49,12 +49,10 @@ namespace VRSuya.Core {
 		/// <summary>주어진 String에서 아바타 이름을 추출하여 반환합니다</summary>
 		/// <returns>아바타 이름 또는 null 값</returns>
 		public string GetAvatarName(string TargetString) {
-			string[] AvatarNames = Enum.GetNames(typeof(AvatarType)).Where(Item => Item.Contains(TargetString)).ToArray();
-			if (AvatarNames.Length > 0) {
-				return AvatarNames[0];
-			} else {
-				return null;
+			foreach (string AvatarName in GetAvatarNames()) {
+				if (TargetString.Contains(AvatarName, StringComparison.OrdinalIgnoreCase)) return AvatarName;
 			}
+			return null;
 		}
 
 		/// <summary>Avatar ENUM의 모든 요소를 string[]으로 반환합니다.</summary>
