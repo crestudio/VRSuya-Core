@@ -255,6 +255,19 @@ namespace VRSuya.Core {
 			return newConditions;
 		}
 
+		/// <summary>주어진 AnimatorController가 Write Defaults 여부를 반환합니다.</summary>
+		/// <returns>AnimatorController의 Write Defaults 여부</returns>
+		public bool IsAnimatorWriteDefaults(AnimatorController TargetAnimator) {
+			AnimatorState[] AvatarAnimatorState = GetAllAnimatorStates(TargetAnimator);
+			bool[] WriteDefaults = AvatarAnimatorState.Select(Item => Item.writeDefaultValues).ToArray();
+			int WriteDefaultsOffCount = WriteDefaults.Where(Item => Item == false).Count();
+			if ((WriteDefaultsOffCount / WriteDefaults.Length) <= 0.5) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
 		/// <summary>대조할 String에 모든 String이 있는지 여부를 반환합니다.</summary>
 		/// <param name="OriginalString">대조 대상 String</param>
 		/// <param name="TargetString">확인 대상 String</param>
