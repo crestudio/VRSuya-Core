@@ -129,6 +129,42 @@ namespace VRSuya.Core {
 			}
 			return CreatedPrefab;
 		}
+
+		/// <summary>지정한 Object들이 AnimationClip를 포함하고 있는지 검사합니다</summary>
+		/// <param name="TargetObjects">검사할 Object 어레이</param>
+		/// <returns>AnimationClip 포함 여부</returns>
+		public bool ContainAnimationClip(Object[] TargetObjects) {
+			return TargetObjects
+				.Select(Item => AssetDatabase.GetAssetPath(Item).EndsWith(".anim"))
+				.Contains(true);
+		}
+
+		/// <summary>지정한 Object들이 AnimatorController를 포함하고 있는지 검사합니다</summary>
+		/// <param name="TargetObjects">검사할 Object 어레이</param>
+		/// <returns>AnimatorController 포함 여부</returns>
+		public bool ContainAnimatorController(Object[] TargetObjects) {
+			return TargetObjects
+				.Select(Item => AssetDatabase.GetAssetPath(Item).EndsWith(".controller"))
+				.Contains(true);
+		}
+
+		/// <summary>지정한 Object들이 Prefab를 포함하고 있는지 검사합니다</summary>
+		/// <param name="TargetObjects">검사할 Object 어레이</param>
+		/// <returns>Prefab 포함 여부</returns>
+		public bool ContainPrefab(Object[] TargetObjects) {
+			return TargetObjects
+				.Select(Item => AssetDatabase.GetAssetPath(Item).EndsWith(".prefab"))
+				.Contains(true);
+		}
+
+		/// <summary>지정한 Object들이 Scene를 포함하고 있는지 검사합니다</summary>
+		/// <param name="TargetObjects">검사할 Object 어레이</param>
+		/// <returns>Scene 포함 여부</returns>
+		public bool ContainScene(Object[] TargetObjects) {
+			return TargetObjects
+				.Select(Item => AssetDatabase.GetAssetPath(Item).EndsWith(".unity"))
+				.Contains(true);
+		}
 	}
 }
 #endif
