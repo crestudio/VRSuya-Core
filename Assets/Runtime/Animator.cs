@@ -99,6 +99,13 @@ namespace VRSuya.Core {
 			}
 		}
 
+		/// <summary>요청한 애니메이터 컨트롤러에서 모든 AnimatorStateTransition를 반환합니다.</summary>
+		/// <returns>모든 AnimatorStateTransition</returns>
+		public AnimatorStateTransition[] GetAllTransitions(AnimatorController TargetAnimatorController) {
+			AnimatorState[] AllAnimatorState = GetAllAnimatorStates(TargetAnimatorController);
+			return AllAnimatorState.SelectMany(Item => Item.transitions).ToArray();
+		}
+
 		/// <summary>요청한 애니메이터 컨트롤러에서 모든 AnimatorState를 반환합니다.</summary>
 		/// <returns>모든 AnimatorState</returns>
 		public AnimatorState[] GetAllAnimatorStates(AnimatorController TargetAnimatorController) {
