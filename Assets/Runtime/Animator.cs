@@ -261,11 +261,14 @@ namespace VRSuya.Core {
 			AnimatorState[] AvatarAnimatorState = GetAllAnimatorStates(TargetAnimator);
 			bool[] WriteDefaults = AvatarAnimatorState.Select(Item => Item.writeDefaultValues).ToArray();
 			int WriteDefaultsOffCount = WriteDefaults.Where(Item => Item == false).Count();
-			if ((WriteDefaultsOffCount / WriteDefaults.Length) <= 0.5) {
-				return true;
-			} else {
-				return false;
+			if (WriteDefaults.Length > 0) {
+				if ((WriteDefaultsOffCount / WriteDefaults.Length) <= 0.5) {
+					return true;
+				} else {
+					return false;
+				}
 			}
+			return true;
 		}
 
 		/// <summary>대조할 String에 모든 String이 있는지 여부를 반환합니다.</summary>
