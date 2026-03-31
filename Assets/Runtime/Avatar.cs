@@ -8,6 +8,7 @@ using UnityEditor.Animations;
 
 using VRC.SDKBase;
 using VRC.SDK3.Avatars.Components;
+using static VRC.SDK3.Avatars.Components.VRCAvatarDescriptor;
 
 /*
  * VRSuya Core
@@ -131,11 +132,13 @@ namespace VRSuya.Core {
 		/// <param name="AvatarGameObject">VRChat 아바타 GameObject</param>
 		/// <param name="LayerType">VRChat 애니메이터 타입</param>
 		/// <returns>아바타의 지정한 레이어 애니메이터 컨트롤러</returns>
-		public AnimatorController GetAnimatorController(GameObject AvatarGameObject, VRCAvatarDescriptor.AnimLayerType LayerType) {
-			AvatarGameObject.TryGetComponent(typeof(VRCAvatarDescriptor), out Component AvatarDescriptor);
+		public AnimatorController GetAnimatorController(GameObject AvatarGameObject, AnimLayerType LayerType) {
+			AvatarGameObject.TryGetComponent(out VRCAvatarDescriptor AvatarDescriptor);
 			if (AvatarDescriptor) {
-				VRCAvatarDescriptor.CustomAnimLayer TargetAnimatorController = Array.Find(AvatarDescriptor.GetComponent<VRCAvatarDescriptor>().baseAnimationLayers, AnimationLayer => AnimationLayer.type == LayerType);
-				return (AnimatorController)TargetAnimatorController.animatorController;
+				CustomAnimLayer TargetLayer = AvatarDescriptor.baseAnimationLayers.FirstOrDefault(Item => Item.type == LayerType);
+				if (!TargetLayer.isDefault) {
+					return TargetLayer.animatorController as AnimatorController;
+				}
 			}
 			return null;
 		}
