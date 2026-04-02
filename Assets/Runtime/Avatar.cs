@@ -39,7 +39,7 @@ namespace VRSuya.Core {
 			IMERIS,
 			Karin, Kikyo, Kipfel, Kokoa, Koyuki, KUMALY, Kuronatu,
 			Lapwing, Lazuli, Leefa, Leeme, Lime, LUMINA, Lunalitt,
-			Mafuyu, Maki, Mamehinata, MANUKA, Mariel, Marron, Maya, Merino, Milfy, Milk, Milltina, Minahoshi, Minase, Mint, Mir, Mishe, Moe,
+			Mafuyu, Maki, Mamehinata, MANUKA, Mariel, Marron, Maya, MAYO, Merino, Milfy, Milk, Milltina, Minahoshi, Minase, Mint, Mir, Mishe, Moe,
 			Nayu, Nehail, Nochica,
 			Platinum, Plum, Pochimaru,
 			Quiche,

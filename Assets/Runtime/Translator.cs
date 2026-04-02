@@ -397,6 +397,7 @@ namespace VRSuya.Core {
 			{ AvatarType.Mariel, new string[] { "Mariel", "마리엘", "まりえる" } },
 			{ AvatarType.Marron, new string[] { "Marron", "마론", "マロン" } },
 			{ AvatarType.Maya, new string[] { "Maya", "마야", "舞夜" } },
+			{ AvatarType.MAYO, new string[] { "MAYO", "마요", "まよ" } },
 			{ AvatarType.Merino, new string[] { "Merino", "메리노", "メリノ" } },
 			{ AvatarType.Milfy, new string[] { "Milfy", "미르피", "ミルフィ" } },
 			{ AvatarType.Milk, new string[] { "Milk(New)", "밀크(신)", "ミルク（新）" } },
