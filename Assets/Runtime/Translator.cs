@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 
 using UnityEditor;
+using UnityEngine;
 
 using static VRSuya.Core.Avatar;
 
@@ -17,6 +18,24 @@ namespace VRSuya.Core {
 
 		public static readonly string[] LanguageOption = new string[] { "English", "한국어", "日本語" };
 		public static int LanguageIndex = 0;
+
+		static Translator() {
+			LanguageIndex = GetSystemLanguage();
+		}
+
+		/// <summary>시스템의 언어에 맞춰 LanguageIndex 값을 반환합니다.</summary>
+		/// <returns>시스템 언어의 Translator의 LanguageIndex</returns>
+		static int GetSystemLanguage() {
+			SystemLanguage TargetLanguage = Application.systemLanguage;
+			switch (TargetLanguage) {
+				case SystemLanguage.Korean:
+					return 1;
+				case SystemLanguage.Japanese:
+					return 2;
+				default:
+					return 0;
+			}
+		}
 
 		/// <summary>요청한 값을 설정된 언어에 맞춰 값을 반환합니다.</summary>
 		/// <returns>요청한 String의 현재 설정된 언어 버전</returns>
