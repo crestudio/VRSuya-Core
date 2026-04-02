@@ -109,6 +109,7 @@ namespace VRSuya.Core {
 			{ "String_UpdateAnimation", "Update Animation" },
 			{ "String_UpdateAnimations", "Update Animation Clips" },
 			{ "String_UpdateAvatarData", "Update Avatar" },
+			{ "String_Okay", "OK" },
 
 			// 아이템명
 			{ "String_ProductAFK", "AFK Package" },
@@ -121,11 +122,39 @@ namespace VRSuya.Core {
 			{ "String_ProductSuyasuya", "Suyasuya" },
 			{ "String_ProductSoundPad", "SoundPad" },
 
+			// Animated PhysBone
+			{ "String_AnimatedPhysBone", "When uploading the avatar, the Animated property of PhysBone components on cheek bones will be enabled." },
+
+			// AvatarPatcher
+			{ "COMPLETED_PATCH", "The {0} avatar has been patched" },
+
+			// AvatarSettingUpdater
+			{ "String_AvatarSettingUpdater", "The latest VRSuya items are now configured automatically during avatar upload, similar to Modular Avatar-compatible items. AvatarSettingUpdater is no longer used." },
+			{ "String_OpenBOOTH", "Open BOOTH" },
+
+			// Hair PhysBone
+			{ "String_PhysBoneName", "PhysBone Name" },
+
 			// Remove Animator Layer
 			{ "String_LayerName", "Layer Name" },
 
 			// PhysBone Connector
 			{ "String_PhysBoneType", "PhysBone Type" },
+			{ "String_LeftCheek", "Left Cheek" },
+			{ "String_RightCheek", "Right Cheek" },
+			{ "String_LeftThumbToe", "Left Thumb Toe" },
+			{ "String_RightThumbToe", "Right Thumb Toe" },
+			{ "String_LeftIndexToe", "Left Index Toe" },
+			{ "String_RightIndexToe", "Right Index Toe" },
+			{ "String_LeftMiddleToe", "Left Middle Toe" },
+			{ "String_RightMiddleToe", "Right Middle Toe" },
+			{ "String_LeftRingToe", "Left Ring Toe" },
+			{ "String_RightRingToe", "Right Ring Toe" },
+			{ "String_LeftLittleToe", "Left Little Toe" },
+			{ "String_RightLittleToe", "Right Little Toe" },
+
+			// Remove PhysBone
+			{ "String_RemovePhysBone", "When uploading the avatar, PhysBone components on cheek bones will be removed." },
 
 			// 상태 메시지
 			{ "String_General", "Please select [General] for avatars that do not exist in the list" },
@@ -200,6 +229,7 @@ namespace VRSuya.Core {
 			{ "String_UpdateAnimation", "애니메이션 업데이트" },
 			{ "String_UpdateAnimations", "애니메이션 업데이트" },
 			{ "String_UpdateAvatarData", "아바타 업데이트" },
+			{ "String_Okay", "확인" },
 
 			// 아이템명
 			{ "String_ProductAFK", "AFK 3종 세트" },
@@ -212,11 +242,39 @@ namespace VRSuya.Core {
 			{ "String_ProductSuyasuya", "스야스야" },
 			{ "String_ProductSoundPad", "사운드패드" },
 
+			// Animated PhysBone
+			{ "String_AnimatedPhysBone", "아바타 업로드 할 때, 볼 본의 PhysBone 컴포넌트의 Animated 속성을 활성화 합니다" },
+
+			// AvatarPatcher
+			{ "COMPLETED_PATCH", "{0} 아바타를 패치하였습니다" },
+
+			// AvatarSettingUpdater
+			{ "String_AvatarSettingUpdater", "최신 VRSuya 아이템은 모듈러 아바타 대응 아이템처럼 이제 아바타 업로드시에 자동으로 설정합니다, AvatarSettingUpdater는 더 이상 사용하지 않습니다" },
+			{ "String_OpenBOOTH", "BOOTH 열기" },
+
+			// Hair PhysBone
+			{ "String_PhysBoneName", "PhysBone 이름" },
+
 			// Remove Animator Layer
 			{ "String_LayerName", "레이어 이름" },
 
 			// PhysBone Connector
 			{ "String_PhysBoneType", "PhysBone 종류" },
+			{ "String_LeftCheek", "왼쪽 볼" },
+			{ "String_RightCheek", "오른쪽 볼" },
+			{ "String_LeftThumbToe", "왼쪽 엄지 발가락" },
+			{ "String_RightThumbToe", "오른쪽 엄지 발가락" },
+			{ "String_LeftIndexToe", "왼쪽 검지 발가락" },
+			{ "String_RightIndexToe", "오른쪽 검지 발가락" },
+			{ "String_LeftMiddleToe", "왼쪽 중지 발가락" },
+			{ "String_RightMiddleToe", "오른쪽 중지 발가락" },
+			{ "String_LeftRingToe", "왼쪽 약지 발가락" },
+			{ "String_RightRingToe", "오른쪽 약지 발가락" },
+			{ "String_LeftLittleToe", "왼쪽 소지 발가락" },
+			{ "String_RightLittleToe", "오른쪽 소지 발가락" },
+
+			// Remove PhysBone
+			{ "String_RemovePhysBone", "아바타 업로드 할 때, 볼 본의 PhysBone 컴포넌트들을 제거합니다" },
 
 			// 상태 메시지
 			{ "String_General", "목록에 존재하지 않는 아바타는 [일반]을 선택해 주세요" },
@@ -291,6 +349,7 @@ namespace VRSuya.Core {
 			{ "String_UpdateAnimation", "アニメーション·アップデート" },
 			{ "String_UpdateAnimations", "アニメーション·アップデート" },
 			{ "String_UpdateAvatarData", "アバターアップデート" },
+			{ "String_Okay", "確認" },
 
 			// 아이템명
 			{ "String_ProductAFK", "AFK 3種セット" },
@@ -303,11 +362,39 @@ namespace VRSuya.Core {
 			{ "String_ProductSuyasuya", "すやすや" },
 			{ "String_ProductSoundPad", "サウンドパッド" },
 
+			// Animated PhysBone
+			{ "String_AnimatedPhysBone", "アバターをアップロードする際、頬ボーンのPhysBoneコンポーネントのAnimatedプロパティが有効化されます。" },
+
+			// AvatarPatcher
+			{ "COMPLETED_PATCH", "{0}アバターをパッチしました。" },
+
+			// AvatarSettingUpdater
+			{ "String_AvatarSettingUpdater", "最新のVRSuyaアイテムはModular Avatar対応アイテムと同様に、アバターのアップロード時に自動で設定されるようになりました。AvatarSettingUpdaterは今後使用されません。" },
+			{ "String_OpenBOOTH", "BOOTHを開く" },
+
+			// Hair PhysBone
+			{ "String_PhysBoneName", "PhysBone名" },
+
 			// Remove Animator Layer
 			{ "String_LayerName", "レイヤー名" },
 
 			// PhysBone Connector
 			{ "String_PhysBoneType", "PhysBoneタイプ" },
+			{ "String_LeftCheek", "左頬" },
+			{ "String_RightCheek", "右頬" },
+			{ "String_LeftThumbToe", "左親指" },
+			{ "String_RightThumbToe", "右親指" },
+			{ "String_LeftIndexToe", "左人差し指" },
+			{ "String_RightIndexToe", "右人差し指" },
+			{ "String_LeftMiddleToe", "左中指" },
+			{ "String_RightMiddleToe", "右中指" },
+			{ "String_LeftRingToe", "左薬指" },
+			{ "String_RightRingToe", "右薬指" },
+			{ "String_LeftLittleToe", "左小指" },
+			{ "String_RightLittleToe", "右小指" },
+
+			// Remove PhysBone
+			{ "String_RemovePhysBone", "アバターをアップロードする際、頬ボーンのPhysBoneコンポーネントは削除されます。" },
 
 			// 상태 메시지
 			{ "String_General", "リストに存在しないアバターは「一般」を選択してください" },
