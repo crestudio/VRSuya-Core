@@ -25,9 +25,6 @@ namespace VRSuya.Core {
 			VRCParameter
 		}
 
-		/// <summary>요청한 타입의 파일 GUID 어레이를 가져옵니다</summary>
-		/// <param name="TargetType">Unity 에셋 타입</param>
-		/// <returns>요청한 타입의 파일 GUID 어레이</returns>
 		public string[] GetAssetGUIDs(AssetType TargetType) {
 			List<string> AssetGUIDs = new List<string>();
 			string SearchWord = string.Empty;
@@ -66,10 +63,6 @@ namespace VRSuya.Core {
 			return AssetGUIDs.ToArray();
 		}
 
-		/// <summary>요청한 GUID를 파일 이름으로 반환합니다. 2번째 인자는 확장명 포함 여부를 결정합니다.</summary>
-		/// <param name="GUID">에셋 GUID</param>
-		/// <param name="OnlyFileName">확장명 포함 여부</param>
-		/// <returns>파일 이름</returns>
 		public string GUIDToAssetName(string GUID, bool OnlyFileName) {
 			string FileName = string.Empty;
 			FileName = AssetDatabase.GUIDToAssetPath(GUID).Split('/')[AssetDatabase.GUIDToAssetPath(GUID).Split('/').Length - 1];
@@ -77,9 +70,6 @@ namespace VRSuya.Core {
 			return FileName;
 		}
 
-		/// <summary>파일 이름에서 아바타 이름을 찾아 아바타 이름을 반환합니다.</summary>
-		/// <param name="OriginalFileName">원본 파일 이름</param>
-		/// <returns>아바타 이름</returns>
 		public string GetAvatarName(string OriginalFileName) {
 			Avatar AvatarInstance = new Avatar();
 			string[] FileNameParts = OriginalFileName.Split('_');
@@ -92,10 +82,6 @@ namespace VRSuya.Core {
 			return null;
 		}
 
-		/// <summary>파일 이름에서 아바타 이름을 찾아 다른 이름으로 바꾼 문자열을 반환합니다.</summary>
-		/// <param name="OriginalFileName">원본 파일 이름</param>
-		/// <param name="NewAvatarName">새로운 아바타 이름</param>
-		/// <returns>변경된 파일 이름</returns>
 		public string ReplaceAvatarName(string OriginalFileName, string NewAvatarName) {
 			Avatar AvatarInstance = new Avatar();
 			string[] FileNameParts = OriginalFileName.Split('_');
@@ -109,11 +95,6 @@ namespace VRSuya.Core {
 			return string.Join("_", FileNameParts);
 		}
 
-		/// <summary>지정한 GameObject를 Prefab으로 내보내고 반환합니다</summary>
-		/// <param name="TargetGameObject">내보낼 GameObject</param>
-		/// <param name="TargetAssetPath">내보낼 폴더 경로</param>
-		/// <param name="TargetAssetName">내보낼 에셋 이름</param>
-		/// <returns>생성된 Prefab GameObject</returns>
 		public GameObject ExportPrefab(GameObject TargetGameObject, string TargetAssetPath, string TargetAssetName) {
 			string FullExportPath = Path.Combine(TargetAssetPath, $"{TargetAssetName}.prefab");
 			FullExportPath = FullExportPath.Replace("\\", "/");
@@ -130,36 +111,24 @@ namespace VRSuya.Core {
 			return CreatedPrefab;
 		}
 
-		/// <summary>지정한 Object들이 AnimationClip를 포함하고 있는지 검사합니다</summary>
-		/// <param name="TargetObjects">검사할 Object 어레이</param>
-		/// <returns>AnimationClip 포함 여부</returns>
 		public bool ContainAnimationClip(Object[] TargetObjects) {
 			return TargetObjects
 				.Select(Item => AssetDatabase.GetAssetPath(Item).EndsWith(".anim"))
 				.Contains(true);
 		}
 
-		/// <summary>지정한 Object들이 AnimatorController를 포함하고 있는지 검사합니다</summary>
-		/// <param name="TargetObjects">검사할 Object 어레이</param>
-		/// <returns>AnimatorController 포함 여부</returns>
 		public bool ContainAnimatorController(Object[] TargetObjects) {
 			return TargetObjects
 				.Select(Item => AssetDatabase.GetAssetPath(Item).EndsWith(".controller"))
 				.Contains(true);
 		}
 
-		/// <summary>지정한 Object들이 Prefab를 포함하고 있는지 검사합니다</summary>
-		/// <param name="TargetObjects">검사할 Object 어레이</param>
-		/// <returns>Prefab 포함 여부</returns>
 		public bool ContainPrefab(Object[] TargetObjects) {
 			return TargetObjects
 				.Select(Item => AssetDatabase.GetAssetPath(Item).EndsWith(".prefab"))
 				.Contains(true);
 		}
 
-		/// <summary>지정한 Object들이 Scene를 포함하고 있는지 검사합니다</summary>
-		/// <param name="TargetObjects">검사할 Object 어레이</param>
-		/// <returns>Scene 포함 여부</returns>
 		public bool ContainScene(Object[] TargetObjects) {
 			return TargetObjects
 				.Select(Item => AssetDatabase.GetAssetPath(Item).EndsWith(".unity"))

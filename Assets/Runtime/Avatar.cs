@@ -55,8 +55,6 @@ namespace VRSuya.Core {
 
 		public static readonly string[] HeadGameObjectNames = new string[] { "Body", "Head", "Face" };
 
-		/// <summary>주어진 String에서 아바타 이름을 추출하여 반환합니다</summary>
-		/// <returns>아바타 이름 또는 null 값</returns>
 		public string GetAvatarName(string TargetString) {
 			foreach (string AvatarName in GetAvatarNames()) {
 				if (TargetString.Contains(AvatarName, StringComparison.OrdinalIgnoreCase)) return AvatarName;
@@ -64,14 +62,10 @@ namespace VRSuya.Core {
 			return null;
 		}
 
-		/// <summary>Avatar ENUM의 모든 요소를 string[]으로 반환합니다.</summary>
-		/// <returns>ENUM 구성 요소 이름의 배열</returns>
 		public string[] GetAvatarNames() {
 			return Enum.GetNames(typeof(AvatarType));
 		}
 
-		/// <summary>Scene에서 조건에 맞는 VRC AvatarDescriptor 컴포넌트 아바타 1개를 반환합니다.</summary>
-		/// <returns>조건에 맞는 VRC 아바타</returns>
 		public GameObject GetAvatarGameObject(GameObject TargetGameObject = null) {
 			if (TargetGameObject == null) {
 				return GetVRCAvatarDescriptor().gameObject;
@@ -86,8 +80,6 @@ namespace VRSuya.Core {
 			}
 		}
 
-		/// <summary>Scene에서 조건에 맞는 VRC AvatarDescriptor 컴포넌트 아바타 1개를 반환합니다.</summary>
-		/// <returns>조건에 맞는 VRC 아바타</returns>
 		public VRC_AvatarDescriptor GetVRCAvatarDescriptor() {
 			VRC_AvatarDescriptor TargetAvatarDescriptor = GetAvatarDescriptorFromVRCSDKBuilder();
 			if (!TargetAvatarDescriptor) TargetAvatarDescriptor = GetAvatarDescriptorFromSelection();
@@ -95,14 +87,10 @@ namespace VRSuya.Core {
 			return TargetAvatarDescriptor;
 		}
 
-		/// <summary>VRCSDK Builder에서 활성화 상태인 VRC 아바타를 반환합니다.</summary>
-		/// <returns>VRCSDK Builder에서 활성화 상태인 VRC 아바타</returns>
 		VRC_AvatarDescriptor GetAvatarDescriptorFromVRCSDKBuilder() {
 			return null;
 		}
 
-		/// <summary>Unity 하이어라키에서 선택한 GameObject 중에서 VRC AvatarDescriptor 컴포넌트가 존재하는 아바타를 1개를 반환합니다.</summary>
-		/// <returns>선택 중인 VRC 아바타</returns>
 		VRC_AvatarDescriptor GetAvatarDescriptorFromSelection() {
 			GameObject[] SelectedGameObjects = Selection.gameObjects;
 			if (SelectedGameObjects.Length == 1) {
@@ -126,8 +114,6 @@ namespace VRSuya.Core {
 			}
 		}
 
-		/// <summary>Scene에서 활성화 상태인 VRC AvatarDescriptor 컴포넌트가 존재하는 아바타를 1개를 반환합니다.</summary>
-		/// <returns>Scene에서 활성화 상태인 VRC 아바타</returns>
 		VRC_AvatarDescriptor GetAvatarDescriptorFromVRCTool() {
 			VRC_AvatarDescriptor[] AllVRCAvatarDescriptor = VRC.Tools.FindSceneObjectsOfTypeAll<VRC_AvatarDescriptor>().ToArray();
 			if (AllVRCAvatarDescriptor.Length > 0) {
@@ -137,10 +123,6 @@ namespace VRSuya.Core {
 			}
 		}
 
-		/// <summary>아바타의 지정한 레이어 애니메이터 컨트롤러를 찾아서 반환합니다.</summary>
-		/// <param name="AvatarGameObject">VRChat 아바타 GameObject</param>
-		/// <param name="LayerType">VRChat 애니메이터 타입</param>
-		/// <returns>아바타의 지정한 레이어 애니메이터 컨트롤러</returns>
 		public AnimatorController GetAnimatorController(GameObject AvatarGameObject, AnimLayerType LayerType) {
 			AvatarGameObject.TryGetComponent(out VRCAvatarDescriptor AvatarDescriptor);
 			if (AvatarDescriptor) {
@@ -152,15 +134,10 @@ namespace VRSuya.Core {
 			return null;
 		}
 
-		/// <summary>HumanBodyBones의 하위 본 목록들을 반환합니다.</summary>
-		/// <returns>HumanBodyBones 목록</returns>
 		public static List<HumanBodyBones> GetHumanBoneList() {
 			return Enum.GetValues(typeof(HumanBodyBones)).Cast<HumanBodyBones>().ToList();
 		}
 
-		/// <summary>요청한 아바타의 머리 GameObject를 가져옵니다</summary>
-		/// <param name="AvatarGameObject">VRChat 아바타 GameObject</param>
-		/// <returns>아바타의 머리 GameObject</returns>
 		public GameObject GetHeadGameObject(GameObject AvatarGameObject) {
 			foreach (SkinnedMeshRenderer TargetSkinnedMeshRenderer in AvatarGameObject.GetComponentsInChildren<SkinnedMeshRenderer>(true)) {
 				if (Array.Exists(HeadGameObjectNames, Item => TargetSkinnedMeshRenderer.gameObject.name == Item)) {
@@ -172,9 +149,6 @@ namespace VRSuya.Core {
 			return null;
 		}
 
-		/// <summary>요청한 SkinnedMeshRenderer에서 BlendShape 목록을 모두 불러옵니다.</summary>
-		/// <param name="TargetSkinnedMeshRenderer">요청할 SkinnedMeshRenderer</param>
-		/// <returns>BlendShape 이름 어레이</returns>
 		public string[] GetBlendshapeNameList(SkinnedMeshRenderer TargetSkinnedMeshRenderer) {
 			List<string> newBlendshapeNameList = new List<string>();
 			Mesh TargetMesh = TargetSkinnedMeshRenderer.sharedMesh;
@@ -186,8 +160,6 @@ namespace VRSuya.Core {
 			return newBlendshapeNameList.ToArray();
 		}
 
-		/// <summary>아바타의 대표 AnchorOverride 포인트를 획득하는 메소드 입니다.</summary>
-		/// <returns>기준이 되는 AnchorOverride 트랜스폼</returns>
 		public Transform GetAvatarAnchorOverride(GameObject AvatarGameObject) {
 			Transform AvatarAnchorOverride = null;
 			GameObject HeadGameObject = GetHeadGameObject(AvatarGameObject);

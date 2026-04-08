@@ -23,8 +23,6 @@ namespace VRSuya.Core {
 			LanguageIndex = GetSystemLanguage();
 		}
 
-		/// <summary>시스템의 언어에 맞춰 LanguageIndex 값을 반환합니다.</summary>
-		/// <returns>시스템 언어의 Translator의 LanguageIndex</returns>
 		static int GetSystemLanguage() {
 			SystemLanguage TargetLanguage = Application.systemLanguage;
 			switch (TargetLanguage) {
@@ -37,8 +35,6 @@ namespace VRSuya.Core {
 			}
 		}
 
-		/// <summary>요청한 값을 설정된 언어에 맞춰 값을 반환합니다.</summary>
-		/// <returns>요청한 String의 현재 설정된 언어 버전</returns>
 		public static string GetTranslatedString(string TargetString) {
 			string NewString = TargetString;
 			switch (LanguageIndex) {
@@ -55,8 +51,6 @@ namespace VRSuya.Core {
 			return NewString;
 		}
 
-		/// <summary>요청한 아바타 이름을 설정된 언어에 맞춰 리스트를 재작성합니다.</summary>
-		/// <returns>아바타 이름의 현재 설정된 언어 버전</returns>
 		public static string[] GetAvatarAuthorName(SerializedProperty TargetProperty) {
 			int AvatarAuthorCount = TargetProperty.arraySize;
 			AvatarAuthor[] AvatarAuthorNames = new AvatarAuthor[AvatarAuthorCount];
@@ -71,8 +65,6 @@ namespace VRSuya.Core {
 				.ToArray();
 		}
 
-		/// <summary>요청한 아바타 이름을 설정된 언어에 맞춰 리스트를 재작성합니다.</summary>
-		/// <returns>아바타 이름의 현재 설정된 언어 버전</returns>
 		public static string[] GetAvatarName(SerializedProperty TargetProperty) {
 			int AvatarNameCount = TargetProperty.arraySize;
 			AvatarType[] AvatarNames = new AvatarType[AvatarNameCount];
@@ -447,8 +439,6 @@ namespace VRSuya.Core {
 			{ "SAME_OBJECT", "原本と同じアバターです、復旧したいアバターと同じ種類のアバターを作って入れてください" }
 		};
 
-		/// <summary>요청한 아바타 제작자 이름들을 설정된 언어에 맞춰 변환합니다.</summary>
-		/// <returns>요청한 아바타 제작자 이름들의 현재 설정된 언어 버전</returns>
 		static readonly Dictionary<AvatarAuthor, string[]> AvatarAuthorNameList = new Dictionary<AvatarAuthor, string[]>() {
 			{ AvatarAuthor.General, new string[] { "General", "일반", "一般" } },
 			{ AvatarAuthor.ChocolateRice, new string[] { "Chocolate rice", "초콜렛 라이스", "チョコレートライス" } },
@@ -457,8 +447,6 @@ namespace VRSuya.Core {
 			{ AvatarAuthor.Plusone, new string[] { "Plusone", "플러스원", "ぷらすわん" } }
 		};
 
-		/// <summary>요청한 아바타 이름들을 설정된 언어에 맞춰 변환합니다.</summary>
-		/// <returns>요청한 아바타 이름들의 현재 설정된 언어 버전</returns>
 		static readonly Dictionary<AvatarType, string[]> AvatarNameList = new Dictionary<AvatarType, string[]>() {
 			{ AvatarType.General, new string[] { "General", "일반", "一般" } },
 			{ AvatarType.None, new string[] { "None", "없음", "無い" } },

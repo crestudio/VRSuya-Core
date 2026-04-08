@@ -17,9 +17,6 @@ namespace VRSuya.Core {
 	[ExecuteInEditMode]
 	public class DuplicateGameObject {
 
-		/// <summary>요청한 타입의 첫번째 윈도우 창 오브젝트를 반환합니다.</summary>
-		/// <param name="EditorWindowType">Unity Editor 윈도우 타입</param>
-		/// <returns>해당 타입의 첫번째 윈도우</returns>
 		public EditorWindow FindFirstWindow(Type EditorWindowType) {
 			if (EditorWindowType == null)
 				throw new ArgumentNullException(nameof(EditorWindowType));
@@ -31,9 +28,6 @@ namespace VRSuya.Core {
 			return Window;
 		}
 
-		/// <summary>요청한 오브젝트의 복제된 GameObject를 반환합니다.</summary>
-		/// <param name="GameObjectInstance">완전 복제를 원하는 GameObject</param>
-		/// <returns>복제된 GameObject</returns>
 		public GameObject DuplicateGameObjectInstance(GameObject GameObjectInstance) {
 			Selection.objects = new Object[] { GameObjectInstance };
 			Selection.activeGameObject = GameObjectInstance;
