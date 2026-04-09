@@ -149,6 +149,10 @@ namespace VRSuya.Core {
 			// Remove Animator Layer
 			{ "String_LayerName", "Layer Name" },
 
+			// Constraint Connector
+			{ "String_LeftHand", "Left Hand" },
+			{ "String_RightHand", "Right Hand" },
+
 			// PhysBone Connector
 			{ "String_PhysBoneType", "PhysBone Type" },
 			{ "String_LeftCheek", "Left Cheek" },
@@ -269,6 +273,10 @@ namespace VRSuya.Core {
 			// Remove Animator Layer
 			{ "String_LayerName", "레이어 이름" },
 
+			// Constraint Connector
+			{ "String_LeftHand", "왼손" },
+			{ "String_RightHand", "오른손" },
+
 			// PhysBone Connector
 			{ "String_PhysBoneType", "PhysBone 종류" },
 			{ "String_LeftCheek", "왼쪽 볼" },
@@ -388,6 +396,10 @@ namespace VRSuya.Core {
 
 			// Remove Animator Layer
 			{ "String_LayerName", "レイヤー名" },
+
+			// Constraint Connector
+			{ "String_LeftHand", "左手" },
+			{ "String_RightHand", "右手" },
 
 			// PhysBone Connector
 			{ "String_PhysBoneType", "PhysBoneタイプ" },
