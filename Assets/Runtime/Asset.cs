@@ -51,13 +51,13 @@ namespace VRSuya.Core {
 					switch (TargetType) {
 						case AssetType.VRCMenu:
 							VRCExpressionsMenu VRCMenuAsset = AssetDatabase.LoadAssetAtPath<VRCExpressionsMenu>(AssetDatabase.GUIDToAssetPath(AssetGUIDs[Index]));
-							if (!VRCMenuAsset || VRCMenuAsset.GetType() != typeof(VRCExpressionsMenu)) {
+							if (!VRCMenuAsset || VRCMenuAsset is not VRCExpressionsMenu) {
 								AssetGUIDs.RemoveAt(Index);
 							}
 							break;
 						case AssetType.VRCParameter:
 							VRCExpressionParameters VRCParameterAsset = AssetDatabase.LoadAssetAtPath<VRCExpressionParameters>(AssetDatabase.GUIDToAssetPath(AssetGUIDs[Index]));
-							if (!VRCParameterAsset || VRCParameterAsset.GetType() != typeof(VRCExpressionParameters)) {
+							if (!VRCParameterAsset || VRCParameterAsset is not VRCExpressionParameters) {
 								AssetGUIDs.RemoveAt(Index);
 							}
 							break;
