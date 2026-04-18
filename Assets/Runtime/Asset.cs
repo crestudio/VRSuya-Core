@@ -20,6 +20,7 @@ namespace VRSuya.Core {
 
 		public enum AssetType {
 			AnimatorController,
+			Prefab,
 			Scene,
 			VRCMenu,
 			VRCParameter
@@ -32,6 +33,9 @@ namespace VRSuya.Core {
 			switch (TargetType) {
 				case AssetType.AnimatorController:
 					SearchWord = "t:AnimatorController";
+					break;
+				case AssetType.Prefab:
+					SearchWord = "t:Prefab";
 					break;
 				case AssetType.Scene:
 					SearchWord = "t:Scene";
