@@ -178,5 +178,13 @@ namespace VRSuya.Core {
 			}
 			return AvatarAnchorOverride;
 		}
+
+		public Transform GetAvatarRootBone(GameObject AvatarGameObject) {
+			AvatarGameObject.TryGetComponent(out UnityEngine.Animator AvatarAnimator);
+			if (AvatarAnimator != null) {
+				return AvatarAnimator.GetBoneTransform(HumanBodyBones.Hips);
+			}
+			return null;
+		}
 	}
 }
