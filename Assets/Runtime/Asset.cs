@@ -74,6 +74,12 @@ namespace VRSuya.Core {
 			return FileName;
 		}
 
+		public string GetAssetName(string OriginalPath, bool OnlyFileName) {
+			string FileName = OriginalPath.Split('/')[OriginalPath.Split('/').Length - 1];
+			if (OnlyFileName) FileName = FileName.Split('.')[0];
+			return FileName;
+		}
+
 		public string GetAvatarName(string OriginalFileName) {
 			Avatar AvatarInstance = new Avatar();
 			string[] FileNameParts = OriginalFileName.Split('_');
@@ -113,6 +119,12 @@ namespace VRSuya.Core {
 				AssetDatabase.Refresh();
 			}
 			return CreatedPrefab;
+		}
+
+		public bool ContainAsset(Object[] TargetObjects) {
+			return TargetObjects
+				.Select(Item => AssetDatabase.GetAssetPath(Item).EndsWith(".asset"))
+				.Contains(true);
 		}
 
 		public bool ContainAnimationClip(Object[] TargetObjects) {
