@@ -149,6 +149,9 @@ namespace VRSuya.Core {
 			// Remove Animator Layer
 			{ "String_LayerName", "Layer Name" },
 
+			// ChangeStandingPose
+			{ "String_ChangeStandingPose", "Replaces the default VRChat standing pose in the Action Layer with the avatar's standing pose." },
+
 			// Constraint Connector
 			{ "String_LeftHand", "Left Hand" },
 			{ "String_RightHand", "Right Hand" },
@@ -273,6 +276,9 @@ namespace VRSuya.Core {
 			// Remove Animator Layer
 			{ "String_LayerName", "레이어 이름" },
 
+			// ChangeStandingPose
+			{ "String_ChangeStandingPose", "액션 레이어의 기본 VRChat 스탠드 포즈를 아바타의 스탠드 포즈로 바꿉니다" },
+
 			// Constraint Connector
 			{ "String_LeftHand", "왼손" },
 			{ "String_RightHand", "오른손" },
@@ -396,6 +402,9 @@ namespace VRSuya.Core {
 
 			// Remove Animator Layer
 			{ "String_LayerName", "レイヤー名" },
+
+			// ChangeStandingPose
+			{ "String_ChangeStandingPose", "Actionレイヤー内のデフォルトVRChatスタンドポーズを、アバターのスタンドポーズに変更します。" },
 
 			// Constraint Connector
 			{ "String_LeftHand", "左手" },
