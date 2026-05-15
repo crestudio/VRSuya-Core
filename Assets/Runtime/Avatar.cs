@@ -186,5 +186,36 @@ namespace VRSuya.Core {
 			}
 			return null;
 		}
+
+		public AnimationClip GetStandingAnimation(AnimatorController TargetAnimator) {
+			AnimatorState StandingState = GetStandingState(TargetAnimator);
+			if (StandingState) {
+				if (StandingState.motion && StandingState.motion is BlendTree) {
+					BlendTree StandingBlendTree = StandingState.motion as BlendTree;
+					ChildMotion[] StandingMotion = StandingBlendTree.children.Where(Item => Item.position == new Vector2(0f, 0f)).ToArray();
+					if (StandingMotion.Length > 0) {
+						if (StandingMotion[0].motion && StandingMotion[0].motion is AnimationClip) {
+							return StandingMotion[0].motion as AnimationClip;
+						}
+					}
+				}
+			}
+			return null;
+		}
+
+		public AnimatorState GetStandingState(AnimatorController TargetAnimator) {
+			if (TargetAnimator.layers.Length > 0) {
+				Animator AnimatorInstance = new Animator();
+				AnimatorState[] AllAnimatorStates = AnimatorInstance.GetAllStates(TargetAnimator.layers[0].stateMachine);
+				AnimatorState StandingState = AllAnimatorStates.FirstOrDefault(Item => Item.name == "Standing");
+				if (StandingState) return StandingState;
+				StandingState = AllAnimatorStates.FirstOrDefault(Item => Item.name.Contains("Stand", StringComparison.OrdinalIgnoreCase));
+				if (StandingState) return StandingState;
+				if (TargetAnimator.layers[0].stateMachine.defaultState) {
+					return TargetAnimator.layers[0].stateMachine.defaultState;
+				}
+			}
+			return null;
+		}
 	}
 }
