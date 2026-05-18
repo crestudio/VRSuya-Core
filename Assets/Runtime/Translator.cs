@@ -188,7 +188,7 @@ namespace VRSuya.Core {
 			// 에러 코드
 			{ "NO_ANIMATOR", "Not found Animator Component in the Avatar!" },
 			{ "NO_ANIMSHAPEKEY", "There are no face-related shape keys in the FX layer animation" },
-			{ "NO_AVATAR", "No Avatar is selected" },
+			{ "NO_OLD_AVATAR", "No Avatar is selected" },
 			{ "NO_CHEEKBONE", "Not found any cheek bone in the Avatar!" },
 			{ "NO_CLIPS", "There is no animation clip to update!" },
 			{ "NO_FACEMESH", "Face mesh not found" },
@@ -196,14 +196,14 @@ namespace VRSuya.Core {
 			{ "NO_MORE_PARAMETER", "Need {0} more space to add VRC Parameter" },
 			{ "NO_NEW_ANIMATOR", "Not found Animator Component in the New Avatar" },
 			{ "NO_OLD_ANIMATOR", "Not found Animator Component in the Original Avatar" },
-			{ "NO_ROOTBONE", "Not found Hips bone in the New Avatar" },
+			{ "NO_NEW_ROOTBONE", "Not found Hips bone in the New Avatar" },
 			{ "NO_SHAPEKEY", "No shapekeys with values set" },
 			{ "NO_SOURCE_FILE", "Not found VRC Assets(likes Animator Controller, Menu, Parameter) in the Avatar" },
 			{ "NO_VRCAVATARDESCRIPTOR", "Not found VRC Avatar Descriptor Component in the Avatar" },
 			{ "NO_VRCSDK_MENU", "Not found VRC Avatar Menu" },
 			{ "NO_VRCSDK_PARAMETER", "Not found VRC Avatar Parameter" },
 			{ "NO_VRSUYA_FILE", "VRSuya package is not installed on Unity project" },
-			{ "SAME_OBJECT", "Same as the original avatar! Select a new GameObject of the same avatar" }
+			{ "SAME_AVATAR", "Same as the original avatar! Select a new GameObject of the same avatar" }
 		};
 
 		// 한국어 사전 데이터
@@ -315,7 +315,7 @@ namespace VRSuya.Core {
 			// 에러 코드
 			{ "NO_ANIMATOR", "아바타에서 애니메이터를 찾을 수 없습니다!" },
 			{ "NO_ANIMSHAPEKEY", "FX 레이어의 애니메이션에서 얼굴 관련 쉐이프키가 없습니다" },
-			{ "NO_AVATAR", "아바타가 지정되지 않았습니다" },
+			{ "NO_OLD_AVATAR", "아바타가 지정되지 않았습니다" },
 			{ "NO_CHEEKBONE", "아바타에서 볼 본을 찾을 수 없습니다!" },
 			{ "NO_CLIPS", "작업할 애니메이션 클립이 없습니다!" },
 			{ "NO_FACEMESH", "얼굴 메쉬를 찾을 수 없습니다" },
@@ -323,14 +323,14 @@ namespace VRSuya.Core {
 			{ "NO_MORE_PARAMETER", "VRC 파라메터를 추가할 공간이 {0}개 부족합니다" },
 			{ "NO_NEW_ANIMATOR", "새 아바타에서 애니메이터를 찾을 수 없습니다" },
 			{ "NO_OLD_ANIMATOR", "원본 아바타에서 애니메이터를 찾을 수 없습니다" },
-			{ "NO_ROOTBONE", "아바타에서 루트 본을 찾을 수 없습니다" },
+			{ "NO_NEW_ROOTBONE", "아바타에서 루트 본을 찾을 수 없습니다" },
 			{ "NO_SHAPEKEY", "값이 설정된 쉐이프키가 없습니다" },
 			{ "NO_SOURCE_FILE", "아바타에서 VRC용 에셋(애니메이터, 메뉴, 파라메터)을 찾을 수 없습니다" },
 			{ "NO_VRCAVATARDESCRIPTOR", "아바타에서 VRC 아바타 디스크립터를 찾을 수 없습니다" },
 			{ "NO_VRCSDK_MENU", "VRC 메뉴가 존재하지 않습니다" },
 			{ "NO_VRCSDK_PARAMETER", "VRC 파라메터가 존재하지 않습니다" },
 			{ "NO_VRSUYA_FILE", "Unity 프로젝트에 VRSuya 패키지가 설치되어 있지 않습니다" },
-			{ "SAME_OBJECT", "원본과 같은 아바타입니다, 복구하려는 아바타와 같은 종류의 아바타를 만들어 넣어주세요" }
+			{ "SAME_AVATAR", "원본과 같은 아바타입니다, 복구하려는 아바타와 같은 종류의 아바타를 만들어 넣어주세요" }
 		};
 
 		// 일본어 사전 데이터
@@ -442,7 +442,7 @@ namespace VRSuya.Core {
 			// 에러 코드
 			{ "NO_ANIMATOR", "アバターにアニメーターが見つかりません" },
 			{ "NO_ANIMSHAPEKEY", "FXレイヤーのアニメーションで顔関連のシェイプキーがありません" },
-			{ "NO_AVATAR", "アバターが指定されていません" },
+			{ "NO_OLD_AVATAR", "アバターが指定されていません" },
 			{ "NO_CHEEKBONE", "アバターにほっぺの骨が見つかりません！" },
 			{ "NO_CLIPS", "作業するアニメーション·クリップがありません！" },
 			{ "NO_FACEMESH", "顔のメッシュが見つかりません" },
@@ -450,14 +450,14 @@ namespace VRSuya.Core {
 			{ "NO_MORE_PARAMETER", "VRCパラメータを追加するスペース{0}スロットが不足しています" },
 			{ "NO_NEW_ANIMATOR", "新しいアバターにアニメーターが見つかりません" },
 			{ "NO_OLD_ANIMATOR", "元のアバターにアニメーターが見つかりません" },
-			{ "NO_ROOTBONE", "アバターにルートボーンが見つかりません" },
+			{ "NO_NEW_ROOTBONE", "アバターにルートボーンが見つかりません" },
 			{ "NO_SHAPEKEY", "値が設定されたシェイプキーがありません" },
 			{ "NO_SOURCE_FILE", "アバターにVRC用アセット(アニメーター、メニュー、パラメータ)が見つかりません" },
 			{ "NO_VRCAVATARDESCRIPTOR", "アバターにVRCアバターディスクリプターが見つかりません" },
 			{ "NO_VRCSDK_MENU", "VRCメニューが存在しません" },
 			{ "NO_VRCSDK_PARAMETER", "VRCパラメータが存在しません" },
 			{ "NO_VRSUYA_FILE", "UnityプロジェクトにVRSuyaパッケージがインストールされていません" },
-			{ "SAME_OBJECT", "原本と同じアバターです、復旧したいアバターと同じ種類のアバターを作って入れてください" }
+			{ "SAME_AVATAR", "原本と同じアバターです、復旧したいアバターと同じ種類のアバターを作って入れてください" }
 		};
 
 		static readonly Dictionary<AvatarAuthor, string[]> AvatarAuthorNameList = new Dictionary<AvatarAuthor, string[]>() {
