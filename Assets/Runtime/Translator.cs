@@ -133,7 +133,10 @@ namespace VRSuya.Core {
 			{ "String_ProductSuyasuya", "Suyasuya" },
 			{ "String_ProductSoundPad", "SoundPad" },
 
-			// Animated PhysBone
+			// AnimatedHairPhysBone
+			{ "String_PhysBoneName", "PhysBone Name" },
+
+			// AnimatedPhysBone
 			{ "String_AnimatedPhysBone", "When uploading the avatar, the Animated property of PhysBone components on cheek bones will be enabled." },
 
 			// AvatarPatcher
@@ -143,20 +146,14 @@ namespace VRSuya.Core {
 			{ "String_AvatarSettingUpdater", "The latest VRSuya items are now configured automatically during avatar upload, similar to Modular Avatar-compatible items. AvatarSettingUpdater is no longer used." },
 			{ "String_OpenBOOTH", "Open BOOTH" },
 
-			// Hair PhysBone
-			{ "String_PhysBoneName", "PhysBone Name" },
-
-			// Remove Animator Layer
-			{ "String_LayerName", "Layer Name" },
-
 			// ChangeStandingPose
 			{ "String_ChangeStandingPose", "Replaces the default VRChat standing pose in the Action Layer with the avatar's standing pose." },
 
-			// Constraint Connector
+			// ConstraintConnector
 			{ "String_LeftHand", "Left Hand" },
 			{ "String_RightHand", "Right Hand" },
 
-			// PhysBone Connector
+			// PhysBoneConnector
 			{ "String_PhysBoneType", "PhysBone Type" },
 			{ "String_LeftCheek", "Left Cheek" },
 			{ "String_RightCheek", "Right Cheek" },
@@ -171,7 +168,13 @@ namespace VRSuya.Core {
 			{ "String_LeftLittleToe", "Left Little Toe" },
 			{ "String_RightLittleToe", "Right Little Toe" },
 
-			// Remove PhysBone
+			// RemoveAnimatorLayer
+			{ "String_LayerName", "Layer Name" },
+
+			// RemoveFXMask
+			{ "String_RemoveFXMask", "Removes the mask if one is assigned to the FX layer." },
+
+			// RemovePhysBone
 			{ "String_RemovePhysBone", "When uploading the avatar, PhysBone components on cheek bones will be removed." },
 
 			// 상태 메시지
@@ -260,7 +263,10 @@ namespace VRSuya.Core {
 			{ "String_ProductSuyasuya", "스야스야" },
 			{ "String_ProductSoundPad", "사운드패드" },
 
-			// Animated PhysBone
+			// AnimatedHairPhysBone
+			{ "String_PhysBoneName", "PhysBone 이름" },
+
+			// AnimatedPhysBone
 			{ "String_AnimatedPhysBone", "아바타 업로드 할 때, 볼 본의 PhysBone 컴포넌트의 Animated 속성을 활성화 합니다" },
 
 			// AvatarPatcher
@@ -270,20 +276,14 @@ namespace VRSuya.Core {
 			{ "String_AvatarSettingUpdater", "최신 VRSuya 아이템은 모듈러 아바타 대응 아이템처럼 이제 아바타 업로드시에 자동으로 설정합니다, AvatarSettingUpdater는 더 이상 사용하지 않습니다" },
 			{ "String_OpenBOOTH", "BOOTH 열기" },
 
-			// Hair PhysBone
-			{ "String_PhysBoneName", "PhysBone 이름" },
-
-			// Remove Animator Layer
-			{ "String_LayerName", "레이어 이름" },
-
 			// ChangeStandingPose
 			{ "String_ChangeStandingPose", "액션 레이어의 기본 VRChat 스탠드 포즈를 아바타의 스탠드 포즈로 바꿉니다" },
 
-			// Constraint Connector
+			// ConstraintConnector
 			{ "String_LeftHand", "왼손" },
 			{ "String_RightHand", "오른손" },
 
-			// PhysBone Connector
+			// PhysBoneConnector
 			{ "String_PhysBoneType", "PhysBone 종류" },
 			{ "String_LeftCheek", "왼쪽 볼" },
 			{ "String_RightCheek", "오른쪽 볼" },
@@ -298,7 +298,13 @@ namespace VRSuya.Core {
 			{ "String_LeftLittleToe", "왼쪽 소지 발가락" },
 			{ "String_RightLittleToe", "오른쪽 소지 발가락" },
 
-			// Remove PhysBone
+			// RemoveAnimatorLayer
+			{ "String_LayerName", "레이어 이름" },
+
+			// RemoveFXMask
+			{ "String_RemoveFXMask", "FX 레이어에 마스크가 할당되어 있는 경우 마스크를 삭제를 합니다" },
+
+			// RemovePhysBone
 			{ "String_RemovePhysBone", "아바타 업로드 할 때, 볼 본의 PhysBone 컴포넌트들을 제거합니다" },
 
 			// 상태 메시지
@@ -387,7 +393,10 @@ namespace VRSuya.Core {
 			{ "String_ProductSuyasuya", "すやすや" },
 			{ "String_ProductSoundPad", "サウンドパッド" },
 
-			// Animated PhysBone
+			// AnimatedHairPhysBone
+			{ "String_PhysBoneName", "PhysBone名" },
+
+			// AnimatedPhysBone
 			{ "String_AnimatedPhysBone", "アバターをアップロードする際、頬ボーンのPhysBoneコンポーネントのAnimatedプロパティが有効化されます。" },
 
 			// AvatarPatcher
@@ -397,20 +406,14 @@ namespace VRSuya.Core {
 			{ "String_AvatarSettingUpdater", "最新のVRSuyaアイテムはModular Avatar対応アイテムと同様に、アバターのアップロード時に自動で設定されるようになりました。AvatarSettingUpdaterは今後使用されません。" },
 			{ "String_OpenBOOTH", "BOOTHを開く" },
 
-			// Hair PhysBone
-			{ "String_PhysBoneName", "PhysBone名" },
-
-			// Remove Animator Layer
-			{ "String_LayerName", "レイヤー名" },
-
 			// ChangeStandingPose
 			{ "String_ChangeStandingPose", "Actionレイヤー内のデフォルトVRChatスタンドポーズを、アバターのスタンドポーズに変更します。" },
 
-			// Constraint Connector
+			// ConstraintConnector
 			{ "String_LeftHand", "左手" },
 			{ "String_RightHand", "右手" },
 
-			// PhysBone Connector
+			// PhysBoneConnector
 			{ "String_PhysBoneType", "PhysBoneタイプ" },
 			{ "String_LeftCheek", "左頬" },
 			{ "String_RightCheek", "右頬" },
@@ -425,7 +428,13 @@ namespace VRSuya.Core {
 			{ "String_LeftLittleToe", "左小指" },
 			{ "String_RightLittleToe", "右小指" },
 
-			// Remove PhysBone
+			// RemoveAnimatorLayer
+			{ "String_LayerName", "レイヤー名" },
+
+			// RemoveFXMask
+			{ "String_RemoveFXMask", "FXレイヤーにマスクが割り当てられている場合、マスクを削除します。" },
+
+			// RemovePhysBone
 			{ "String_RemovePhysBone", "アバターをアップロードする際、頬ボーンのPhysBoneコンポーネントは削除されます。" },
 
 			// 상태 메시지
