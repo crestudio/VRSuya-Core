@@ -15,7 +15,6 @@ using VRC.SDK3.Avatars.ScriptableObjects;
 
 namespace VRSuya.Core {
 
-	[ExecuteInEditMode]
 	public class Asset {
 
 		public enum AssetType {

@@ -13,7 +13,6 @@ using UnityEditor.Animations;
 
 namespace VRSuya.Core {
 
-	[ExecuteInEditMode]
 	public class Animator {
 
 		public void AddParameter(AnimatorController TargetController, AnimatorControllerParameter TargetParameter) {

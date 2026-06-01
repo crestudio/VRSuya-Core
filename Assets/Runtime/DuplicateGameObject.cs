@@ -14,7 +14,6 @@ using Object = UnityEngine.Object;
 
 namespace VRSuya.Core {
 
-	[ExecuteInEditMode]
 	public class DuplicateGameObject {
 
 		public EditorWindow FindFirstWindow(Type EditorWindowType) {

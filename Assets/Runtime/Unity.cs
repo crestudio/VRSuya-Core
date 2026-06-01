@@ -9,7 +9,6 @@ using UnityEngine;
 
 namespace VRSuya.Core {
 
-	[ExecuteInEditMode]
 	public class Unity {
 
 		public static int InitializeUndoGroup(string TargetUndoName) {

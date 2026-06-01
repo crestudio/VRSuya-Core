@@ -17,7 +17,6 @@ using static VRC.SDK3.Avatars.Components.VRCAvatarDescriptor;
 
 namespace VRSuya.Core {
 
-	[ExecuteInEditMode]
 	public class Avatar {
 
 		public enum AvatarAuthor {
