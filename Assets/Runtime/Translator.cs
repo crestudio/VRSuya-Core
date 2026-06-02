@@ -117,6 +117,14 @@ namespace VRSuya.Core {
 			// AvatarPatcher
 			{ "COMPLETED_PATCH", "The {0} avatar has been patched" },
 
+			// AvatarRebuilder
+			{ "NO_NEW_ANIMATOR", "Not found Animator Component in the New Avatar" },
+			{ "NO_NEW_AVATAR", "No New Avatar is selected" },
+			{ "NO_MATCHED_SKINNEDMESHRENDERERS", "No matching SkinnedMeshRenderer was found" },
+			{ "NO_OLD_ANIMATOR", "Not found Animator Component in the Original Avatar" },
+			{ "NO_OLD_AVATAR", "No Avatar is selected" },
+			{ "SAME_AVATAR", "Same as the original avatar! Select a new GameObject of the same avatar" },
+
 			// AvatarSettingUpdater
 			{ "String_AvatarSettingUpdater", "The latest VRSuya items are now configured automatically during avatar upload, similar to Modular Avatar-compatible items. AvatarSettingUpdater is no longer used." },
 			{ "String_OpenBOOTH", "Open BOOTH" },
@@ -166,11 +174,7 @@ namespace VRSuya.Core {
 			{ "NO_CHEEKBONE", "Not found any cheek bone in the Avatar!" },
 			{ "NO_CLIPS", "There is no animation clip to update!" },
 			{ "NO_FACEMESH", "Face mesh not found" },
-			{ "NO_NEW_ANIMATOR", "Not found Animator Component in the New Avatar" },
-			{ "NO_OLD_ANIMATOR", "Not found Animator Component in the Original Avatar" },
-			{ "NO_OLD_AVATAR", "No Avatar is selected" },
-			{ "NO_SHAPEKEY", "No shapekeys with values set" },
-			{ "SAME_AVATAR", "Same as the original avatar! Select a new GameObject of the same avatar" }
+			{ "NO_SHAPEKEY", "No shapekeys with values set" }
 		};
 
 		// 한국어 사전 데이터
@@ -210,6 +214,14 @@ namespace VRSuya.Core {
 
 			// AvatarPatcher
 			{ "COMPLETED_PATCH", "{0} 아바타를 패치하였습니다" },
+
+			// AvatarRebuilder
+			{ "NO_NEW_ANIMATOR", "새 아바타에서 애니메이터를 찾을 수 없습니다" },
+			{ "NO_NEW_AVATAR", "새 아바타가 지정되지 않았습니다" },
+			{ "NO_MATCHED_SKINNEDMESHRENDERERS", "서로 매치가 되는 SkinnedMeshRenderer가 존재하지 않습니다" },
+			{ "NO_OLD_ANIMATOR", "원본 아바타에서 애니메이터를 찾을 수 없습니다" },
+			{ "NO_OLD_AVATAR", "아바타가 지정되지 않았습니다" },
+			{ "SAME_AVATAR", "원본과 같은 아바타입니다, 복구하려는 아바타와 같은 종류의 아바타를 만들어 넣어주세요" },
 
 			// AvatarSettingUpdater
 			{ "String_AvatarSettingUpdater", "최신 VRSuya 아이템은 모듈러 아바타 대응 아이템처럼 이제 아바타 업로드시에 자동으로 설정합니다, AvatarSettingUpdater는 더 이상 사용하지 않습니다" },
@@ -260,11 +272,7 @@ namespace VRSuya.Core {
 			{ "NO_CHEEKBONE", "아바타에서 볼 본을 찾을 수 없습니다!" },
 			{ "NO_CLIPS", "작업할 애니메이션 클립이 없습니다!" },
 			{ "NO_FACEMESH", "얼굴 메쉬를 찾을 수 없습니다" },
-			{ "NO_NEW_ANIMATOR", "새 아바타에서 애니메이터를 찾을 수 없습니다" },
-			{ "NO_OLD_ANIMATOR", "원본 아바타에서 애니메이터를 찾을 수 없습니다" },
-			{ "NO_OLD_AVATAR", "아바타가 지정되지 않았습니다" },
-			{ "NO_SHAPEKEY", "값이 설정된 쉐이프키가 없습니다" },
-			{ "SAME_AVATAR", "원본과 같은 아바타입니다, 복구하려는 아바타와 같은 종류의 아바타를 만들어 넣어주세요" }
+			{ "NO_SHAPEKEY", "값이 설정된 쉐이프키가 없습니다" }
 		};
 
 		// 일본어 사전 데이터
@@ -304,6 +312,14 @@ namespace VRSuya.Core {
 
 			// AvatarPatcher
 			{ "COMPLETED_PATCH", "{0}アバターをパッチしました。" },
+
+			// AvatarRebuilder
+			{ "NO_NEW_ANIMATOR", "新しいアバターにアニメーターが見つかりません" },
+			{ "NO_NEW_AVATAR", "新しいアバターが指定されていません" },
+			{ "NO_MATCHED_SKINNEDMESHRENDERERS", "対応するSkinnedMeshRendererが見つかりません" },
+			{ "NO_OLD_ANIMATOR", "元のアバターにアニメーターが見つかりません" },
+			{ "NO_OLD_AVATAR", "アバターが指定されていません" },
+			{ "SAME_AVATAR", "原本と同じアバターです、復旧したいアバターと同じ種類のアバターを作って入れてください" },
 
 			// AvatarSettingUpdater
 			{ "String_AvatarSettingUpdater", "最新のVRSuyaアイテムはModular Avatar対応アイテムと同様に、アバターのアップロード時に自動で設定されるようになりました。AvatarSettingUpdaterは今後使用されません。" },
@@ -354,11 +370,7 @@ namespace VRSuya.Core {
 			{ "NO_CHEEKBONE", "アバターにほっぺの骨が見つかりません！" },
 			{ "NO_CLIPS", "作業するアニメーション·クリップがありません！" },
 			{ "NO_FACEMESH", "顔のメッシュが見つかりません" },
-			{ "NO_NEW_ANIMATOR", "新しいアバターにアニメーターが見つかりません" },
-			{ "NO_OLD_ANIMATOR", "元のアバターにアニメーターが見つかりません" },
-			{ "NO_OLD_AVATAR", "アバターが指定されていません" },
-			{ "NO_SHAPEKEY", "値が設定されたシェイプキーがありません" },
-			{ "SAME_AVATAR", "原本と同じアバターです、復旧したいアバターと同じ種類のアバターを作って入れてください" }
+			{ "NO_SHAPEKEY", "値が設定されたシェイプキーがありません" }
 		};
 
 		static readonly Dictionary<AvatarAuthor, string[]> AvatarAuthorNameList = new Dictionary<AvatarAuthor, string[]>() {
