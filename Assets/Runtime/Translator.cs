@@ -139,6 +139,9 @@ namespace VRSuya.Core {
 			{ "String_LeftHand", "Left Hand" },
 			{ "String_RightHand", "Right Hand" },
 
+			// ForceOnWriteDefaults
+			{ "String_ForceOnWriteDefaults", "Sets Write Defaults to ON for the FX layer.\nSome avatar gimmicks may not function correctly as a result. If this occurs, removing this component will resolve the issue; however, facial expression animations provided by VRSuya items may no longer work correctly." },
+
 			// PhysBoneConnector
 			{ "String_PhysBoneType", "PhysBone Type" },
 			{ "String_LeftCheek", "Left Cheek" },
@@ -240,6 +243,9 @@ namespace VRSuya.Core {
 			{ "String_LeftHand", "왼손" },
 			{ "String_RightHand", "오른손" },
 
+			// ForceOnWriteDefaults
+			{ "String_ForceOnWriteDefaults", "FX 레이어를 Write Defaults를 ON으로 설정합니다\n일부 아바타의 기믹이 제대로 동작하지 않을 수 있습니다, 이러한 경우에는 현재 컴포넌트를 제거하면 문제가 해결이 되나 VRSuya 아이템의 표정 애니메이션이 제대로 동작하지 않습니다" },
+
 			// PhysBoneConnector
 			{ "String_PhysBoneType", "PhysBone 종류" },
 			{ "String_LeftCheek", "왼쪽 볼" },
@@ -340,6 +346,9 @@ namespace VRSuya.Core {
 			// ConstraintConnector
 			{ "String_LeftHand", "左手" },
 			{ "String_RightHand", "右手" },
+
+			// ForceOnWriteDefaults
+			{ "String_ForceOnWriteDefaults", "FXレイヤーのWrite DefaultsをONに設定します。\nその影響により、一部のアバターギミックが正常に動作しなくなる場合があります。その場合は、このコンポーネントを削除することで問題を解決できますが、VRSuyaアイテムの表情アニメーションが正常に動作しなくなる可能性があります。" },
 
 			// PhysBoneConnector
 			{ "String_PhysBoneType", "PhysBoneタイプ" },
