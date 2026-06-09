@@ -81,6 +81,7 @@ namespace VRSuya.Core {
 
 		// 영어 사전 데이터
 		static readonly Dictionary<string, string> String_English = new Dictionary<string, string>() {
+			{ "String_Add", "Add" },
 			{ "String_After", "After" },
 			{ "String_AnimationClip", "Animation Clip" },
 			{ "String_AnimationOrigin", "Animation Origin" },
@@ -99,8 +100,10 @@ namespace VRSuya.Core {
 			{ "String_NewAvatar", "New Avatar" },
 			{ "String_Okay", "OK" },
 			{ "String_OldAvatar", "Original Avatar" },
+			{ "String_Path", "Path" },
 			{ "String_Refresh", "Refresh" },
 			{ "String_Reload", "Reload" },
+			{ "String_Remove", "Remove" },
 			{ "String_Replace", "Replace" },
 			{ "String_Save", "Save" },
 			{ "String_Show", "Show" },
@@ -179,6 +182,7 @@ namespace VRSuya.Core {
 
 		// 한국어 사전 데이터
 		static readonly Dictionary<string, string> String_Korean = new Dictionary<string, string>() {
+			{ "String_Add", "추가" },
 			{ "String_After", "변경 후" },
 			{ "String_AnimationClip", "애니메이션 클립" },
 			{ "String_AnimationOrigin", "애니메이션 본 원점" },
@@ -197,8 +201,10 @@ namespace VRSuya.Core {
 			{ "String_NewAvatar", "신규 아바타" },
 			{ "String_Okay", "확인" },
 			{ "String_OldAvatar", "원본 아바타" },
+			{ "String_Path", "경로" },
 			{ "String_Refresh", "새로 고침" },
 			{ "String_Reload", "다시 불러오기" },
+			{ "String_Remove", "삭제" },
 			{ "String_Replace", "교체" },
 			{ "String_Save", "저장" },
 			{ "String_Show", "표시" },
@@ -277,6 +283,7 @@ namespace VRSuya.Core {
 
 		// 일본어 사전 데이터
 		static readonly Dictionary<string, string> String_Japanese = new Dictionary<string, string>() {
+			{ "String_Add", "追加" },
 			{ "String_After", "変更" },
 			{ "String_AnimationClip", "アニメーション·クリップ" },
 			{ "String_AnimationOrigin", "アニメーションほっぺの原点" },
@@ -295,8 +302,10 @@ namespace VRSuya.Core {
 			{ "String_NewAvatar", "新規アバター" },
 			{ "String_Okay", "確認" },
 			{ "String_OldAvatar", "原本アバター" },
+			{ "String_Path", "パス" },
 			{ "String_Refresh", "更新" },
 			{ "String_Reload", "リロード" },
+			{ "String_Remove", "削除" },
 			{ "String_Replace", "交換" },
 			{ "String_Save", "保存" },
 			{ "String_Show", "表示" },

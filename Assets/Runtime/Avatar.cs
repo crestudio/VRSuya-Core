@@ -216,5 +216,50 @@ namespace VRSuya.Core {
 			}
 			return null;
 		}
+
+		public AnimationClip[] GetAllAvatarAnimationClips(GameObject AvatarGameObject) {
+			List<AnimatorController> AvatarAnimatorControllers = new List<AnimatorController>();
+			List<AnimationClip> AvatarAnimationClips = new List<AnimationClip>();
+			AvatarAnimatorControllers.Add(GetAnimatorController(AvatarGameObject, AnimLayerType.Action));
+			AvatarAnimatorControllers.Add(GetAnimatorController(AvatarGameObject, AnimLayerType.Additive));
+			AvatarAnimatorControllers.Add(GetAnimatorController(AvatarGameObject, AnimLayerType.Base));
+			AvatarAnimatorControllers.Add(GetAnimatorController(AvatarGameObject, AnimLayerType.FX));
+			AvatarAnimatorControllers.Add(GetAnimatorController(AvatarGameObject, AnimLayerType.Gesture));
+			AvatarAnimatorControllers.Add(GetAnimatorController(AvatarGameObject, AnimLayerType.IKPose));
+			AvatarAnimatorControllers.Add(GetAnimatorController(AvatarGameObject, AnimLayerType.Sitting));
+			AvatarAnimatorControllers.Add(GetAnimatorController(AvatarGameObject, AnimLayerType.TPose));
+			foreach (AnimatorController TargetAnimator in AvatarAnimatorControllers) {
+				AvatarAnimationClips.AddRange(GetAllAnimationClips(TargetAnimator));
+			}
+			return AvatarAnimationClips.Distinct().ToArray();
+		}
+
+		public AnimationClip[] GetAllAnimationClips(AnimatorController TargetAnimator) {
+			if (!TargetAnimator) return new AnimationClip[0];
+			VRSuya.Core.Animator AnimatorInstance = new VRSuya.Core.Animator();
+			List<AnimationClip> AnimatorAnimationClips = new List<AnimationClip>();
+			List<Motion> AnimatorMotionList = AnimatorInstance.GetAllAnimatorStates(TargetAnimator)
+				.Where(Item => Item.motion != null)
+				.Select(Item => Item.motion)
+				.ToList();
+			List<BlendTree> ChildBlendTrees = AnimatorMotionList.Where(Item => Item is BlendTree).Select(Item => Item as BlendTree).ToList();
+			AnimatorAnimationClips.AddRange(AnimatorMotionList.Where(Item => Item is AnimationClip).Select(Item => Item as AnimationClip));
+			foreach (BlendTree TargetChildBlendTree in ChildBlendTrees) {
+				AnimatorAnimationClips.AddRange(GetAllAnimationClipsFromBlendTree(TargetChildBlendTree));
+			}
+			return AnimatorAnimationClips.Distinct().ToArray();
+		}
+
+		public AnimationClip[] GetAllAnimationClipsFromBlendTree(BlendTree TargetBlendTree) {
+			if (!TargetBlendTree) return new AnimationClip[0];
+			List<AnimationClip> BlendTreeAnimationClips = new List<AnimationClip>();
+			List<Motion> BlendTreeMotions = TargetBlendTree.children.Where(Item => Item.motion != null).Select(Item => Item.motion).ToList();
+			List<BlendTree> ChildBlendTrees = BlendTreeMotions.Where(Item => Item is BlendTree).Select(Item => Item as BlendTree).ToList();
+			BlendTreeAnimationClips.AddRange(BlendTreeMotions.Where(Item => Item is AnimationClip).Select(Item => Item as AnimationClip));
+			foreach (BlendTree TargetChildBlendTree in ChildBlendTrees) {
+				BlendTreeAnimationClips.AddRange(GetAllAnimationClipsFromBlendTree(TargetChildBlendTree));
+			}
+			return BlendTreeAnimationClips.Distinct().ToArray();
+		}
 	}
 }
