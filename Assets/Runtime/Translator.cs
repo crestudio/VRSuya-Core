@@ -91,6 +91,7 @@ namespace VRSuya.Core {
 			{ "String_AvatarOrigin", "Avatar Origin" },
 			{ "String_Before", "Before" },
 			{ "String_BlendShape", "Blendshape" },
+			{ "String_Browse", "Browse" },
 			{ "String_FXLayer", "FX Layer" },
 			{ "String_GetPosition", "Get cheek bone position" },
 			{ "String_HeadMesh", "Face Mesh" },
@@ -117,6 +118,19 @@ namespace VRSuya.Core {
 
 			// AnimatedPhysBone
 			{ "String_AnimatedPhysBone", "When uploading the avatar, the Animated property of PhysBone components on cheek bones will be enabled." },
+
+			// AvatarHDiffPatcher
+			{ "String_PatchData", "Patch Data" },
+			{ "ERROR_CONSOLE", "An error occurred while patching the avatar! Please check the error message in the Unity Console window" },
+			{ "ERROR_FAILEDRUN", "Failed to launch HDiffPatch" },
+			{ "ERROR_FBX", "The source file path is invalid" },
+			{ "ERROR_HDIFF", "The HDiff patch file path is invalid" },
+			{ "ERROR_NOHDIFFPATCH", "Could not find the HDiffPatch executable" },
+			{ "ERROR_NOPERMISSION", "Failed to grant execute permission to HDiffPatch" },
+			{ "ERROR_OUTPUTPATH", "Exporting is only supported within the Unity project's Assets folder, Please select a different path" },
+			{ "ERROR_PLATFORM", "HDiffPatch supports Windows, macOS, and Linux only" },
+			{ "ERROR_TIMEDOUT", "The HDiffPatch process timed out" },
+			{ "NOT_MATCH", "Failed to apply the HDiff patch because the selected source file does not match the patch, Please select the correct source file" },
 
 			// AvatarPatcher
 			{ "COMPLETED_PATCH", "The {0} avatar has been patched" },
@@ -196,6 +210,7 @@ namespace VRSuya.Core {
 			{ "String_AvatarOrigin", "아바타 볼 원점" },
 			{ "String_Before", "변경 전" },
 			{ "String_BlendShape", "쉐이프키" },
+			{ "String_Browse", "찾아보기" },
 			{ "String_FXLayer", "FX 레이어" },
 			{ "String_GetPosition", "볼 데이터 가져오기" },
 			{ "String_HeadMesh", "얼굴 메쉬" },
@@ -222,6 +237,19 @@ namespace VRSuya.Core {
 
 			// AnimatedPhysBone
 			{ "String_AnimatedPhysBone", "아바타 업로드 할 때, 볼 본의 PhysBone 컴포넌트의 Animated 속성을 활성화 합니다" },
+
+			// AvatarHDiffPatcher
+			{ "String_PatchData", "패치 데이터" },
+			{ "ERROR_CONSOLE", "아바타 패치 도중 에러가 발생하였습니다, Unity의 Console 창에서 오류 메시지를 확인해 주세요" },
+			{ "ERROR_FAILEDRUN", "HDiffPatch를 실행하는데 실패하였습니다" },
+			{ "ERROR_FBX", "원본 파일의 경로가 올바르지 않습니다" },
+			{ "ERROR_HDIFF", "HDiff 패치 파일의 경로가 올바르지 않습니다" },
+			{ "ERROR_NOHDIFFPATCH", "HDiffPatch 실행 파일을 찾을 수 없습니다" },
+			{ "ERROR_NOPERMISSION", "HDiffPatch 실행 권한 부여에 실패하였습니다" },
+			{ "ERROR_OUTPUTPATH", "Unity 프로젝트의 Assets 폴더 내부로만 내보내기를 할 수 있습니다, 다시 경로를 지정해 주세요" },
+			{ "ERROR_PLATFORM", "HDiffPatch는 윈도우, 맥, 리눅스만 지원합니다" },
+			{ "ERROR_TIMEDOUT", "HDiffPatch 프로세스의 작업 시간을 초과하였습니다" },
+			{ "NOT_MATCH", "선택한 원본 파일이 패치 데이터와 일치하지 않아 HDiff 패치를 적용할 수 없었습니다, 올바른 원본 파일을 선택해 주세요" },
 
 			// AvatarPatcher
 			{ "COMPLETED_PATCH", "{0} 아바타를 패치하였습니다" },
@@ -301,6 +329,7 @@ namespace VRSuya.Core {
 			{ "String_AvatarOrigin", "アバターほっぺの原点" },
 			{ "String_Before", "既存" },
 			{ "String_BlendShape", "シェイプキー" },
+			{ "String_Browse", "参照" },
 			{ "String_FXLayer", "FXレイヤー" },
 			{ "String_GetPosition", "ほっぺデータのインポート" },
 			{ "String_HeadMesh", "顔メッシュ" },
@@ -327,6 +356,19 @@ namespace VRSuya.Core {
 
 			// AnimatedPhysBone
 			{ "String_AnimatedPhysBone", "アバターをアップロードする際、頬ボーンのPhysBoneコンポーネントのAnimatedプロパティが有効化されます。" },
+
+			// AvatarHDiffPatcher
+			{ "String_PatchData", "パッチデータ" },
+			{ "ERROR_CONSOLE", "アバターのパッチ中にエラーが発生しました！UnityのConsoleウィンドウでエラーメッセージを確認してください" },
+			{ "ERROR_FAILEDRUN", "HDiffPatchの起動に失敗しました" },
+			{ "ERROR_FBX", "元ファイルのパスが無効です" },
+			{ "ERROR_HDIFF", "HDiffパッチファイルのパスが無効です" },
+			{ "ERROR_NOHDIFFPATCH", "HDiffPatchの実行ファイルが見つかりません" },
+			{ "ERROR_NOPERMISSION", "HDiffPatchへの実行権限の付与に失敗しました" },
+			{ "ERROR_OUTPUTPATH", "UnityプロジェクトのAssetsフォルダー内にのみエクスポートできます、パスを再指定してください" },
+			{ "ERROR_PLATFORM", "HDiffPatchはWindows、macOS、Linuxのみサポートしています" },
+			{ "ERROR_TIMEDOUT", "HDiffPatchプロセスがタイムアウトしました" },
+			{ "NOT_MATCH", "選択された元ファイルがパッチと一致しないため、HDiffパッチを適用できませんでした、正しい元ファイルを選択してください" },
 
 			// AvatarPatcher
 			{ "COMPLETED_PATCH", "{0}アバターをパッチしました。" },
