@@ -355,7 +355,7 @@ namespace VRSuya.Core {
 			{ "String_PhysBoneName", "PhysBone名" },
 
 			// AnimatedPhysBone
-			{ "String_AnimatedPhysBone", "アバターをアップロードする際、頬ボーンのPhysBoneコンポーネントのAnimatedプロパティが有効化されます。" },
+			{ "String_AnimatedPhysBone", "アバターをアップロードする際、頬ボーンのPhysBoneコンポーネントのAnimatedプロパティが有効化されます" },
 
 			// AvatarHDiffPatcher
 			{ "String_PatchData", "パッチデータ" },
@@ -371,7 +371,7 @@ namespace VRSuya.Core {
 			{ "NOT_MATCH", "選択された元ファイルがパッチと一致しないため、HDiffパッチを適用できませんでした、正しい元ファイルを選択してください" },
 
 			// AvatarPatcher
-			{ "COMPLETED_PATCH", "{0}アバターをパッチしました。" },
+			{ "COMPLETED_PATCH", "{0}アバターをパッチしました" },
 
 			// AvatarRebuilder
 			{ "NO_NEW_ANIMATOR", "新しいアバターにアニメーターが見つかりません" },
@@ -382,18 +382,18 @@ namespace VRSuya.Core {
 			{ "SAME_AVATAR", "原本と同じアバターです、復旧したいアバターと同じ種類のアバターを作って入れてください" },
 
 			// AvatarSettingUpdater
-			{ "String_AvatarSettingUpdater", "最新のVRSuyaアイテムはModular Avatar対応アイテムと同様に、アバターのアップロード時に自動で設定されるようになりました。AvatarSettingUpdaterは今後使用されません。" },
+			{ "String_AvatarSettingUpdater", "最新のVRSuyaアイテムはModular Avatar対応アイテムと同様に、アバターのアップロード時に自動で設定されるようになりました、AvatarSettingUpdaterは今後使用されません" },
 			{ "String_OpenBOOTH", "BOOTHを開く" },
 
 			// ChangeStandingPose
-			{ "String_ChangeStandingPose", "Actionレイヤー内のデフォルトVRChatスタンドポーズを、アバターのスタンドポーズに変更します。" },
+			{ "String_ChangeStandingPose", "Actionレイヤー内のデフォルトVRChatスタンドポーズを、アバターのスタンドポーズに変更します" },
 
 			// ConstraintConnector
 			{ "String_LeftHand", "左手" },
 			{ "String_RightHand", "右手" },
 
 			// ForceOnWriteDefaults
-			{ "String_ForceOnWriteDefaults", "FXレイヤーのWrite DefaultsをONに設定します。\nその影響により、一部のアバターギミックが正常に動作しなくなる場合があります。その場合は、このコンポーネントを削除することで問題を解決できますが、VRSuyaアイテムの表情アニメーションが正常に動作しなくなる可能性があります。" },
+			{ "String_ForceOnWriteDefaults", "FXレイヤーのWrite DefaultsをONに設定します\nその影響により、一部のアバターギミックが正常に動作しなくなる場合があります、その場合は、このコンポーネントを削除することで問題を解決できますが、VRSuyaアイテムの表情アニメーションが正常に動作しなくなる可能性があります" },
 
 			// PhysBoneConnector
 			{ "String_PhysBoneType", "PhysBoneタイプ" },
@@ -414,10 +414,10 @@ namespace VRSuya.Core {
 			{ "String_LayerName", "レイヤー名" },
 
 			// RemoveFXMask
-			{ "String_RemoveFXMask", "FXレイヤーにマスクが割り当てられている場合、マスクを削除します。" },
+			{ "String_RemoveFXMask", "FXレイヤーにマスクが割り当てられている場合、マスクを削除します" },
 
 			// RemovePhysBone
-			{ "String_RemovePhysBone", "アバターをアップロードする際、頬ボーンのPhysBoneコンポーネントは削除されます。" },
+			{ "String_RemovePhysBone", "アバターをアップロードする際、頬ボーンのPhysBoneコンポーネントは削除されます" },
 
 			// TextureReplacer
 			{ "String_Null", "項目をクリアすると、該当テクスチャがマテリアルから削除されます" },
