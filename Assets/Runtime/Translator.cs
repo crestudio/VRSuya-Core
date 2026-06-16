@@ -127,6 +127,7 @@ namespace VRSuya.Core {
 			{ "NO_NEW_AVATAR", "No New Avatar is selected" },
 			{ "NO_MATCHED_SKINNEDMESHRENDERERS", "No matching SkinnedMeshRenderer was found" },
 			{ "NO_OLD_ANIMATOR", "Not found Animator Component in the Original Avatar" },
+			{ "NO_OLD_AVATAR_SCENE", "The avatar is not placed in the scene" },
 			{ "NO_OLD_AVATAR", "No Avatar is selected" },
 			{ "SAME_AVATAR", "Same as the original avatar! Select a new GameObject of the same avatar" },
 
@@ -146,6 +147,7 @@ namespace VRSuya.Core {
 
 			// HDiffPatcher
 			{ "String_PatchData", "Patch Data" },
+			{ "String_ReplaceAfterPatch", "Replace Avatar After Patching" },
 			{ "ERROR_CONSOLE", "An error occurred while patching the avatar! Please check the error message in the Unity Console window" },
 			{ "ERROR_FAILEDRUN", "Failed to launch HDiffPatch" },
 			{ "ERROR_FBX", "The source file path is invalid" },
@@ -246,6 +248,7 @@ namespace VRSuya.Core {
 			{ "NO_NEW_AVATAR", "새 아바타가 지정되지 않았습니다" },
 			{ "NO_MATCHED_SKINNEDMESHRENDERERS", "서로 매치가 되는 SkinnedMeshRenderer가 존재하지 않습니다" },
 			{ "NO_OLD_ANIMATOR", "원본 아바타에서 애니메이터를 찾을 수 없습니다" },
+			{ "NO_OLD_AVATAR_SCENE", "아바타가 Scene에 위치하고 있지 않습니다" },
 			{ "NO_OLD_AVATAR", "아바타가 지정되지 않았습니다" },
 			{ "SAME_AVATAR", "원본과 같은 아바타입니다, 복구하려는 아바타와 같은 종류의 아바타를 만들어 넣어주세요" },
 
@@ -265,6 +268,7 @@ namespace VRSuya.Core {
 
 			// HDiffPatcher
 			{ "String_PatchData", "패치 데이터" },
+			{ "String_ReplaceAfterPatch", "패치 후 아바타 교체" },
 			{ "ERROR_CONSOLE", "아바타 패치 도중 에러가 발생하였습니다, Unity의 Console 창에서 오류 메시지를 확인해 주세요" },
 			{ "ERROR_FAILEDRUN", "HDiffPatch를 실행하는데 실패하였습니다" },
 			{ "ERROR_FBX", "원본 파일의 경로가 올바르지 않습니다" },
@@ -365,6 +369,7 @@ namespace VRSuya.Core {
 			{ "NO_NEW_AVATAR", "新しいアバターが指定されていません" },
 			{ "NO_MATCHED_SKINNEDMESHRENDERERS", "対応するSkinnedMeshRendererが見つかりません" },
 			{ "NO_OLD_ANIMATOR", "元のアバターにアニメーターが見つかりません" },
+			{ "NO_OLD_AVATAR_SCENE", "アバターがシーン内に配置されていません" },
 			{ "NO_OLD_AVATAR", "アバターが指定されていません" },
 			{ "SAME_AVATAR", "原本と同じアバターです、復旧したいアバターと同じ種類のアバターを作って入れてください" },
 
@@ -384,6 +389,7 @@ namespace VRSuya.Core {
 			
 			// HDiffPatcher
 			{ "String_PatchData", "パッチデータ" },
+			{ "String_ReplaceAfterPatch", "パッチ後にアバターを置き換える" },
 			{ "ERROR_CONSOLE", "アバターのパッチ中にエラーが発生しました！UnityのConsoleウィンドウでエラーメッセージを確認してください" },
 			{ "ERROR_FAILEDRUN", "HDiffPatchの起動に失敗しました" },
 			{ "ERROR_FBX", "元ファイルのパスが無効です" },
