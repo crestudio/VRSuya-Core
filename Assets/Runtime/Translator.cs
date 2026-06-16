@@ -119,19 +119,6 @@ namespace VRSuya.Core {
 			// AnimatedPhysBone
 			{ "String_AnimatedPhysBone", "When uploading the avatar, the Animated property of PhysBone components on cheek bones will be enabled." },
 
-			// AvatarHDiffPatcher
-			{ "String_PatchData", "Patch Data" },
-			{ "ERROR_CONSOLE", "An error occurred while patching the avatar! Please check the error message in the Unity Console window" },
-			{ "ERROR_FAILEDRUN", "Failed to launch HDiffPatch" },
-			{ "ERROR_FBX", "The source file path is invalid" },
-			{ "ERROR_HDIFF", "The HDiff patch file path is invalid" },
-			{ "ERROR_NOHDIFFPATCH", "Could not find the HDiffPatch executable" },
-			{ "ERROR_NOPERMISSION", "Failed to grant execute permission to HDiffPatch" },
-			{ "ERROR_OUTPUTPATH", "Exporting is only supported within the Unity project's Assets folder, Please select a different path" },
-			{ "ERROR_PLATFORM", "HDiffPatch supports Windows, macOS, and Linux only" },
-			{ "ERROR_TIMEDOUT", "The HDiffPatch process timed out" },
-			{ "NOT_MATCH", "Failed to apply the HDiff patch because the selected source file does not match the patch, Please select the correct source file" },
-
 			// AvatarPatcher
 			{ "COMPLETED_PATCH", "The {0} avatar has been patched" },
 
@@ -156,6 +143,19 @@ namespace VRSuya.Core {
 
 			// ForceOnWriteDefaults
 			{ "String_ForceOnWriteDefaults", "Sets Write Defaults to ON for the FX layer.\nSome avatar gimmicks may not function correctly as a result. If this occurs, removing this component will resolve the issue; however, facial expression animations provided by VRSuya items may no longer work correctly." },
+
+			// HDiffPatcher
+			{ "String_PatchData", "Patch Data" },
+			{ "ERROR_CONSOLE", "An error occurred while patching the avatar! Please check the error message in the Unity Console window" },
+			{ "ERROR_FAILEDRUN", "Failed to launch HDiffPatch" },
+			{ "ERROR_FBX", "The source file path is invalid" },
+			{ "ERROR_HDIFF", "The HDiff patch file path is invalid" },
+			{ "ERROR_NOHDIFFPATCH", "Could not find the HDiffPatch executable" },
+			{ "ERROR_NOPERMISSION", "Failed to grant execute permission to HDiffPatch" },
+			{ "ERROR_OUTPUTPATH", "Exporting is only supported within the Unity project's Assets folder, Please select a different path" },
+			{ "ERROR_PLATFORM", "HDiffPatch supports Windows, macOS, and Linux only" },
+			{ "ERROR_TIMEDOUT", "The HDiffPatch process timed out" },
+			{ "NOT_MATCH", "Failed to apply the HDiff patch because the selected source file does not match the patch, Please select the correct source file" },
 
 			// PhysBoneConnector
 			{ "String_PhysBoneType", "PhysBone Type" },
@@ -238,19 +238,6 @@ namespace VRSuya.Core {
 			// AnimatedPhysBone
 			{ "String_AnimatedPhysBone", "아바타 업로드 할 때, 볼 본의 PhysBone 컴포넌트의 Animated 속성을 활성화 합니다" },
 
-			// AvatarHDiffPatcher
-			{ "String_PatchData", "패치 데이터" },
-			{ "ERROR_CONSOLE", "아바타 패치 도중 에러가 발생하였습니다, Unity의 Console 창에서 오류 메시지를 확인해 주세요" },
-			{ "ERROR_FAILEDRUN", "HDiffPatch를 실행하는데 실패하였습니다" },
-			{ "ERROR_FBX", "원본 파일의 경로가 올바르지 않습니다" },
-			{ "ERROR_HDIFF", "HDiff 패치 파일의 경로가 올바르지 않습니다" },
-			{ "ERROR_NOHDIFFPATCH", "HDiffPatch 실행 파일을 찾을 수 없습니다" },
-			{ "ERROR_NOPERMISSION", "HDiffPatch 실행 권한 부여에 실패하였습니다" },
-			{ "ERROR_OUTPUTPATH", "Unity 프로젝트의 Assets 폴더 내부로만 내보내기를 할 수 있습니다, 다시 경로를 지정해 주세요" },
-			{ "ERROR_PLATFORM", "HDiffPatch는 윈도우, 맥, 리눅스만 지원합니다" },
-			{ "ERROR_TIMEDOUT", "HDiffPatch 프로세스의 작업 시간을 초과하였습니다" },
-			{ "NOT_MATCH", "선택한 원본 파일이 패치 데이터와 일치하지 않아 HDiff 패치를 적용할 수 없었습니다, 올바른 원본 파일을 선택해 주세요" },
-
 			// AvatarPatcher
 			{ "COMPLETED_PATCH", "{0} 아바타를 패치하였습니다" },
 
@@ -275,6 +262,19 @@ namespace VRSuya.Core {
 
 			// ForceOnWriteDefaults
 			{ "String_ForceOnWriteDefaults", "FX 레이어를 Write Defaults를 ON으로 설정합니다\n일부 아바타의 기믹이 제대로 동작하지 않을 수 있습니다, 이러한 경우에는 현재 컴포넌트를 제거하면 문제가 해결이 되나 VRSuya 아이템의 표정 애니메이션이 제대로 동작하지 않습니다" },
+
+			// HDiffPatcher
+			{ "String_PatchData", "패치 데이터" },
+			{ "ERROR_CONSOLE", "아바타 패치 도중 에러가 발생하였습니다, Unity의 Console 창에서 오류 메시지를 확인해 주세요" },
+			{ "ERROR_FAILEDRUN", "HDiffPatch를 실행하는데 실패하였습니다" },
+			{ "ERROR_FBX", "원본 파일의 경로가 올바르지 않습니다" },
+			{ "ERROR_HDIFF", "HDiff 패치 파일의 경로가 올바르지 않습니다" },
+			{ "ERROR_NOHDIFFPATCH", "HDiffPatch 실행 파일을 찾을 수 없습니다" },
+			{ "ERROR_NOPERMISSION", "HDiffPatch 실행 권한 부여에 실패하였습니다" },
+			{ "ERROR_OUTPUTPATH", "Unity 프로젝트의 Assets 폴더 내부로만 내보내기를 할 수 있습니다, 다시 경로를 지정해 주세요" },
+			{ "ERROR_PLATFORM", "HDiffPatch는 윈도우, 맥, 리눅스만 지원합니다" },
+			{ "ERROR_TIMEDOUT", "HDiffPatch 프로세스의 작업 시간을 초과하였습니다" },
+			{ "NOT_MATCH", "선택한 원본 파일이 패치 데이터와 일치하지 않아 HDiff 패치를 적용할 수 없었습니다, 올바른 원본 파일을 선택해 주세요" },
 
 			// PhysBoneConnector
 			{ "String_PhysBoneType", "PhysBone 종류" },
@@ -357,19 +357,6 @@ namespace VRSuya.Core {
 			// AnimatedPhysBone
 			{ "String_AnimatedPhysBone", "アバターをアップロードする際、頬ボーンのPhysBoneコンポーネントのAnimatedプロパティが有効化されます" },
 
-			// AvatarHDiffPatcher
-			{ "String_PatchData", "パッチデータ" },
-			{ "ERROR_CONSOLE", "アバターのパッチ中にエラーが発生しました！UnityのConsoleウィンドウでエラーメッセージを確認してください" },
-			{ "ERROR_FAILEDRUN", "HDiffPatchの起動に失敗しました" },
-			{ "ERROR_FBX", "元ファイルのパスが無効です" },
-			{ "ERROR_HDIFF", "HDiffパッチファイルのパスが無効です" },
-			{ "ERROR_NOHDIFFPATCH", "HDiffPatchの実行ファイルが見つかりません" },
-			{ "ERROR_NOPERMISSION", "HDiffPatchへの実行権限の付与に失敗しました" },
-			{ "ERROR_OUTPUTPATH", "UnityプロジェクトのAssetsフォルダー内にのみエクスポートできます、パスを再指定してください" },
-			{ "ERROR_PLATFORM", "HDiffPatchはWindows、macOS、Linuxのみサポートしています" },
-			{ "ERROR_TIMEDOUT", "HDiffPatchプロセスがタイムアウトしました" },
-			{ "NOT_MATCH", "選択された元ファイルがパッチと一致しないため、HDiffパッチを適用できませんでした、正しい元ファイルを選択してください" },
-
 			// AvatarPatcher
 			{ "COMPLETED_PATCH", "{0}アバターをパッチしました" },
 
@@ -394,6 +381,19 @@ namespace VRSuya.Core {
 
 			// ForceOnWriteDefaults
 			{ "String_ForceOnWriteDefaults", "FXレイヤーのWrite DefaultsをONに設定します\nその影響により、一部のアバターギミックが正常に動作しなくなる場合があります、その場合は、このコンポーネントを削除することで問題を解決できますが、VRSuyaアイテムの表情アニメーションが正常に動作しなくなる可能性があります" },
+			
+			// HDiffPatcher
+			{ "String_PatchData", "パッチデータ" },
+			{ "ERROR_CONSOLE", "アバターのパッチ中にエラーが発生しました！UnityのConsoleウィンドウでエラーメッセージを確認してください" },
+			{ "ERROR_FAILEDRUN", "HDiffPatchの起動に失敗しました" },
+			{ "ERROR_FBX", "元ファイルのパスが無効です" },
+			{ "ERROR_HDIFF", "HDiffパッチファイルのパスが無効です" },
+			{ "ERROR_NOHDIFFPATCH", "HDiffPatchの実行ファイルが見つかりません" },
+			{ "ERROR_NOPERMISSION", "HDiffPatchへの実行権限の付与に失敗しました" },
+			{ "ERROR_OUTPUTPATH", "UnityプロジェクトのAssetsフォルダー内にのみエクスポートできます、パスを再指定してください" },
+			{ "ERROR_PLATFORM", "HDiffPatchはWindows、macOS、Linuxのみサポートしています" },
+			{ "ERROR_TIMEDOUT", "HDiffPatchプロセスがタイムアウトしました" },
+			{ "NOT_MATCH", "選択された元ファイルがパッチと一致しないため、HDiffパッチを適用できませんでした、正しい元ファイルを選択してください" },
 
 			// PhysBoneConnector
 			{ "String_PhysBoneType", "PhysBoneタイプ" },
