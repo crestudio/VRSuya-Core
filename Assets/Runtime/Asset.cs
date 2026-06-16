@@ -149,6 +149,14 @@ namespace VRSuya.Core {
 				.Select(Item => AssetDatabase.GetAssetPath(Item).EndsWith(".unity"))
 				.Contains(true);
 		}
+
+		public void PingAsset(string TargetAssetPath) {
+			if (string.IsNullOrEmpty(TargetAssetPath)) return;
+			Object TargetAssetObject = AssetDatabase.LoadAssetAtPath<Object>(TargetAssetPath);
+			if (!TargetAssetObject) return;
+			EditorGUIUtility.PingObject(TargetAssetObject);
+			Selection.activeObject = TargetAssetObject;
+		}
 	}
 }
 #endif
