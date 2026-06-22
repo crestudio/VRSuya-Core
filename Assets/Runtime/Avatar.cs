@@ -53,6 +53,13 @@ namespace VRSuya.Core {
 		}
 
 		public static readonly string[] HeadGameObjectNames = new string[] { "Body", "Head", "Face" };
+		public static readonly string[] CheekLeftBoneNames = new string[] {
+			"Cheek_L", "Cheek.L", "Cheek1_L", "Cheek_Root_L", "Cheek_root_L", "Hoppe.L"
+		};
+		public static readonly string[] CheekRightBoneNames = new string[] {
+			"Cheek_R", "Cheek.R", "Cheek1_R", "Cheek_Root_R", "Cheek_root_R", "Hoppe.R"
+		};
+		public static readonly string[] CheekBoneNames = CheekLeftBoneNames.Concat(CheekRightBoneNames).ToArray();
 
 		public string GetAvatarName(string TargetString) {
 			foreach (string AvatarName in GetAvatarNames()) {
