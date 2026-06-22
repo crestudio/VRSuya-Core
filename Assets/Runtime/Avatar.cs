@@ -138,10 +138,24 @@ namespace VRSuya.Core {
 		}
 
 		public GameObject GetHeadGameObject(GameObject AvatarGameObject) {
-			foreach (SkinnedMeshRenderer TargetSkinnedMeshRenderer in AvatarGameObject.GetComponentsInChildren<SkinnedMeshRenderer>(true)) {
-				if (Array.Exists(HeadGameObjectNames, Item => TargetSkinnedMeshRenderer.gameObject.name == Item)) {
-					if (Array.Exists(TargetSkinnedMeshRenderer.bones, Bone => AvatarGameObject.GetComponent<UnityEngine.Animator>().GetBoneTransform(HumanBodyBones.Head) == Bone)) {
-						return TargetSkinnedMeshRenderer.gameObject;
+			AvatarGameObject.TryGetComponent(out VRCAvatarDescriptor AvatarDescriptor);
+			if (AvatarDescriptor) {
+				if (AvatarDescriptor.VisemeSkinnedMesh) {
+					return AvatarDescriptor.VisemeSkinnedMesh.gameObject;
+				}
+				if (AvatarDescriptor.customEyeLookSettings.eyelidsSkinnedMesh) {
+					return AvatarDescriptor.customEyeLookSettings.eyelidsSkinnedMesh.gameObject;
+				}
+			}
+			AvatarGameObject.TryGetComponent(out UnityEngine.Animator AvatarAnimator);
+			if (AvatarAnimator) {
+				Transform HeadTransform = AvatarAnimator.GetBoneTransform(HumanBodyBones.Head);
+				if (HeadTransform) {
+					SkinnedMeshRenderer HeadSkinnedMeshrenderer = AvatarGameObject.GetComponentsInChildren<SkinnedMeshRenderer>(true)
+						.Where(Item => HeadGameObjectNames.Contains(Item.gameObject.name, StringComparer.OrdinalIgnoreCase))
+						.FirstOrDefault(Item => Item.bones.Contains(HeadTransform));
+					if (HeadSkinnedMeshrenderer) {
+						return HeadSkinnedMeshrenderer.gameObject;
 					}
 				}
 			}
@@ -160,22 +174,22 @@ namespace VRSuya.Core {
 		}
 
 		public Transform GetAvatarAnchorOverride(GameObject AvatarGameObject) {
-			Transform AvatarAnchorOverride = null;
 			GameObject HeadGameObject = GetHeadGameObject(AvatarGameObject);
 			if (HeadGameObject) {
 				SkinnedMeshRenderer HeadSkinnedMeshRenderer = HeadGameObject.GetComponent<SkinnedMeshRenderer>();
-				if (HeadSkinnedMeshRenderer.probeAnchor) {
-					AvatarAnchorOverride = HeadSkinnedMeshRenderer.probeAnchor;
-					return AvatarAnchorOverride;
+				if (HeadSkinnedMeshRenderer) {
+					if (HeadSkinnedMeshRenderer.probeAnchor) {
+						return HeadSkinnedMeshRenderer.probeAnchor;
+					}
 				}
 			}
-			UnityEngine.Animator AvatarAnimator = AvatarGameObject.GetComponent<UnityEngine.Animator>();
-			if (AvatarAnimator.GetBoneTransform(HumanBodyBones.Head)) {
-				AvatarAnchorOverride = AvatarAnimator.GetBoneTransform(HumanBodyBones.Head);
-			} else if (AvatarAnimator.GetBoneTransform(HumanBodyBones.Hips)) {
-				AvatarAnchorOverride = AvatarAnimator.GetBoneTransform(HumanBodyBones.Hips);
-			}
-			return AvatarAnchorOverride;
+			return AvatarGameObject.GetComponentsInChildren<SkinnedMeshRenderer>(true)
+				.Select(Item => Item.probeAnchor)
+				.Where(Item => Item != null)
+				.GroupBy(Item => Item)
+				.OrderByDescending(Item => Item.Count())
+				.FirstOrDefault()?
+				.Key;
 		}
 
 		public Transform GetAvatarRootBone(GameObject AvatarGameObject) {
