@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using UnityEngine;
 using UnityEditor;
 using UnityEditor.Animations;
+using UnityEditor.SceneManagement;
+using UnityEngine;
 
 using VRC.SDKBase;
 using VRC.SDK3.Avatars.Components;
@@ -84,6 +85,10 @@ namespace VRSuya.Core {
 					return null;
 				}
 			}
+		}
+
+		public static GameObject[] GetAvatarGameObjects() {
+			return EditorSceneManager.GetActiveScene().GetRootGameObjects().Where(Item => Item.GetComponent<VRC_AvatarDescriptor>() != null).ToArray();
 		}
 
 		public static VRC_AvatarDescriptor GetVRCAvatarDescriptor() {
