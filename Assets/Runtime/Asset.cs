@@ -15,7 +15,7 @@ using VRC.SDK3.Avatars.ScriptableObjects;
 
 namespace VRSuya.Core {
 
-	public class Asset {
+	public static class Asset {
 
 		public enum AssetType {
 			AnimatorController,
@@ -25,7 +25,7 @@ namespace VRSuya.Core {
 			VRCParameter
 		}
 
-		public string[] GetAssetGUIDs(AssetType TargetType) {
+		public static string[] GetAssetGUIDs(AssetType TargetType) {
 			List<string> AssetGUIDs = new List<string>();
 			string SearchWord = string.Empty;
 			string SearchPath = "Assets/";
@@ -66,23 +66,22 @@ namespace VRSuya.Core {
 			return AssetGUIDs.ToArray();
 		}
 
-		public string GUIDToAssetName(string GUID, bool OnlyFileName) {
+		public static string GUIDToAssetName(string GUID, bool OnlyFileName) {
 			string FileName = string.Empty;
 			FileName = AssetDatabase.GUIDToAssetPath(GUID).Split('/')[AssetDatabase.GUIDToAssetPath(GUID).Split('/').Length - 1];
 			if (OnlyFileName) FileName = FileName.Split('.')[0];
 			return FileName;
 		}
 
-		public string GetAssetName(string OriginalPath, bool OnlyFileName) {
+		public static string GetAssetName(string OriginalPath, bool OnlyFileName) {
 			string FileName = OriginalPath.Split('/')[OriginalPath.Split('/').Length - 1];
 			if (OnlyFileName) FileName = FileName.Split('.')[0];
 			return FileName;
 		}
 
-		public string GetAvatarName(string OriginalFileName) {
-			Avatar AvatarInstance = new Avatar();
+		public static string GetAvatarName(string OriginalFileName) {
 			string[] FileNameParts = OriginalFileName.Split('_');
-			string[] AvatarNames = AvatarInstance.GetAvatarNames();
+			string[] AvatarNames = Avatar.GetAvatarNames();
 			for (int Index = FileNameParts.Length - 1; Index >= 0; Index--) {
 				if (AvatarNames.Contains(FileNameParts[Index])) {
 					return FileNameParts[Index];
@@ -91,10 +90,9 @@ namespace VRSuya.Core {
 			return null;
 		}
 
-		public string ReplaceAvatarName(string OriginalFileName, string NewAvatarName) {
-			Avatar AvatarInstance = new Avatar();
+		public static string ReplaceAvatarName(string OriginalFileName, string NewAvatarName) {
 			string[] FileNameParts = OriginalFileName.Split('_');
-			string[] AvatarNames = AvatarInstance.GetAvatarNames();
+			string[] AvatarNames = Avatar.GetAvatarNames();
 			for (int Index = FileNameParts.Length - 1; Index >= 0; Index--) {
 				if (AvatarNames.Contains(FileNameParts[Index])) {
 					FileNameParts[Index] = NewAvatarName;
@@ -104,7 +102,7 @@ namespace VRSuya.Core {
 			return string.Join("_", FileNameParts);
 		}
 
-		public GameObject ExportPrefab(GameObject TargetGameObject, string TargetAssetPath, string TargetAssetName) {
+		public static GameObject ExportPrefab(GameObject TargetGameObject, string TargetAssetPath, string TargetAssetName) {
 			string FullExportPath = Path.Combine(TargetAssetPath, $"{TargetAssetName}.prefab");
 			FullExportPath = FullExportPath.Replace("\\", "/");
 			if (!Directory.Exists(TargetAssetPath)) {
@@ -120,37 +118,37 @@ namespace VRSuya.Core {
 			return CreatedPrefab;
 		}
 
-		public bool ContainAsset(Object[] TargetObjects) {
+		public static bool ContainAsset(Object[] TargetObjects) {
 			return TargetObjects
 				.Select(Item => AssetDatabase.GetAssetPath(Item).EndsWith(".asset"))
 				.Contains(true);
 		}
 
-		public bool ContainAnimationClip(Object[] TargetObjects) {
+		public static bool ContainAnimationClip(Object[] TargetObjects) {
 			return TargetObjects
 				.Select(Item => AssetDatabase.GetAssetPath(Item).EndsWith(".anim"))
 				.Contains(true);
 		}
 
-		public bool ContainAnimatorController(Object[] TargetObjects) {
+		public static bool ContainAnimatorController(Object[] TargetObjects) {
 			return TargetObjects
 				.Select(Item => AssetDatabase.GetAssetPath(Item).EndsWith(".controller"))
 				.Contains(true);
 		}
 
-		public bool ContainPrefab(Object[] TargetObjects) {
+		public static bool ContainPrefab(Object[] TargetObjects) {
 			return TargetObjects
 				.Select(Item => AssetDatabase.GetAssetPath(Item).EndsWith(".prefab"))
 				.Contains(true);
 		}
 
-		public bool ContainScene(Object[] TargetObjects) {
+		public static bool ContainScene(Object[] TargetObjects) {
 			return TargetObjects
 				.Select(Item => AssetDatabase.GetAssetPath(Item).EndsWith(".unity"))
 				.Contains(true);
 		}
 
-		public void PingAsset(string TargetAssetPath) {
+		public static void PingAsset(string TargetAssetPath) {
 			if (string.IsNullOrEmpty(TargetAssetPath)) return;
 			Object TargetAssetObject = AssetDatabase.LoadAssetAtPath<Object>(TargetAssetPath);
 			if (!TargetAssetObject) return;

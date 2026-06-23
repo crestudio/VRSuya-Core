@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace VRSuya.Core {
 
-	public class Unity {
+	public static class Unity {
 
 		public static int InitializeUndoGroup(string TargetUndoName) {
 			Undo.IncrementCurrentGroup();

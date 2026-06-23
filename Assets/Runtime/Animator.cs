@@ -13,9 +13,9 @@ using UnityEditor.Animations;
 
 namespace VRSuya.Core {
 
-	public class Animator {
+	public static class Animator {
 
-		public void AddParameter(AnimatorController TargetController, AnimatorControllerParameter TargetParameter) {
+		public static void AddParameter(AnimatorController TargetController, AnimatorControllerParameter TargetParameter) {
 			AnimatorControllerParameter newParameter = new AnimatorControllerParameter {
 				defaultBool = TargetParameter.defaultBool,
 				defaultFloat = TargetParameter.defaultFloat,
@@ -26,7 +26,7 @@ namespace VRSuya.Core {
 			TargetController.AddParameter(newParameter);
 		}
 
-		public AnimatorControllerLayer[] DuplicateAnimatorLayers(AnimatorController TargetController, AnimatorControllerLayer[] TargetLayers) {
+		public static AnimatorControllerLayer[] DuplicateAnimatorLayers(AnimatorController TargetController, AnimatorControllerLayer[] TargetLayers) {
 			AnimatorControllerLayer[] newAnimatorLayers = new AnimatorControllerLayer[TargetController.layers.Length + TargetLayers.Length];
 			Array.Copy(TargetController.layers, newAnimatorLayers, TargetController.layers.Length);
 			for (int Index = 0; Index < TargetLayers.Length; Index++) {
@@ -36,7 +36,7 @@ namespace VRSuya.Core {
 			return newAnimatorLayers;
 		}
 
-		public AnimatorControllerLayer DuplicateAnimatorLayer(AnimatorControllerLayer TargetAnimatorLayer) {
+		public static AnimatorControllerLayer DuplicateAnimatorLayer(AnimatorControllerLayer TargetAnimatorLayer) {
 			AnimatorControllerLayer newAnimatorLayer = new AnimatorControllerLayer {
 				avatarMask = TargetAnimatorLayer.avatarMask,
 				blendingMode = TargetAnimatorLayer.blendingMode,
@@ -50,7 +50,7 @@ namespace VRSuya.Core {
 			return newAnimatorLayer;
 		}
 
-		public AnimatorStateMachine DuplicateStateMachine(AnimatorStateMachine TargetStateMachine) {
+		public static AnimatorStateMachine DuplicateStateMachine(AnimatorStateMachine TargetStateMachine) {
 			AnimatorStateMachine newStateMachines = new AnimatorStateMachine {
 				anyStatePosition = TargetStateMachine.anyStatePosition,
 				behaviours = TargetStateMachine.behaviours,
@@ -66,7 +66,7 @@ namespace VRSuya.Core {
 			return newStateMachines;
 		}
 
-		public void CopyTransitions(AnimatorStateMachine TargetStateMachine, AnimatorStateMachine OldStateMachine) {
+		public static void CopyTransitions(AnimatorStateMachine TargetStateMachine, AnimatorStateMachine OldStateMachine) {
 			AnimatorStateMachine[] OldAnimatorStateMachines = GetAllStateMachines(OldStateMachine);
 			AnimatorStateMachine[] NewAnimatorStateMachines = GetAllStateMachines(TargetStateMachine);
 			AnimatorState[] OldAnimatorStates = GetAllStates(OldStateMachine);
@@ -90,12 +90,12 @@ namespace VRSuya.Core {
 			}
 		}
 
-		public AnimatorStateTransition[] GetAllTransitions(AnimatorController TargetAnimatorController) {
+		public static AnimatorStateTransition[] GetAllTransitions(AnimatorController TargetAnimatorController) {
 			AnimatorState[] AllAnimatorState = GetAllAnimatorStates(TargetAnimatorController);
 			return AllAnimatorState.SelectMany(Item => Item.transitions).ToArray();
 		}
 
-		public AnimatorState[] GetAllAnimatorStates(AnimatorController TargetAnimatorController) {
+		public static AnimatorState[] GetAllAnimatorStates(AnimatorController TargetAnimatorController) {
 			List<AnimatorStateMachine> AllAnimatorStateMachine = new List<AnimatorStateMachine>();
 			List<AnimatorState> AllAnimatorState = new List<AnimatorState>();
 			foreach (AnimatorControllerLayer TargetAnimatorLayer in TargetAnimatorController.layers) {
@@ -107,7 +107,7 @@ namespace VRSuya.Core {
 			return AllAnimatorState.ToArray();
 		}
 
-		public BlendTree[] GetAllBlendTrees(AnimatorState[] TargetAnimatorStates) {
+		public static BlendTree[] GetAllBlendTrees(AnimatorState[] TargetAnimatorStates) {
 			BlendTree[] BlendTrees = new BlendTree[0];
 			foreach (AnimatorState TargetAnimatorState in TargetAnimatorStates) {
 				if (TargetAnimatorState.motion is BlendTree TargetBlendTree) {
@@ -117,7 +117,7 @@ namespace VRSuya.Core {
 			return BlendTrees;
 		}
 
-		BlendTree[] GetSubBlendTrees(BlendTree TargetBlendTree) {
+		static BlendTree[] GetSubBlendTrees(BlendTree TargetBlendTree) {
 			BlendTree[] BlendTrees = new BlendTree[0];
 			BlendTrees = BlendTrees.Concat(new BlendTree[] { TargetBlendTree }).ToArray();
 			foreach (ChildMotion ChildMotion in TargetBlendTree.children) {
@@ -128,7 +128,7 @@ namespace VRSuya.Core {
 			return BlendTrees;
 		}
 
-		public AnimatorState[] GetAllStates(AnimatorStateMachine TargetStateMachine) {
+		public static AnimatorState[] GetAllStates(AnimatorStateMachine TargetStateMachine) {
 			AnimatorState[] States = TargetStateMachine.states.Select(ExistChildState => ExistChildState.state).ToArray();
 			if (TargetStateMachine.stateMachines.Length > 0) {
 				foreach (var TargetChildStatetMachine in TargetStateMachine.stateMachines) {
@@ -138,7 +138,7 @@ namespace VRSuya.Core {
 			return States;
 		}
 
-		public AnimatorStateMachine[] GetAllStateMachines(AnimatorStateMachine TargetStateMachine) {
+		public static AnimatorStateMachine[] GetAllStateMachines(AnimatorStateMachine TargetStateMachine) {
 			AnimatorStateMachine[] StateMachines = new AnimatorStateMachine[] { TargetStateMachine };
 			if (TargetStateMachine.stateMachines.Length > 0) {
 				foreach (var TargetChildStateMachine in TargetStateMachine.stateMachines) {
@@ -148,7 +148,7 @@ namespace VRSuya.Core {
 			return StateMachines;
 		}
 
-		public ChildAnimatorStateMachine[] DuplicateChildStateMachine(ChildAnimatorStateMachine[] TargetChildStateMachines) {
+		public static ChildAnimatorStateMachine[] DuplicateChildStateMachine(ChildAnimatorStateMachine[] TargetChildStateMachines) {
 			ChildAnimatorStateMachine[] newChildStateMachines = new ChildAnimatorStateMachine[TargetChildStateMachines.Length];
 			for (int Index = 0; Index < TargetChildStateMachines.Length; Index++) {
 				ChildAnimatorStateMachine newChildStateMachine = new ChildAnimatorStateMachine {
@@ -160,7 +160,7 @@ namespace VRSuya.Core {
 			return newChildStateMachines;
 		}
 
-		public ChildAnimatorState[] DuplicateChildAnimatorState(ChildAnimatorState[] TargetChildAnimatorStates) {
+		public static ChildAnimatorState[] DuplicateChildAnimatorState(ChildAnimatorState[] TargetChildAnimatorStates) {
 			ChildAnimatorState[] newChildAnimatorStates = new ChildAnimatorState[TargetChildAnimatorStates.Length];
 			for (int Index = 0; Index < TargetChildAnimatorStates.Length; Index++) {
 				ChildAnimatorState newChildAnimatorState = new ChildAnimatorState {
@@ -172,7 +172,7 @@ namespace VRSuya.Core {
 			return newChildAnimatorStates;
 		}
 
-		public AnimatorState DuplicateAnimatorState(AnimatorState TargetAnimatorState) {
+		public static AnimatorState DuplicateAnimatorState(AnimatorState TargetAnimatorState) {
 			AnimatorState newState = new AnimatorState {
 				behaviours = TargetAnimatorState.behaviours,
 				cycleOffset = TargetAnimatorState.cycleOffset,
@@ -196,7 +196,7 @@ namespace VRSuya.Core {
 			return newState;
 		}
 
-		public AnimatorStateTransition DuplicateTransition(AnimatorStateTransition TargetStateTransition, AnimatorState TargetAnimatorState, AnimatorStateMachine TargetAnimatorStateMachine) {
+		public static AnimatorStateTransition DuplicateTransition(AnimatorStateTransition TargetStateTransition, AnimatorState TargetAnimatorState, AnimatorStateMachine TargetAnimatorStateMachine) {
 			AnimatorStateTransition newTransition = new AnimatorStateTransition {
 				canTransitionToSelf = TargetStateTransition.canTransitionToSelf,
 				duration = TargetStateTransition.duration,
@@ -218,7 +218,7 @@ namespace VRSuya.Core {
 			return newTransition;
 		}
 
-		public AnimatorCondition[] DuplicateConditions(AnimatorCondition[] TargetConditions) {
+		public static AnimatorCondition[] DuplicateConditions(AnimatorCondition[] TargetConditions) {
 			AnimatorCondition[] newConditions = new AnimatorCondition[TargetConditions.Length];
 			for (int Index = 0; Index < TargetConditions.Length; Index++) {
 				AnimatorCondition newCondition = new AnimatorCondition {
@@ -231,7 +231,7 @@ namespace VRSuya.Core {
 			return newConditions;
 		}
 
-		public bool IsAnimatorWriteDefaults(AnimatorController TargetAnimator) {
+		public static bool IsAnimatorWriteDefaults(AnimatorController TargetAnimator) {
 			AnimatorState[] AvatarAnimatorState = GetAllAnimatorStates(TargetAnimator);
 			bool[] WriteDefaults = AvatarAnimatorState.Select(Item => Item.writeDefaultValues).ToArray();
 			int WriteDefaultsOffCount = WriteDefaults.Where(Item => Item == false).Count();
@@ -245,7 +245,7 @@ namespace VRSuya.Core {
 			return true;
 		}
 
-		public bool ContainWords(string OriginalString, string TargetString) {
+		public static bool ContainWords(string OriginalString, string TargetString) {
 			string[] Words = TargetString.Split(' ');
 			return Words.All(Word => OriginalString.Contains(Word));
 		}

@@ -14,7 +14,7 @@ using static VRSuya.Core.Avatar;
 
 namespace VRSuya.Core {
 
-	public class Translator {
+	public static class Translator {
 
 		public static readonly string[] LanguageOption = new string[] { "English", "한국어", "日本語" };
 		public static int LanguageIndex = 0;

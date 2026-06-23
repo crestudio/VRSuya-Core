@@ -14,9 +14,9 @@ using Object = UnityEngine.Object;
 
 namespace VRSuya.Core {
 
-	public class DuplicateGameObject {
+	public static class DuplicateGameObject {
 
-		public EditorWindow FindFirstWindow(Type EditorWindowType) {
+		public static EditorWindow FindFirstWindow(Type EditorWindowType) {
 			if (EditorWindowType == null)
 				throw new ArgumentNullException(nameof(EditorWindowType));
 			if (!typeof(EditorWindow).IsAssignableFrom(EditorWindowType))
@@ -27,7 +27,7 @@ namespace VRSuya.Core {
 			return Window;
 		}
 
-		public GameObject DuplicateGameObjectInstance(GameObject GameObjectInstance) {
+		public static GameObject DuplicateGameObjectInstance(GameObject GameObjectInstance) {
 			Selection.objects = new Object[] { GameObjectInstance };
 			Selection.activeGameObject = GameObjectInstance;
 			Type HierarchyViewType = Type.GetType("UnityEditor.SceneHierarchyWindow, UnityEditor");
