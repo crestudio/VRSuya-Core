@@ -1,4 +1,6 @@
 ﻿#if UNITY_EDITOR
+using System.Text;
+
 using UnityEditor;
 using UnityEngine;
 
@@ -46,6 +48,27 @@ namespace VRSuya.Core {
 			TargetComponent Component = TargetGameObject.GetComponent<TargetComponent>();
 			if (!Component) Component = TargetGameObject.AddComponent<TargetComponent>();
 			return Component;
+		}
+
+		public static GameObject GetSourcePrefab(GameObject TargetGameObject) {
+			if (!TargetGameObject) return null;
+			if (PrefabUtility.GetPrefabInstanceStatus(TargetGameObject) == PrefabInstanceStatus.NotAPrefab) return null;
+			GameObject TargetPrefabGameObject = PrefabUtility.GetNearestPrefabInstanceRoot(TargetGameObject);
+			if (!TargetPrefabGameObject) return null;
+			return PrefabUtility.GetCorrespondingObjectFromSource(TargetPrefabGameObject);
+		}
+
+		public static string GetHierarchyPath(GameObject TargetGameObject) {
+			if (!TargetGameObject) return string.Empty;
+			StringBuilder HierarchyPathStringBuilder = new StringBuilder();
+			Transform CurrentTransform = TargetGameObject.transform;
+			while (CurrentTransform != null) {
+				if (HierarchyPathStringBuilder.Length > 0) HierarchyPathStringBuilder.Insert(0, "/");
+				HierarchyPathStringBuilder.Insert(0, CurrentTransform.gameObject.name);
+				if (!CurrentTransform.parent) break;
+				CurrentTransform = CurrentTransform.parent;
+			}
+			return HierarchyPathStringBuilder.ToString();
 		}
 	}
 }
