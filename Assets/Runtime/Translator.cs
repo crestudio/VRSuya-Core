@@ -87,6 +87,7 @@ namespace VRSuya.Core {
 			{ "String_AnimationOrigin", "Animation Origin" },
 			{ "String_AnimationStrength", "Animation Strength" },
 			{ "String_Avatar", "Avatar" },
+			{ "String_Apply", "Apply" },
 			{ "String_AvatarAuthor", "Avatar Author" },
 			{ "String_AvatarOrigin", "Avatar Origin" },
 			{ "String_Before", "Before" },
@@ -130,6 +131,9 @@ namespace VRSuya.Core {
 			{ "NO_OLD_AVATAR_SCENE", "The avatar is not placed in the scene" },
 			{ "NO_OLD_AVATAR", "No Avatar is selected" },
 			{ "SAME_AVATAR", "Same as the original avatar! Select a new GameObject of the same avatar" },
+
+			// AvatarScaler
+			{ "String_AvatarHeight", "Avatar Height (cm)" },
 
 			// AvatarSettingUpdater
 			{ "String_AvatarSettingUpdater", "The latest VRSuya items are now configured automatically during avatar upload, similar to Modular Avatar-compatible items. AvatarSettingUpdater is no longer used." },
@@ -208,6 +212,7 @@ namespace VRSuya.Core {
 			{ "String_AnimationOrigin", "애니메이션 본 원점" },
 			{ "String_AnimationStrength", "애니메이션 강도" },
 			{ "String_Avatar", "아바타" },
+			{ "String_Apply", "적용" },
 			{ "String_AvatarAuthor", "아바타 제작자" },
 			{ "String_AvatarOrigin", "아바타 볼 원점" },
 			{ "String_Before", "변경 전" },
@@ -251,6 +256,9 @@ namespace VRSuya.Core {
 			{ "NO_OLD_AVATAR_SCENE", "아바타가 Scene에 위치하고 있지 않습니다" },
 			{ "NO_OLD_AVATAR", "아바타가 지정되지 않았습니다" },
 			{ "SAME_AVATAR", "원본과 같은 아바타입니다, 복구하려는 아바타와 같은 종류의 아바타를 만들어 넣어주세요" },
+
+			// AvatarScaler
+			{ "String_AvatarHeight", "아바타 키 (cm)" },
 
 			// AvatarSettingUpdater
 			{ "String_AvatarSettingUpdater", "최신 VRSuya 아이템은 모듈러 아바타 대응 아이템처럼 이제 아바타 업로드시에 자동으로 설정합니다, AvatarSettingUpdater는 더 이상 사용하지 않습니다" },
@@ -329,6 +337,7 @@ namespace VRSuya.Core {
 			{ "String_AnimationOrigin", "アニメーションほっぺの原点" },
 			{ "String_AnimationStrength", "アニメーション強盗" },
 			{ "String_Avatar", "アバター" },
+			{ "String_Apply", "適用" },
 			{ "String_AvatarAuthor", "アバター製作者" },
 			{ "String_AvatarOrigin", "アバターほっぺの原点" },
 			{ "String_Before", "既存" },
@@ -372,6 +381,9 @@ namespace VRSuya.Core {
 			{ "NO_OLD_AVATAR_SCENE", "アバターがシーン内に配置されていません" },
 			{ "NO_OLD_AVATAR", "アバターが指定されていません" },
 			{ "SAME_AVATAR", "原本と同じアバターです、復旧したいアバターと同じ種類のアバターを作って入れてください" },
+
+			// AvatarScaler
+			{ "String_AvatarHeight", "アバターの高さ (cm)" },
 
 			// AvatarSettingUpdater
 			{ "String_AvatarSettingUpdater", "最新のVRSuyaアイテムはModular Avatar対応アイテムと同様に、アバターのアップロード時に自動で設定されるようになりました、AvatarSettingUpdaterは今後使用されません" },
