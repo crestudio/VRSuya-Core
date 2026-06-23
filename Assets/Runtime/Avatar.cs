@@ -62,6 +62,20 @@ namespace VRSuya.Core {
 		};
 		public static readonly string[] CheekBoneNames = CheekLeftBoneNames.Concat(CheekRightBoneNames).ToArray();
 
+		public static readonly Dictionary<string, string[]> ToeBoneDictionary = new Dictionary<string, string[]>() {
+			{ "ThumbToe1_L", new string[] { "ThumbToe1_L", "Toe_Thumb_Proximal_L" } },
+			{ "ThumbToe1_R", new string[] { "ThumbToe1_R", "Toe_Thumb_Proximal_R" } },
+			{ "IndexToe1_L", new string[] { "IndexToe1_L", "Toe_Index_Proximal_L" } },
+			{ "IndexToe1_R", new string[] { "IndexToe1_R", "Toe_Index_Proximal_R" } },
+			{ "MiddleToe1_L", new string[] { "MiddleToe1_L", "Toe_Middle_Proximal_L" } },
+			{ "MiddleToe1_R", new string[] { "MiddleToe1_R", "Toe_Middle_Proximal_R" } },
+			{ "RingToe1_L", new string[] { "RingToe1_L", "Toe_Ring_Proximal_L" } },
+			{ "RingToe1_R", new string[] { "RingToe1_R", "Toe_Ring_Proximal_R" } },
+			{ "LittleToe1_L", new string[] { "LittleToe1_L", "Toe_Little_Proximal_L" } },
+			{ "LittleToe1_R", new string[] { "LittleToe1_R", "Toe_Little_Proximal_R" } }
+		};
+		public static readonly string[] ToeBoneNames = ToeBoneDictionary.Values.SelectMany(Item => Item).ToArray();
+
 		public static string GetAvatarName(string TargetString) {
 			foreach (string AvatarName in GetAvatarNames()) {
 				if (TargetString.Contains(AvatarName, StringComparison.OrdinalIgnoreCase)) return AvatarName;
