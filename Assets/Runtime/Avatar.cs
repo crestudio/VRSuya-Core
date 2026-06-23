@@ -199,6 +199,19 @@ namespace VRSuya.Core {
 			return newBlendshapeNameList.ToArray();
 		}
 
+		public static bool SetBlendshapeValue(SkinnedMeshRenderer TargetSkinnedMeshRenderer, string TargetBlendShapeName, float NewValue) {
+			int TargetIndex = Array.IndexOf(GetBlendshapeNameList(TargetSkinnedMeshRenderer), TargetBlendShapeName);
+			if (TargetIndex != -1) {
+				float OldValue = TargetSkinnedMeshRenderer.GetBlendShapeWeight(TargetIndex);
+				if (!Mathf.Approximately(OldValue, NewValue)) {
+					TargetSkinnedMeshRenderer.SetBlendShapeWeight(TargetIndex, NewValue);
+					EditorUtility.SetDirty(TargetSkinnedMeshRenderer);
+					return true;
+				}
+			}
+			return false;
+		}
+
 		public static Transform GetAvatarAnchorOverride(GameObject AvatarGameObject) {
 			GameObject HeadGameObject = GetHeadGameObject(AvatarGameObject);
 			if (HeadGameObject) {
