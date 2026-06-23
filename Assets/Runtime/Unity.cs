@@ -70,6 +70,25 @@ namespace VRSuya.Core {
 			}
 			return HierarchyPathStringBuilder.ToString();
 		}
+
+		public static void SetMirroredTransform(Transform TargetTransform, Transform TargetMirroredTransform) {
+			if (!TargetTransform || !TargetMirroredTransform) return;
+			Vector3 MirroredLocalPosition = new Vector3(
+				-TargetTransform.localPosition.x,
+				TargetTransform.localPosition.y,
+				TargetTransform.localPosition.z
+			);
+			Quaternion MirroredLocalRotation = new Quaternion(
+				TargetTransform.rotation.x,
+				-TargetTransform.rotation.y,
+				-TargetTransform.rotation.z,
+				TargetTransform.rotation.w
+			);
+			TargetMirroredTransform.localPosition = MirroredLocalPosition;
+			TargetMirroredTransform.localRotation = MirroredLocalRotation;
+			TargetMirroredTransform.localScale = TargetTransform.transform.localScale;
+			return;
+		}
 	}
 }
 #endif
