@@ -28,6 +28,28 @@ namespace VRSuya.Core {
 			TargetController.AddParameter(newParameter);
 		}
 
+		static void CollectAnimatorComponent<TargetComponent>(AnimatorStateMachine TargetStateMachine, List<TargetComponent> TargetComponents) where TargetComponent : StateMachineBehaviour {
+			foreach (StateMachineBehaviour TargetBehaviour in TargetStateMachine.behaviours) {
+				if (TargetBehaviour is TargetComponent TargetStateMachineBehaviour) {
+					TargetComponents.Add(TargetStateMachineBehaviour);
+				}
+			}
+			foreach (ChildAnimatorState ChildState in TargetStateMachine.states) {
+				AnimatorState TargetState = ChildState.state;
+				if (!TargetState) continue;
+				foreach (StateMachineBehaviour TargetBehaviour in TargetState.behaviours) {
+					if (TargetBehaviour is TargetComponent TargetStateMachineBehaviourl) {
+						TargetComponents.Add(TargetStateMachineBehaviourl);
+					}
+				}
+			}
+			foreach (ChildAnimatorStateMachine ChildStateMachine in TargetStateMachine.stateMachines) {
+				AnimatorStateMachine ChildSubStateMachine = ChildStateMachine.stateMachine;
+				if (!ChildSubStateMachine) continue;
+				CollectAnimatorComponent(ChildSubStateMachine, TargetComponents);
+			}
+		}
+
 		public static void CopyTransitions(AnimatorStateMachine TargetStateMachine, AnimatorStateMachine OldStateMachine) {
 			AnimatorStateMachine[] OldAnimatorStateMachines = GetAllStateMachines(OldStateMachine);
 			AnimatorStateMachine[] NewAnimatorStateMachines = GetAllStateMachines(TargetStateMachine);
@@ -264,6 +286,12 @@ namespace VRSuya.Core {
 		public static AnimatorStateTransition[] GetAllTransitions(AnimatorController TargetAnimatorController) {
 			AnimatorState[] AllAnimatorState = GetAllAnimatorStates(TargetAnimatorController);
 			return AllAnimatorState.SelectMany(Item => Item.transitions).ToArray();
+		}
+
+		public static TargetComponent[] GetAnimatorComponent<TargetComponent>(AnimatorStateMachine TargetStateMachine) where TargetComponent : StateMachineBehaviour {
+			List<TargetComponent> TargetComponents = new List<TargetComponent>();
+			CollectAnimatorComponent(TargetStateMachine, TargetComponents);
+			return TargetComponents.ToArray();
 		}
 
 		public static AnimatorState GetStandingState(AnimatorController TargetAnimator) {
