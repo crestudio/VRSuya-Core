@@ -1,11 +1,12 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 using UnityEditor;
 using UnityEngine;
 
-using static VRSuya.Core.Avatar;
+using static VRSuya.Core.AvatarUtility;
 
 /*
  * VRSuya Core
@@ -556,3 +557,4 @@ namespace VRSuya.Core {
 		};
 	}
 }
+#endif
