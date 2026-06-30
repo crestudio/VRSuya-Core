@@ -94,6 +94,21 @@ namespace VRSuya.Core {
 			return Undo.GetCurrentGroup();
 		}
 
+		public static bool IsVariantModelPrefab(GameObject TargetGameObject) {
+			if (!PrefabUtility.IsPartOfVariantPrefab(TargetGameObject)) return false;
+			GameObject PrefabSourceGameObject = TargetGameObject;
+			string PrefabSourceAssetPath = AssetDatabase.GetAssetPath(TargetGameObject);
+			while (PrefabSourceGameObject) {
+				string CurrentAssetPath = AssetDatabase.GetAssetPath(PrefabSourceGameObject);
+				if (!string.IsNullOrEmpty(CurrentAssetPath)) PrefabSourceAssetPath = CurrentAssetPath;
+				GameObject ParentPrefabSourceGameObject = PrefabUtility.GetCorrespondingObjectFromSource(PrefabSourceGameObject);
+				if (!ParentPrefabSourceGameObject) break;
+				PrefabSourceGameObject = ParentPrefabSourceGameObject;
+			}
+			if (string.IsNullOrEmpty(PrefabSourceAssetPath)) return false;
+			return PrefabSourceAssetPath.EndsWith(".fbx", StringComparison.OrdinalIgnoreCase);
+		}
+
 		public static bool SetBlendshapeValue(SkinnedMeshRenderer TargetSkinnedMeshRenderer, string TargetBlendShapeName, float NewValue) {
 			int TargetIndex = Array.IndexOf(GetBlendshapeNameList(TargetSkinnedMeshRenderer), TargetBlendShapeName);
 			if (TargetIndex != -1) {
