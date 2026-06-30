@@ -123,9 +123,11 @@ namespace VRSuya.Core {
 			{ "String_AnimatedPhysBone", "When uploading the avatar, the Animated property of PhysBone components on cheek bones will be enabled." },
 
 			// AvatarPatcher
+			{ "String_AvatarPatcher", "This tool is currently under development, We're working to release an update as soon as possible" },
 			{ "COMPLETED_PATCH", "The {0} avatar has been patched" },
 
 			// AvatarRebuilder
+			{ "String_AvatarRebuilder", "This tool is used to replace avatar models that have been patched in Blender\nIf you want to patch your avatar directly in Unity, please use the following menu instead of this tool\nTools → VRSuya → Installer → HDiffPatcher" },
 			{ "NO_NEW_ANIMATOR", "Not found Animator Component in the New Avatar" },
 			{ "NO_NEW_AVATAR", "No New Avatar is selected" },
 			{ "NO_MATCHED_SKINNEDMESHRENDERERS", "No matching SkinnedMeshRenderer was found" },
@@ -152,6 +154,7 @@ namespace VRSuya.Core {
 			{ "String_ForceOnWriteDefaults", "Sets Write Defaults to ON for the FX layer.\nSome avatar gimmicks may not function correctly as a result. If this occurs, removing this component will resolve the issue; however, facial expression animations provided by VRSuya items may no longer work correctly." },
 
 			// HDiffPatcher
+			{ "String_HDiffPatcher", "Patches can only be applied to the original avatar model file\nIf the model file has been modified (like facial patch), use the AvatarPatcher add-on in Blender to patch the modified model, then replace the avatar model using AvatarRebuilder" },
 			{ "String_PatchData", "Patch Data" },
 			{ "String_ReplaceAfterPatch", "Replace Avatar After Patching" },
 			{ "ERROR_CONSOLE", "An error occurred while patching the avatar! Please check the error message in the Unity Console window" },
@@ -249,9 +252,11 @@ namespace VRSuya.Core {
 			{ "String_AnimatedPhysBone", "아바타 업로드 할 때, 볼 본의 PhysBone 컴포넌트의 Animated 속성을 활성화 합니다" },
 
 			// AvatarPatcher
+			{ "String_AvatarPatcher", "현재 프로그램은 개발 중입니다, 빠르게 업데이트 할 수 있도록 하겠습니다" },
 			{ "COMPLETED_PATCH", "{0} 아바타를 패치하였습니다" },
 
 			// AvatarRebuilder
+			{ "String_AvatarRebuilder", "Blender에서 패치한 아바타 모델을 교체하기 위한 프로그램 입니다\nUnity에서 바로 아바타를 패치하시려면, 현재 프로그램 대신 아래의 메뉴를 이용하여 아바타 모델 패치를 진행해 주세요\nTools → VRSuya → Installer → HDiffPatcher" },
 			{ "NO_NEW_ANIMATOR", "새 아바타에서 애니메이터를 찾을 수 없습니다" },
 			{ "NO_NEW_AVATAR", "새 아바타가 지정되지 않았습니다" },
 			{ "NO_MATCHED_SKINNEDMESHRENDERERS", "서로 매치가 되는 SkinnedMeshRenderer가 존재하지 않습니다" },
@@ -278,6 +283,7 @@ namespace VRSuya.Core {
 			{ "String_ForceOnWriteDefaults", "FX 레이어를 Write Defaults를 ON으로 설정합니다\n일부 아바타의 기믹이 제대로 동작하지 않을 수 있습니다, 이러한 경우에는 현재 컴포넌트를 제거하면 문제가 해결이 되나 VRSuya 아이템의 표정 애니메이션이 제대로 동작하지 않습니다" },
 
 			// HDiffPatcher
+			{ "String_HDiffPatcher", "순정 아바타 모델 파일만 패치를 적용할 수 있습니다\n페이셜 패치 등으로 모델 파일을 수정한 경우에는 Blender에서 AvatarPatcher 애드온으로 수정된 모델으로 패치를 진행한 모델 파일로 AvatarRebuilder에서 교체 작업을 해야 합니다" },
 			{ "String_PatchData", "패치 데이터" },
 			{ "String_ReplaceAfterPatch", "패치 후 아바타 교체" },
 			{ "ERROR_CONSOLE", "아바타 패치 도중 에러가 발생하였습니다, Unity의 Console 창에서 오류 메시지를 확인해 주세요" },
@@ -375,9 +381,11 @@ namespace VRSuya.Core {
 			{ "String_AnimatedPhysBone", "アバターをアップロードする際、頬ボーンのPhysBoneコンポーネントのAnimatedプロパティが有効化されます" },
 
 			// AvatarPatcher
+			{ "String_AvatarPatcher", "このツールは現在開発中です、できるだけ早く公開できるよう開発を進めております" },
 			{ "COMPLETED_PATCH", "{0}アバターをパッチしました" },
 
 			// AvatarRebuilder
+			{ "String_AvatarRebuilder", "このツールはBlenderでパッチを適用したアバターモデルを差し替えるためのツールです\nUnity上で直接アバターをパッチしたい場合は、このツールではなく、以下のメニューからアバターモデルのパッチを実行してください\nTools → VRSuya → Installer → HDiffPatcher" },
 			{ "NO_NEW_ANIMATOR", "新しいアバターにアニメーターが見つかりません" },
 			{ "NO_NEW_AVATAR", "新しいアバターが指定されていません" },
 			{ "NO_MATCHED_SKINNEDMESHRENDERERS", "対応するSkinnedMeshRendererが見つかりません" },
@@ -404,6 +412,7 @@ namespace VRSuya.Core {
 			{ "String_ForceOnWriteDefaults", "FXレイヤーのWrite DefaultsをONに設定します\nその影響により、一部のアバターギミックが正常に動作しなくなる場合があります、その場合は、このコンポーネントを削除することで問題を解決できますが、VRSuyaアイテムの表情アニメーションが正常に動作しなくなる可能性があります" },
 			
 			// HDiffPatcher
+			{ "String_HDiffPatcher", "パッチはオリジナルのアバターモデルファイルにのみ適用できます\nフェイシャルパッチなどでモデルファイルを変更している場合は、BlenderのAvatarPatcherアドオンを使用して変更済みモデルにパッチを適用し、その後AvatarRebuilderでアバターモデルを差し替えてください" },
 			{ "String_PatchData", "パッチデータ" },
 			{ "String_ReplaceAfterPatch", "パッチ後にアバターを置き換える" },
 			{ "ERROR_CONSOLE", "アバターのパッチ中にエラーが発生しました！UnityのConsoleウィンドウでエラーメッセージを確認してください" },
