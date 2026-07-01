@@ -82,18 +82,20 @@ namespace VRSuya.Core {
 
 		// 영어 사전 데이터
 		static readonly Dictionary<string, string> String_English = new Dictionary<string, string>() {
+			{ "String_Active", "Active" },
 			{ "String_Add", "Add" },
 			{ "String_After", "After" },
 			{ "String_AnimationClip", "Animation Clip" },
 			{ "String_AnimationOrigin", "Animation Origin" },
 			{ "String_AnimationStrength", "Animation Strength" },
-			{ "String_Avatar", "Avatar" },
 			{ "String_Apply", "Apply" },
+			{ "String_Avatar", "Avatar" },
 			{ "String_AvatarAuthor", "Avatar Author" },
 			{ "String_AvatarOrigin", "Avatar Origin" },
 			{ "String_Before", "Before" },
 			{ "String_BlendShape", "Blendshape" },
 			{ "String_Browse", "Browse" },
+			{ "String_Close", "Close" },
 			{ "String_FXLayer", "FX Layer" },
 			{ "String_GetPosition", "Get cheek bone position" },
 			{ "String_HeadMesh", "Face Mesh" },
@@ -121,6 +123,10 @@ namespace VRSuya.Core {
 
 			// AnimatedPhysBone
 			{ "String_AnimatedPhysBone", "When uploading the avatar, the Animated property of PhysBone components on cheek bones will be enabled." },
+
+			// AnimatorView
+			{ "String_FollowGameObject", "Follow GameObject" },
+			{ "String_LockRotation", "Lock Camera Rotation" },
 
 			// AvatarPatcher
 			{ "String_AvatarPatcher", "This tool is currently under development, We're working to release an update as soon as possible" },
@@ -211,18 +217,20 @@ namespace VRSuya.Core {
 
 		// 한국어 사전 데이터
 		static readonly Dictionary<string, string> String_Korean = new Dictionary<string, string>() {
+			{ "String_Active", "활성화" },
 			{ "String_Add", "추가" },
 			{ "String_After", "변경 후" },
 			{ "String_AnimationClip", "애니메이션 클립" },
 			{ "String_AnimationOrigin", "애니메이션 본 원점" },
 			{ "String_AnimationStrength", "애니메이션 강도" },
-			{ "String_Avatar", "아바타" },
 			{ "String_Apply", "적용" },
+			{ "String_Avatar", "아바타" },
 			{ "String_AvatarAuthor", "아바타 제작자" },
 			{ "String_AvatarOrigin", "아바타 볼 원점" },
 			{ "String_Before", "변경 전" },
 			{ "String_BlendShape", "쉐이프키" },
 			{ "String_Browse", "찾아보기" },
+			{ "String_Close", "닫기" },
 			{ "String_FXLayer", "FX 레이어" },
 			{ "String_GetPosition", "볼 데이터 가져오기" },
 			{ "String_HeadMesh", "얼굴 메쉬" },
@@ -250,6 +258,10 @@ namespace VRSuya.Core {
 
 			// AnimatedPhysBone
 			{ "String_AnimatedPhysBone", "아바타 업로드 할 때, 볼 본의 PhysBone 컴포넌트의 Animated 속성을 활성화 합니다" },
+
+			// AnimatorView
+			{ "String_FollowGameObject", "GameObject 추적" },
+			{ "String_LockRotation", "카메라 회전 고정" },
 
 			// AvatarPatcher
 			{ "String_AvatarPatcher", "현재 프로그램은 개발 중입니다, 빠르게 업데이트 할 수 있도록 하겠습니다" },
@@ -340,18 +352,20 @@ namespace VRSuya.Core {
 
 		// 일본어 사전 데이터
 		static readonly Dictionary<string, string> String_Japanese = new Dictionary<string, string>() {
+			{ "String_Active", "有効化" },
 			{ "String_Add", "追加" },
 			{ "String_After", "変更" },
 			{ "String_AnimationClip", "アニメーション·クリップ" },
 			{ "String_AnimationOrigin", "アニメーションほっぺの原点" },
 			{ "String_AnimationStrength", "アニメーション強盗" },
-			{ "String_Avatar", "アバター" },
 			{ "String_Apply", "適用" },
+			{ "String_Avatar", "アバター" },
 			{ "String_AvatarAuthor", "アバター製作者" },
 			{ "String_AvatarOrigin", "アバターほっぺの原点" },
 			{ "String_Before", "既存" },
 			{ "String_BlendShape", "シェイプキー" },
 			{ "String_Browse", "参照" },
+			{ "String_Close", "閉じる" },
 			{ "String_FXLayer", "FXレイヤー" },
 			{ "String_GetPosition", "ほっぺデータのインポート" },
 			{ "String_HeadMesh", "顔メッシュ" },
@@ -379,6 +393,10 @@ namespace VRSuya.Core {
 
 			// AnimatedPhysBone
 			{ "String_AnimatedPhysBone", "アバターをアップロードする際、頬ボーンのPhysBoneコンポーネントのAnimatedプロパティが有効化されます" },
+
+			// AnimatorView
+			{ "String_FollowGameObject", "GameObjectを追従" },
+			{ "String_LockRotation", "カメラ回転固定" },
 
 			// AvatarPatcher
 			{ "String_AvatarPatcher", "このツールは現在開発中です、できるだけ早く公開できるよう開発を進めております" },
