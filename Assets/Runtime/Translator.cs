@@ -80,6 +80,19 @@ namespace VRSuya.Core {
 				.ToArray();
 		}
 
+		public static string[] GetPhysBoneOption() {
+			switch (LanguageIndex) {
+				case 0:
+					return new string[] { "Cheek", "Toe" };
+				case 1:
+					return new string[] { "볼", "발가락" };
+				case 2:
+					return new string[] { "頬", "足指" };
+				default:
+					return new string[] { "Cheek", "Toe" };
+			}
+		}
+
 		// 영어 사전 데이터
 		static readonly Dictionary<string, string> String_English = new Dictionary<string, string>() {
 			{ "String_Active", "Active" },
