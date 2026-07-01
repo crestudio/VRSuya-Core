@@ -17,10 +17,8 @@ namespace VRSuya.Core {
 	public static class DuplicateUtility {
 
 		public static EditorWindow GetEditorWindow(Type TargetEditorWindowType) {
-			if (TargetEditorWindowType == null)
-				throw new ArgumentNullException(nameof(TargetEditorWindowType));
-			if (!typeof(EditorWindow).IsAssignableFrom(TargetEditorWindowType))
-				throw new ArgumentException($"The given type ({TargetEditorWindowType.Name}) does not inherit from {nameof(EditorWindow)}");
+			if (TargetEditorWindowType == null) return null;
+			if (!typeof(EditorWindow).IsAssignableFrom(TargetEditorWindowType)) return null;
 			Object[] TargetEditorWindows = Resources.FindObjectsOfTypeAll(TargetEditorWindowType);
 			if (TargetEditorWindows.Length <= 0) return null;
 			EditorWindow TargetEditorWindow = (EditorWindow)TargetEditorWindows[0];
