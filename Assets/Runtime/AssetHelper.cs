@@ -122,6 +122,10 @@ namespace VRSuya.Core {
 			return AssetNameParts.FirstOrDefault(Item => AvatarNames.Contains(Item, StringComparer.OrdinalIgnoreCase));
 		}
 
+		public static string GetDirectoryPath(string TargetAssetPath) {
+			return Path.GetDirectoryName(TargetAssetPath).Replace('\\', '/');
+		}
+
 		public static string GetUnityAssetPath(string TargetFilePath) {
 			string AssetPath = Path.GetFullPath(TargetFilePath).Replace('\\', '/');
 			string UnityProjectAssetsPath = Path.GetFullPath(Application.dataPath + "/..").Replace('\\', '/');
