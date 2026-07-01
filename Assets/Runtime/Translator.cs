@@ -80,6 +80,19 @@ namespace VRSuya.Core {
 				.ToArray();
 		}
 
+		public static string[] GetLanguageOption() {
+			switch (LanguageIndex) {
+				case 0:
+					return new string[] { "Auto", "English", "Korean", "Japanese" };
+				case 1:
+					return new string[] { "자동", "영어", "한국어", "일본어" };
+				case 2:
+					return new string[] { "自動", "英語", "韓国語", "日本語" };
+				default:
+					return new string[] { "Auto", "English", "Korean", "Japanese" };
+			}
+		}
+
 		public static string[] GetPhysBoneOption() {
 			switch (LanguageIndex) {
 				case 0:
@@ -186,6 +199,9 @@ namespace VRSuya.Core {
 			{ "ERROR_PLATFORM", "HDiffPatch supports Windows, macOS, and Linux only" },
 			{ "ERROR_TIMEDOUT", "The HDiffPatch process timed out" },
 			{ "NOT_MATCH", "Failed to apply the HDiff patch because the selected source file does not match the patch, Please select the correct source file" },
+
+			// MenuSelector
+			{ "String_MenuLanguage", "Menu Language" },
 
 			// PhysBoneConnector
 			{ "String_PhysBoneType", "PhysBone Type" },
@@ -322,6 +338,9 @@ namespace VRSuya.Core {
 			{ "ERROR_TIMEDOUT", "HDiffPatch 프로세스의 작업 시간을 초과하였습니다" },
 			{ "NOT_MATCH", "선택한 원본 파일이 패치 데이터와 일치하지 않아 HDiff 패치를 적용할 수 없었습니다, 올바른 원본 파일을 선택해 주세요" },
 
+			// MenuSelector
+			{ "String_MenuLanguage", "메뉴 언어" },
+
 			// PhysBoneConnector
 			{ "String_PhysBoneType", "PhysBone 종류" },
 			{ "String_LeftCheek", "왼쪽 볼" },
@@ -456,6 +475,9 @@ namespace VRSuya.Core {
 			{ "ERROR_PLATFORM", "HDiffPatchはWindows、macOS、Linuxのみサポートしています" },
 			{ "ERROR_TIMEDOUT", "HDiffPatchプロセスがタイムアウトしました" },
 			{ "NOT_MATCH", "選択された元ファイルがパッチと一致しないため、HDiffパッチを適用できませんでした、正しい元ファイルを選択してください" },
+
+			// MenuSelector
+			{ "String_MenuLanguage", "メニュー言語" },
 
 			// PhysBoneConnector
 			{ "String_PhysBoneType", "PhysBoneタイプ" },
