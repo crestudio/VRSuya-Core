@@ -182,6 +182,12 @@ namespace VRSuya.Core {
 			{ "String_LeftHand", "Left Hand" },
 			{ "String_RightHand", "Right Hand" },
 
+			// FixFacialAnimation
+			{ "String_AddBlink", "Add Blink Shapekey" },
+			{ "String_AddLayerControl", "Add Layer Control" },
+			{ "String_GetAvatarData", "Get Avatar Data" },
+			{ "String_LayerIndex", "Layer Index" },
+
 			// ForceOnWriteDefaults
 			{ "String_ForceOnWriteDefaults", "Sets Write Defaults to ON for the FX layer.\nSome avatar gimmicks may not function correctly as a result. If this occurs, removing this component will resolve the issue; however, facial expression animations provided by VRSuya items may no longer work correctly." },
 
@@ -320,6 +326,12 @@ namespace VRSuya.Core {
 			{ "String_LeftHand", "왼손" },
 			{ "String_RightHand", "오른손" },
 
+			// FixFacialAnimation
+			{ "String_AddBlink", "블링크 쉐이프키 추가" },
+			{ "String_AddLayerControl", "레이어 컨트롤 추가" },
+			{ "String_GetAvatarData", "아바타 데이터 업데이트" },
+			{ "String_LayerIndex", "레이어 인덱스" },
+
 			// ForceOnWriteDefaults
 			{ "String_ForceOnWriteDefaults", "FX 레이어를 Write Defaults를 ON으로 설정합니다\n일부 아바타의 기믹이 제대로 동작하지 않을 수 있습니다, 이러한 경우에는 현재 컴포넌트를 제거하면 문제가 해결이 되나 VRSuya 아이템의 표정 애니메이션이 제대로 동작하지 않습니다" },
 
@@ -457,6 +469,12 @@ namespace VRSuya.Core {
 			// ConstraintConnector
 			{ "String_LeftHand", "左手" },
 			{ "String_RightHand", "右手" },
+
+			// FixFacialAnimation
+			{ "String_AddBlink", "まばたきシェイプキーを追加" },
+			{ "String_AddLayerControl", "レイヤーコントロールを追加" },
+			{ "String_GetAvatarData", "アバターデータを追加" },
+			{ "String_LayerIndex", "レイヤーインデックス" },
 
 			// ForceOnWriteDefaults
 			{ "String_ForceOnWriteDefaults", "FXレイヤーのWrite DefaultsをONに設定します\nその影響により、一部のアバターギミックが正常に動作しなくなる場合があります、その場合は、このコンポーネントを削除することで問題を解決できますが、VRSuyaアイテムの表情アニメーションが正常に動作しなくなる可能性があります" },
