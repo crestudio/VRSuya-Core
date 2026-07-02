@@ -285,7 +285,10 @@ namespace VRSuya.Core {
 
 		public static AnimatorStateTransition[] GetAllTransitions(AnimatorController TargetAnimatorController) {
 			AnimatorState[] AllAnimatorState = GetAllAnimatorStates(TargetAnimatorController);
-			return AllAnimatorState.SelectMany(Item => Item.transitions).ToArray();
+			List<AnimatorStateTransition> AllTransitions = new List<AnimatorStateTransition>();
+			AllTransitions.AddRange(AllAnimatorState.SelectMany(Item => Item.transitions));
+			AllTransitions.AddRange(TargetAnimatorController.layers.SelectMany(Item => GetAllStateMachines(Item.stateMachine)).SelectMany(Item => Item.anyStateTransitions));
+			return AllTransitions.ToArray();
 		}
 
 		public static TargetComponent[] GetAnimatorComponent<TargetComponent>(AnimatorStateMachine TargetStateMachine) where TargetComponent : StateMachineBehaviour {
