@@ -64,6 +64,14 @@ namespace VRSuya.Core {
 		};
 		public static readonly string[] CheekBoneNames = CheekLeftBoneNames.Concat(CheekRightBoneNames).ToArray();
 
+		public static readonly string[] ToeLeftBoneNames = new string[] {
+			"Toe.L", "Toe_L" , "Toes.L", "Toes_L", "Left Toe", "LeftToeBase", "LeftToes", "foot.L.001", "Foot.L.002", "Bese_L"
+		};
+		public static readonly string[] ToeRightBoneNames = new string[] {
+			"Toe.R", "Toe_R", "Toes.R", "Toes_L", "Right Toe", "RightToeBase", "RightToes", "foot.R.001", "Foot.R.002", "Bese_R"
+		};
+		public static readonly string[] HumanoidToeBoneNames = ToeLeftBoneNames.Concat(ToeRightBoneNames).ToArray();
+
 		public static readonly Dictionary<string, string[]> ToeBoneDictionary = new Dictionary<string, string[]>() {
 			{ "ThumbToe1_L", new string[] { "ThumbToe1_L", "Toe_Thumb_Proximal_L" } },
 			{ "ThumbToe1_R", new string[] { "ThumbToe1_R", "Toe_Thumb_Proximal_R" } },
