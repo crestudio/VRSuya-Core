@@ -193,7 +193,7 @@ namespace VRSuya.Core {
 		}
 
 		public static Transform GetAvatarRootBone(GameObject AvatarGameObject) {
-			AvatarGameObject.TryGetComponent(out UnityEngine.Animator AvatarAnimator);
+			AvatarGameObject.TryGetComponent(out Animator AvatarAnimator);
 			if (AvatarAnimator) {
 				return AvatarAnimator.GetBoneTransform(HumanBodyBones.Hips);
 			}
@@ -210,7 +210,7 @@ namespace VRSuya.Core {
 					return TargetAvatarDescriptor.customEyeLookSettings.eyelidsSkinnedMesh.gameObject;
 				}
 			}
-			AvatarGameObject.TryGetComponent(out UnityEngine.Animator TargetAnimator);
+			AvatarGameObject.TryGetComponent(out Animator TargetAnimator);
 			if (TargetAnimator) {
 				Transform LeftEyeTransform = TargetAnimator.GetBoneTransform(HumanBodyBones.LeftEye);
 				Transform RightEyeTransform = TargetAnimator.GetBoneTransform(HumanBodyBones.RightEye);
