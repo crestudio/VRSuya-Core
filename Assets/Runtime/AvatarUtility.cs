@@ -212,6 +212,15 @@ namespace VRSuya.Core {
 			}
 			AvatarGameObject.TryGetComponent(out UnityEngine.Animator TargetAnimator);
 			if (TargetAnimator) {
+				Transform LeftEyeTransform = TargetAnimator.GetBoneTransform(HumanBodyBones.LeftEye);
+				Transform RightEyeTransform = TargetAnimator.GetBoneTransform(HumanBodyBones.RightEye);
+				if (LeftEyeTransform && RightEyeTransform) {
+					SkinnedMeshRenderer HeadSkinnedMeshrenderer = AvatarGameObject.GetComponentsInChildren<SkinnedMeshRenderer>(true)
+						.FirstOrDefault(Item => Item.bones.Contains(LeftEyeTransform) && Item.bones.Contains(LeftEyeTransform));
+					if (HeadSkinnedMeshrenderer) {
+						return HeadSkinnedMeshrenderer.gameObject;
+					}
+				}
 				Transform HeadTransform = TargetAnimator.GetBoneTransform(HumanBodyBones.Head);
 				if (HeadTransform) {
 					SkinnedMeshRenderer HeadSkinnedMeshrenderer = AvatarGameObject.GetComponentsInChildren<SkinnedMeshRenderer>(true)
