@@ -97,6 +97,20 @@ namespace VRSuya.Core {
 			return null;
 		}
 
+		public static GameObject GetArmatureGameObject(GameObject AvatarGameObject) {
+			AvatarGameObject.TryGetComponent(out Animator TargetAnimator);
+			if (TargetAnimator) {
+				Transform HipsTransform = TargetAnimator.GetBoneTransform(HumanBodyBones.Hips);
+				if (HipsTransform) {
+					Transform ArmatureTransform = HipsTransform.parent;
+					if (ArmatureTransform) {
+						return ArmatureTransform.gameObject;
+					}
+				}
+			}
+			return null;
+		}
+
 		public static Transform GetAvatarAnchorOverride(GameObject AvatarGameObject) {
 			GameObject HeadGameObject = GetHeadGameObject(AvatarGameObject);
 			if (HeadGameObject) {
@@ -225,6 +239,18 @@ namespace VRSuya.Core {
 				}
 			}
 			return null;
+		}
+
+		public static bool HasEndBone(GameObject AvatarGameObject) {
+			GameObject ArmatureGameObject = GetArmatureGameObject(AvatarGameObject);
+			Transform[] EndTransforms = ArmatureGameObject.GetComponentsInChildren<Transform>(true).Where(Item => Item.childCount == 0).ToArray();
+			int EndBoneCount = EndTransforms.Where(Item => Item.name.Contains("_end")).Count();
+			if (EndTransforms.Length > 0) {
+				if ((float)EndBoneCount / EndTransforms.Length >= 0.75) {
+					return true;
+				}
+			}
+			return false;
 		}
 	}
 }
