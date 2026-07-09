@@ -249,6 +249,7 @@ namespace VRSuya.Core {
 			{ "NO_CHEEKBONE", "Not found any cheek bone in the Avatar!" },
 			{ "NO_CLIPS", "There is no animation clip to update!" },
 			{ "NO_FACEMESH", "Face mesh not found" },
+			{ "NO_PREFAB_MODE", "This operation is not available in Prefab Mode" },
 			{ "NO_SHAPEKEY", "No shapekeys with values set" }
 		};
 
@@ -395,6 +396,7 @@ namespace VRSuya.Core {
 			{ "NO_CHEEKBONE", "아바타에서 볼 본을 찾을 수 없습니다!" },
 			{ "NO_CLIPS", "작업할 애니메이션 클립이 없습니다!" },
 			{ "NO_FACEMESH", "얼굴 메쉬를 찾을 수 없습니다" },
+			{ "NO_PREFAB_MODE", "Prefab 편집 모드에서는 진행할 수 없습니다" },
 			{ "NO_SHAPEKEY", "값이 설정된 쉐이프키가 없습니다" }
 		};
 
@@ -541,6 +543,7 @@ namespace VRSuya.Core {
 			{ "NO_CHEEKBONE", "アバターにほっぺの骨が見つかりません！" },
 			{ "NO_CLIPS", "作業するアニメーション·クリップがありません！" },
 			{ "NO_FACEMESH", "顔のメッシュが見つかりません" },
+			{ "NO_PREFAB_MODE", "Prefab編集モードでは実行できません" },
 			{ "NO_SHAPEKEY", "値が設定されたシェイプキーがありません" }
 		};
 

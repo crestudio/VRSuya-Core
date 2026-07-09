@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 /*
@@ -99,6 +100,10 @@ namespace VRSuya.Core {
 									(TargetColor.g - ReferenceColor.g) * (TargetColor.g - ReferenceColor.g) +
 									(TargetColor.b - ReferenceColor.b) * (TargetColor.b - ReferenceColor.b);
 			return DistanceSquared < ToleranceSquared;
+		}
+
+		public static bool IsPrefabEditingMode() {
+			return PrefabStageUtility.GetCurrentPrefabStage() != null;
 		}
 
 		public static bool IsVariantModelPrefab(GameObject TargetGameObject) {
