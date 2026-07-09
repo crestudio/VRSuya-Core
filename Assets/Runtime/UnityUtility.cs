@@ -94,6 +94,13 @@ namespace VRSuya.Core {
 			return Undo.GetCurrentGroup();
 		}
 
+		public static bool IsColorCloseToReference(Color TargetColor, Color ReferenceColor, float ToleranceSquared) {
+			float DistanceSquared = (TargetColor.r - ReferenceColor.r) * (TargetColor.r - ReferenceColor.r) +
+									(TargetColor.g - ReferenceColor.g) * (TargetColor.g - ReferenceColor.g) +
+									(TargetColor.b - ReferenceColor.b) * (TargetColor.b - ReferenceColor.b);
+			return DistanceSquared < ToleranceSquared;
+		}
+
 		public static bool IsVariantModelPrefab(GameObject TargetGameObject) {
 			if (!PrefabUtility.IsPartOfVariantPrefab(TargetGameObject)) return false;
 			GameObject PrefabSourceGameObject = TargetGameObject;

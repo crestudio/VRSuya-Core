@@ -5,8 +5,10 @@ using System.IO;
 using System.Linq;
 
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 
+using static VRC.SDK3.Avatars.Components.VRCAvatarDescriptor;
 using VRC.SDK3.Avatars.ScriptableObjects;
 
 using Object = UnityEngine.Object;
@@ -73,6 +75,24 @@ namespace VRSuya.Core {
 			return CreatedPrefab;
 		}
 
+		public static Material[] GetAnimationMaterials(GameObject TargetGameObject) {
+			List<Material> AnimationMaterials = new List<Material>();
+			AnimatorController AvatarFXAnimator = AvatarUtility.GetAnimatorController(TargetGameObject, AnimLayerType.FX);
+			if (AvatarFXAnimator) {
+				AnimationClip[] AllAnimationClips = AnimatorHelper.GetAllAnimationClips(AvatarFXAnimator);
+				AnimationMaterials.AddRange(AllAnimationClips
+					.SelectMany(TargetAnimationClip => AnimationUtility.GetObjectReferenceCurveBindings(TargetAnimationClip)
+						.Where(TargetBinding => TargetBinding.type == typeof(SkinnedMeshRenderer) || TargetBinding.type == typeof(MeshRenderer))
+						.SelectMany(TargetBinding => AnimationUtility.GetObjectReferenceCurve(TargetAnimationClip, TargetBinding) ?? new ObjectReferenceKeyframe[0])
+						.Where(TargetKeyframe => TargetKeyframe.value is Material)
+						.Select(TargetKeyframe => TargetKeyframe.value as Material)
+					)
+				);
+			}
+			AnimationMaterials = AnimationMaterials.Where(Item => Item != null).Distinct().OrderBy(Item => Item.name).ToList();
+			return AnimationMaterials.ToArray();
+		}
+
 		public static string[] GetAssetGUIDs(AssetType TargetType) {
 			string SearchWord = string.Empty;
 			switch (TargetType) {
@@ -126,6 +146,24 @@ namespace VRSuya.Core {
 			return Path.GetDirectoryName(TargetAssetPath).Replace('\\', '/');
 		}
 
+		public static Texture2D[] GetMaterialTextures(Material TargetMaterial) {
+			List<Texture2D> NewTexture2Ds = new List<Texture2D>();
+			if (TargetMaterial) {
+				Shader TargetShader = TargetMaterial.shader;
+				int PropertyCount = ShaderUtil.GetPropertyCount(TargetShader);
+				for (int Index = 0; Index < PropertyCount; Index++) {
+					if (ShaderUtil.GetPropertyType(TargetShader, Index) == ShaderUtil.ShaderPropertyType.TexEnv) {
+						string PropertyName = ShaderUtil.GetPropertyName(TargetShader, Index);
+						Texture MaterialTexture = TargetMaterial.GetTexture(PropertyName);
+						if (MaterialTexture && MaterialTexture is Texture2D) {
+							NewTexture2Ds.Add(MaterialTexture as Texture2D);
+						}
+					}
+				}
+			}
+			return NewTexture2Ds.Distinct().OrderBy(Item => Item.name).ToArray();
+		}
+
 		public static string GetUnityAssetPath(string TargetFilePath) {
 			string AssetPath = Path.GetFullPath(TargetFilePath).Replace('\\', '/');
 			string UnityProjectAssetsPath = Path.GetFullPath(Application.dataPath + "/..").Replace('\\', '/');
@@ -134,6 +172,22 @@ namespace VRSuya.Core {
 
 		public static string GUIDToAssetName(string TargetGUID, bool OnlyFileName) {
 			return GetAssetName(AssetDatabase.GUIDToAssetPath(TargetGUID), OnlyFileName);
+		}
+
+		public static bool IsTextureNormalMap(Texture2D TargetTexture) {
+			if (!TargetTexture) return false;
+			Color ReferenceColor = new Color(0.5f, 0.5f, 1.0f);
+			float Tolerance = 0.3f;
+			Color[] Pixels = TargetTexture.GetPixels();
+			int ClosePixelCount = 0;
+			float ToleranceSquared = Tolerance * Tolerance;
+			foreach (Color Pixel in Pixels) {
+				if (UnityUtility.IsColorCloseToReference(Pixel, ReferenceColor, ToleranceSquared)) {
+					ClosePixelCount++;
+				}
+			}
+			float ClosePixelRatio = (float)ClosePixelCount / Pixels.Length;
+			return ClosePixelRatio > 0.5f;
 		}
 
 		public static void PingAsset(string TargetAssetPath) {

@@ -181,6 +181,24 @@ namespace VRSuya.Core {
 				.ToArray();
 		}
 
+		public static Material[] GetAvatarMaterials(GameObject AvatarGameObject) {
+			List<Material> NewAvatarMaterials = new List<Material>();
+			SkinnedMeshRenderer[] AvatarSkinnedMeshRenderers = AvatarGameObject.GetComponentsInChildren<SkinnedMeshRenderer>(true);
+			MeshRenderer[] AvatarMeshRenderers = AvatarGameObject.GetComponentsInChildren<MeshRenderer>(true);
+			Material[] AnimationMaterials = AssetUtility.GetAnimationMaterials(AvatarGameObject);
+			if (AvatarSkinnedMeshRenderers.Length > 0) {
+				NewAvatarMaterials.AddRange(AvatarSkinnedMeshRenderers.SelectMany(Item => Item.sharedMaterials));
+			}
+			if (AvatarMeshRenderers.Length > 0) {
+				NewAvatarMaterials.AddRange(AvatarMeshRenderers.SelectMany(Item => Item.sharedMaterials));
+			}
+			if (AnimationMaterials.Length > 0) {
+				NewAvatarMaterials.AddRange(AnimationMaterials);
+			}
+			NewAvatarMaterials = NewAvatarMaterials.Where(Item => Item != null).Distinct().OrderBy(Item => Item.name).ToList();
+			return NewAvatarMaterials.ToArray();
+		}
+
 		public static string GetAvatarName(string TargetString) {
 			foreach (string AvatarName in GetAvatarNames()) {
 				if (TargetString.Contains(AvatarName, StringComparison.OrdinalIgnoreCase)) return AvatarName;
@@ -198,6 +216,18 @@ namespace VRSuya.Core {
 				return AvatarAnimator.GetBoneTransform(HumanBodyBones.Hips);
 			}
 			return null;
+		}
+
+		public static Texture2D[] GetAvatarTextures(GameObject AvatarGameObject) {
+			List<Texture2D> NewAvatarTextures = new List<Texture2D>();
+			Material[] AvatarMaterials = GetAvatarMaterials(AvatarGameObject);
+			if (AvatarMaterials.Length > 0) {
+				foreach (Material TargetMaterial in AvatarMaterials) {
+					NewAvatarTextures.AddRange(AssetUtility.GetMaterialTextures(TargetMaterial));
+				}
+				NewAvatarTextures = NewAvatarTextures.Distinct().OrderBy(Item => Item.name).ToList();
+			}
+			return NewAvatarTextures.ToArray();
 		}
 
 		public static GameObject GetHeadGameObject(GameObject AvatarGameObject) {
